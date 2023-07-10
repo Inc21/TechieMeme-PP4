@@ -1,6 +1,6 @@
 ---
 name: User Story Template
-about: Deffault User Story Template
+about: Default User Story Template
 title: ''
 labels: ''
 assignees: ''
