@@ -1,10 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def memes(request):
-    return HttpResponse("Hello, world. You're at the memes index.")
+    return render(request, "memes/memes.html")
 
 
 def meme(request, pk):
-    return HttpResponse("single meme")
+    return render(request, "memes/single-meme.html")
