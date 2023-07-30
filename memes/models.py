@@ -7,6 +7,8 @@ import uuid
 class Meme(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
+    meme_img = models.ImageField(
+        upload_to='static/images/', default='static/images/placeholder.png')
     tags = models.ManyToManyField('Tag', blank=True)
     vote_total = models.IntegerField(default=0, null=True, blank=True)
     vote_ratio = models.IntegerField(default=0, null=True, blank=True)

@@ -8,3 +8,7 @@ def memes(request):
 
 def meme(request, pk):
     return render(request, "memes/single-meme.html")
+
+
+def home_page(request):
+    return render(request, "index.html")
