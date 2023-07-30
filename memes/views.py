@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 
 def memes(request):
-    return render(request, "memes/memes.html")
+    message = "Hello, world. You're at the memes page."
+    return render(request, "memes/memes.html", {"message": message})
 
 
 def meme(request, pk):
