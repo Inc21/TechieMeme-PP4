@@ -6,6 +6,10 @@
 
 body {
     font-family: 'Lexend', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 /* Colors */
@@ -79,19 +83,15 @@ header {
     font-size: 1.5em;
 }
 
-/* Main content custom css */
-.main-container {
-    min-height: calc(97vh - 15em);
-}
-
 /* Footer custom css */
 footer {
     background-color: #4C4E52;
-    height: 5em;
+    height: 4em;
     background:linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(80, 86, 85, 0.9));
     background-size: cover;
     background-position: left;
     color: whitesmoke;
+    margin-top: auto;
 }
 
 /* Media queries */
