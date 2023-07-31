@@ -9,9 +9,10 @@ def memes(request):
 
 
 def meme(request, pk):
-    meme = Meme.objects.get(id=pk)
-    # print('meme: ', meme)
-    return render(request, "memes/single-meme.html", {'meme': meme})
+    memeObj = Meme.objects.get(id=pk)
+    print('memeObj:', memeObj)
+    context = {"meme": memeObj}
+    return render(request, "memes/single-meme.html", context)
 
 
 def home_page(request):

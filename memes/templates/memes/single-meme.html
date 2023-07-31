@@ -7,5 +7,11 @@
 <img src="" alt="Meme"/>
 <br>
 <p>{{ meme.description }}</p>
+<hr>
+{% for tag in meme.tags.all %}
+    <span style="border: 1px solid black">{{ tag }}</span>
+{% endfor %}
+<hr>
+
 
 {% endblock content %}

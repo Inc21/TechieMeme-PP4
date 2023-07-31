@@ -4,15 +4,25 @@
 
 <h1>Memes</h1>
 
-<hr>
-
-<ul>
-
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Meme</th>
+    <th><i class="fa-regular fa-face-smile"></i>Likes</th>
+    <th><i class="fa-regular fa-face-frown-open"></i>Unlikes</th>
+	<th>Created</th>
+	<th>Link</th>
+  </tr>
   {% for meme in memes  %}
-    <li>Title: <a href="{% url 'meme' meme.id %}">{{meme.title}}</a> <img src="{{ meme.meme_img }}" alt=""></li>
+  	<tr>
+		<td>{{meme.id}}</td>
+		<td>{{meme.title}}</td>
+		<td>{{meme.smiley_face}}</td>
+		<td>{{meme.sad_face}}</td>
+		<td>{{meme.created}}</td>
+		<td><a href="{% url 'meme' meme.id %}">View</a></td>
+	</tr>
   {% endfor %}
-
-</ul>
-
+</table>
 
 {% endblock content %}

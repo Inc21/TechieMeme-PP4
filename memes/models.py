@@ -10,8 +10,8 @@ class Meme(models.Model):
     meme_img = models.ImageField(
         upload_to='static/images/', default='static/images/placeholder.png')
     tags = models.ManyToManyField('Tag', blank=True)
-    vote_total = models.IntegerField(default=0, null=True, blank=True)
-    vote_ratio = models.IntegerField(default=0, null=True, blank=True)
+    smiley_face = models.IntegerField(default=0, null=True, blank=True)
+    sad_face = models.IntegerField(default=0, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -22,8 +22,8 @@ class Meme(models.Model):
 
 class Review(models.Model):
     VOTE_TYPE = (
-        ('like', 'Like'),
-        ('unlike', 'Un Like'),
+        ('like', '+1'),
+        ('unlike', '-1'),
     )
     # owner = models.ForeignKey(
     meme = models.ForeignKey(Meme, on_delete=models.CASCADE)
@@ -34,7 +34,7 @@ class Review(models.Model):
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
-        return self.review
+        return self.meme.title.title() + ' - ' + self.value
 
 
 class Tag(models.Model):
