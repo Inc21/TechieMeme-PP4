@@ -1,7 +1,11 @@
 {% extends 'main.html' %}
+{% load static %}
 
 {% block content %}
 
-<h1>Single Meme Template</h1>
+<h2>{{ meme.title }}</h2>
+<img src="" alt="Meme"/>
+<br>
+<p>{{ meme.description }}</p>
 
 {% endblock content %}

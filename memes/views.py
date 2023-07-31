@@ -1,13 +1,17 @@
 from django.shortcuts import render
+from .models import Meme
 
 
 def memes(request):
-    message = "Hello, world. You're at the memes page."
-    return render(request, "memes/memes.html", {"message": message})
+    memes = Meme.objects.all()
+    context = {"memes": memes}
+    return render(request, "memes/memes.html", context)
 
 
 def meme(request, pk):
-    return render(request, "memes/single-meme.html")
+    meme = Meme.objects.get(id=pk)
+    # print('meme: ', meme)
+    return render(request, "memes/single-meme.html", {'meme': meme})
 
 
 def home_page(request):
