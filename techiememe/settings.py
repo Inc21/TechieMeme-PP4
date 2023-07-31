@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'memes.apps.MemesConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
