@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Colors */
+.yellow {
+    color: #DE970B;
+}
+
+/* Header custom css */
+header {
+    background-color: #4C4E52;
+    height: auto;
+    background:linear-gradient(0deg, rgba(80, 86, 85, 0.7), rgba(0, 0, 0, 1)), url("../images/site/background11.webp");
+    background-size: cover;
+    background-position: top;
+}
+
+.logo-image {
+    max-width: 350px;
+    height: auto;
+    rotate: -10deg;
+    font-size: 2em;
+    font-weight: 800;
+    margin: 1em;
+    flex-wrap: nowrap;
+}
+
+.logo-text {
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg,
+        #DE970B 0%,
+        #9a3bff 29%,
+        #ff1361 67%,
+        #DE970B 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 5s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.navbar-item {
+    font-weight: bold;
+    color: whitesmoke;
+    font-weight: 800;
+    font-size: 1.3em;
+    text-decoration: none;
+    margin-top: 1em;
+}
+
+.navbar-item:hover {
+    color: #DE970B;
+    transform: scale(1.1);
+    text-decoration: none;
+    /* text-shadow: white 0px 0px 1px 1px; */
+}
+
+.hamburger-icon {
+    font-size: 1.5em;
+}
+
+/* Main content custom css */
+.main-container {
+    min-height: calc(97vh - 15em);
+}
+
+/* Footer custom css */
+footer {
+    background-color: #4C4E52;
+    height: 5em;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(80, 86, 85, 0.9));
+    background-size: cover;
+    background-position: left;
+    color: whitesmoke;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1040px) {
+    .logo-image {
+        font-size: 1.75em;
+    }
+
+    .navbar-item {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .logo-image {
+        font-size: 1.5em;
+    }
+    .hamburger-icon {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .logo-image {
+        font-size: 1em;
+    }
+
+    .hamburger-icon {
+        font-size: 0.8em;
+    }
+
+    body {
+        min-width: 320px;
+    }
+}

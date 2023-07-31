@@ -1,1 +1,42 @@
-<h1>LOGO</h1>
+{% load static %}
+
+<header class="p-3 ">
+    <nav class="navbar navbar-expand-lg text-nowrap" aria-label="Fifth navbar example">
+        <div class="container-fluid">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <div class="img-fluid logo-image"><i class="fa-solid fa-chevron-left yellow"></i><span class="logo-text">Techie / Meme</span><i class="fa-solid fa-chevron-right yellow"></i></div>
+            </a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="hamburger-icon btn btn-outline-light me-2 fa-solid fa-bars"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarsExample05">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="navbar-item nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-item nav-link" href="#">Memes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-item">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-item"><i class="fa-solid fa-plus yellow"></i>Upload-Meme</a>
+                </li>
+                </ul>
+                <div class="text-end mb-3">
+                    <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button type="button" class="btn btn-outline-light me-2">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row justify-content-center justify-content-lg-end">
+            <form class="col-10 col-lg-5 mb-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
+        </div>
+        
+</header>
