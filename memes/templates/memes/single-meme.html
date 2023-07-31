@@ -4,7 +4,7 @@
 {% block content %}
 
 <h2>{{ meme.title }}</h2>
-<img src="" alt="Meme"/>
+<img style="max-width: 250px;" src="{{meme.meme_img.url}}" alt="Meme"/>
 <br>
 <p>{{ meme.description }}</p>
 <hr>
