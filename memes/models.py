@@ -7,8 +7,8 @@ import uuid
 class Meme(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
-    meme_img = models.ImageField(
-        default='/static/images/memes/default.webp')
+    meme_img = models.ImageField(upload_to='memes/',
+                                 default='memes/default.webp')
     tags = models.ManyToManyField('Tag', blank=True)
     smiley_face = models.IntegerField(default=0, null=True, blank=True)
     sad_face = models.IntegerField(default=0, null=True, blank=True)
