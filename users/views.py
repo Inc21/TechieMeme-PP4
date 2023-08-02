@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from .models import UserProfile
 
 
 def userProfiles(request):
-    return render(request, "users/user_profiles.html")
+    profiles = UserProfile.objects.all()
+    context = {'profiles': profiles}
+    return render(request, "users/user_profiles.html", context)
