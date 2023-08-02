@@ -1,12 +1,12 @@
 from django.db import models
 import uuid
-
-# Create your models here.
+from users.models import UserProfile
 
 
 class Meme(models.Model):
+    uploader = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=100)
-    description = models.TextField(null=True, blank=True)
     meme_img = models.ImageField(upload_to='memes/',
                                  default='memes/default.webp')
     tags = models.ManyToManyField('Tag', blank=True)
