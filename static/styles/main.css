@@ -37,7 +37,6 @@ header {
 }
 
 .logo-text {
-    text-transform: uppercase;
     background-image: linear-gradient(
         -225deg,
         #DE970B 0%,
@@ -99,7 +98,7 @@ footer {
     background:linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(80, 86, 85, 0.9));
     color: whitesmoke;
     margin-top: auto;
-    padding: 0.5em;
+    /* padding: 5px; */
 }
 
 .footer-text {
