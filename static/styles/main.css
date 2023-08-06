@@ -9,30 +9,30 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    background-color: #e6e6e6;
 }
 
-/* Colors */
+/*------------------------------------------------------------- Colors */
 .yellow {
     color: #DE970B;
 }
 
-/* Header custom css */
+/*------------------------------------------------------------- Header custom css */
 header {
     background-color: #4C4E52;
     height: auto;
     background:linear-gradient(0deg, rgba(80, 86, 85, 0.7), rgba(0, 0, 0, 1)), url("../images/site/background11.webp");
     background-size: cover;
     background-position: top;
+    overflow: hidden;
 }
 
 .logo-image {
-    max-width: 350px;
+    max-width: 300px;
     height: auto;
     rotate: -10deg;
     font-size: 2em;
     font-weight: 800;
-    margin: 1em;
     flex-wrap: nowrap;
 }
 
@@ -72,29 +72,45 @@ header {
     margin-top: 1em;
 }
 
-.navbar-item:hover {
+.hover:hover {
     color: #DE970B;
-    transform: scale(1.1);
-    text-decoration: none;
-    /* text-shadow: white 0px 0px 1px 1px; */
 }
 
 .hamburger-icon {
     font-size: 1.5em;
 }
 
-/* Footer custom css */
-footer {
-    background-color: #4C4E52;
-    height: 4em;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(80, 86, 85, 0.9));
-    background-size: cover;
-    background-position: left;
-    color: whitesmoke;
-    margin-top: auto;
+.card {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    color: #666666;
+    /* max-width: 300px; */
 }
 
-/* Media queries */
+.active-link {
+    color: #DE970B;
+    text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------- Footer custom css */
+footer {
+    background-color: #4C4E52;
+    /* height: 4em; */
+    background:linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(80, 86, 85, 0.9));
+    color: whitesmoke;
+    margin-top: auto;
+    padding: 0.5em;
+}
+
+.footer-text {
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+.footer-text-small {
+    font-size: 0.8em;
+} 
+
+/* ------------------------------------------------------------- Media queries */
 
 @media screen and (max-width: 1040px) {
     .logo-image {
@@ -126,5 +142,10 @@ footer {
 
     body {
         min-width: 320px;
+        overflow-x: hidden;
+    }
+
+    .footer-text {
+        font-size: 1em;
     }
 }

@@ -2,6 +2,35 @@
 
 {% block content %}
 
-    <h1>Users</h1>
+   <div class="container">
+		<div class="row gy-3">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="custom-card col-md-6 col-lg-4 d-flex justify-content-center">
+                    <div class="card m-4 w-75">
+                        <div class="card-body">
+                            <img src="/assets/images/users/default_user.webp" class="card-img-top rounded-2" alt="...">
+                            <a href="#" class="card-link yellow">mrDoe99</a>
+                            <h5 class="card-title">John Doe</h5>
+                            <hr>
+                            <div class="row flex-nowrap">
+                                <div class="col-1"><i class="fa-regular fa-address-card yellow"></i></div>
+                                <div class="col-11"><p class="card-text">Short bio, to read full open profile...</p></div>
+                            </div>
+                            <hr>
+                            <div class="row flex-nowrap">
+                                <div class="col-1"><i class="fa-regular fa-image yellow fs-6"></i></div>
+                                <div class="col-11">Memes Uploaded: 16</div>
+                            </div>
+                            <hr>
+                            <div class="row flex-nowrap">
+                                <div class="col-1"><i class="fa-solid fa-plug yellow fs-5"></i></div>
+                                <div class="col-11">Last active: 1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
 
 {% endblock content %}
