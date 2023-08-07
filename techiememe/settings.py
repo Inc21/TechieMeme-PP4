@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # local apps
     'memes.apps.MemesConfig',
     'users.apps.UsersConfig',
+    # third party apps
+    # 'last_active',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +64,10 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+# MIDDLEWARE_CLASSES = (
+#     'last_active.middleware.LastActiveMiddleware',
+# )
 
 ROOT_URLCONF = 'techiememe.urls'
 
