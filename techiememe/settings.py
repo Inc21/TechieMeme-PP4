@@ -32,8 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'techiememe.herokuapp.com',
-    'techiememe-50a6f4eb45eb.herokuapp.com',
+    'techiememe.herokuapp.com.',
+    'techiememe-50a6f4eb45eb.herokuapp.com.',
     ]
 
 
