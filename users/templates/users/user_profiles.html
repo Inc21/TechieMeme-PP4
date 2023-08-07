@@ -4,10 +4,10 @@
 
    <div class="container">
 		<div class="row gy-3">
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-12 d-flex flex-wrap justify-content-center">
 
                 {% for profile in profiles %}
-                <div class="custom-card col-md-6 col-lg-4 d-flex justify-content-center">
+                <div class="custom-card col-md-6 col-lg-3 d-flex justify-content-center">
                     <div class="card m-4 w-75">
                         <div class="card-body">
                             <img src="{{ profile.user_img.url}}" class="card-img-top rounded-2" alt="...">
@@ -21,7 +21,7 @@
                             <hr>
                             <div class="row flex-nowrap">
                                 <div class="col-1"><i class="fa-regular fa-image yellow fs-6"></i></div>
-                                <div class="col-11">Memes Uploaded: 16</div>
+                                <div class="col-11">Memes Uploaded: {{profile.memes_uploaded}}</div>
                             </div>
                             <hr>
                             <div class="row flex-nowrap">

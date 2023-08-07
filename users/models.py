@@ -20,6 +20,7 @@ class UserProfile(models.Model):
     social_website = models.CharField(max_length=200, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    memes_uploaded = models.IntegerField(default=0)
 
     def __str__(self):
         return str(self.user.username)
