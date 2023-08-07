@@ -6,4 +6,21 @@
 
 <h1>single user page</h1>
 
+<div>User image:  <img src="{{ profile.user_img.url}}" class="card-img-top rounded-2" alt="..." style="max-width: 250px"></div>
+<div>Username: {{ profile.username }}</div>
+<div>First name: {{ profile.first_name }}</div>
+<div>Last name: {{ profile.last_name }}</div>
+<div>Location: {{ profile.location }}</div>
+<div>Email: {{ profile.email }}</div>
+<div>Bio: {{ profile.bio }}</div>
+<div>Memes uploaded: {{profile.memes_uploaded}}</div>
+<div>Last Login: {{ profile.user.last_login|date:"d/M/Y" }}</div>
+<div>Account created: {{ profile.created|date:"d/M/Y" }}</div>
+<br>
+<h2>{{ profile.username }} Uploads</h2>
+{% for meme in profile.meme_set.all %}
+    <div><img style="max-width: 250px;" src="{{meme.meme_img.url}}" alt="Meme"/></div>
+    <br>
+{% endfor %}
+
 {% endblock content %}

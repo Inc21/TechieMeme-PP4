@@ -6,8 +6,8 @@
 
 <table>
   <tr>
-    <th>ID</th>
     <th>Meme</th>
+    <th>Meme Title</th>
     <th><i class="fa-regular fa-face-smile"></i></th>
     <th><i class="fa-regular fa-face-frown-open"></i></th>
 	<th>Created</th>
@@ -15,7 +15,7 @@
   </tr>
   {% for meme in memes  %}
   	<tr>
-		<td>{{meme.id}}</td>
+		<td><img src="{{meme.meme_img.url}}" alt="" style="max-width: 200px"></td>
 		<td>{{meme.title}}</td>
 		<td>{{meme.smiley_face}}</td>
 		<td>{{meme.sad_face}}</td>
