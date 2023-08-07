@@ -9,6 +9,7 @@ class UserProfile(models.Model):
     username = models.CharField(max_length=50, null=True, blank=True)
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
+    location = models.CharField(max_length=100, null=True, blank=True)
     email = models.EmailField(max_length=100, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
     user_img = models.ImageField(null=True, blank=True, upload_to='users/',
