@@ -26,8 +26,15 @@
                 </li>
                 </ul>
                 <div class="text-end mb-3">
-                    <a href="" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGIN</a>
-                    <a type="button" class="btn btn-outline-light me-2 hover navbar-item">SIGN-UP</a>
+                    {% if request.user.is_authenticated %}
+                        <div class="loggedin btn me-2 navbar-item">
+                            <a class="yellow" href="{% url 'single_user' request.user.profile.id %}"><i class="fa-regular fa-circle-user"></i> {{ request.user.profile.username}}</a>
+                        </div>
+                        <a href="{% url 'account_logout' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGOUT</a>
+                        {% else %}
+                        <a href="{% url 'account_login' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGIN</a>
+                        <a href="{% url 'account_signup' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">SIGN-UP</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
