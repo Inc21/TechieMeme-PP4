@@ -16,10 +16,10 @@
                     <a class="{% if request.resolver_match.url_name == 'home_page' %}active-link{% endif %} navbar-item nav-link hover" aria-current="page" href="{% url 'home_page' %}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="navbar-item nav-link hover" href="#">MEMES</a>
+                    <a class="{% if request.resolver_match.url_name == 'memes' or request.resolver_match.url_name == 'meme'  %}active-link{% endif %} navbar-item nav-link hover" href="{% url 'memes' %}">MEMES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="{% if request.resolver_match.url_name == 'user_profiles' %}active-link{% endif %} nav-link navbar-item hover" href="{% url 'user_profiles' %}">USERS</a>
+                    <a class="{% if request.resolver_match.url_name == 'user_profiles' or request.resolver_match.url_name == 'single_user' %}active-link{% endif %} nav-link navbar-item hover" href="{% url 'user_profiles' %}">USERS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link navbar-item hover"><i class="fa-solid fa-plus yellow"></i>UPLOAD-MEME</a>
