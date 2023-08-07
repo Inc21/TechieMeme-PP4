@@ -1,5 +1,7 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
 {% block content %}
 
    <div class="container">
@@ -11,7 +13,7 @@
                     <div class="card m-4 w-75">
                         <div class="card-body">
                             <img src="{{ profile.user_img.url}}" class="card-img-top rounded-2" alt="...">
-                            <a href="#" class="card-link yellow">{{ profile.username}}</a>
+                            <a href="{% url 'single_user' profile.id %}" class="card-link yellow">{{ profile.username}}</a>
                             <h5 class="card-title">{{ profile.first_name}} {{ profile.last_name }}</h5>
                             <hr>
                             <div class="row flex-nowrap">
@@ -21,7 +23,7 @@
                             <hr>
                             <div class="row flex-nowrap">
                                 <div class="col-1"><i class="fa-regular fa-image yellow fs-6"></i></div>
-                                <div class="col-11">Memes Uploaded: {{profile.memes_uploaded}}</div>
+                                <div class="col-11">Uploads: {{profile.memes_uploaded}}</div>
                             </div>
                             <hr>
                             <div class="row flex-nowrap">

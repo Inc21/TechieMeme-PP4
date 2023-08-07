@@ -9,3 +9,9 @@ def userProfiles(request):
     last_login = user.last_login.strftime("%d/%m/%y")
     context = {'profiles': profiles, 'last_login': last_login}
     return render(request, "users/user_profiles.html", context)
+
+
+def singleUser(request, pk):
+    profile = UserProfile.objects.get(id=pk)
+    context = {'profile': profile}
+    return render(request, "users/single_user.html", context)
