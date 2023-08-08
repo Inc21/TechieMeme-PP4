@@ -28,7 +28,7 @@
                 <div class="text-end mb-3">
                     {% if request.user.is_authenticated %}
                         <div class="loggedin btn me-2 navbar-item">
-                            <a class="yellow" href="{% url 'single_user' request.user.profile.id %}"><i class="fa-regular fa-circle-user"></i> {{ request.user.profile.username}}</a>
+                            <a class="yellow" href="{% url 'single_user' request.user.userprofile.id %}"><i class="fa-regular fa-circle-user"></i> {{ request.user.username}}</a>
                         </div>
                         <a href="{% url 'account_logout' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGOUT</a>
                         {% else %}

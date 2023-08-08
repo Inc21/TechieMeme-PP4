@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
-                                blank=True, related_name='profile')
+                                blank=True,)
     username = models.CharField(max_length=50, null=True, blank=True)
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
@@ -24,4 +24,4 @@ class UserProfile(models.Model):
     memes_uploaded = models.IntegerField(default=0)
 
     def __str__(self):
-        return str(self.user.username)
+        return str(self.username)
