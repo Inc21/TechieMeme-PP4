@@ -14,7 +14,7 @@
 <div>Email: {{ profile.email }}</div>
 <div>Bio: {{ profile.bio }}</div>
 <div>Memes uploaded: {{profile.memes_uploaded}}</div>
-<div>Last Login: {{ profile.user.last_login|date:"d/M/Y" }}</div>
+<div>Last Visit: {{ profile.user.last_active|date:"d/M/Y" }}</div>
 <div>Account created: {{ profile.created|date:"d/M/Y" }}</div>
 <br>
 <h2>{{ profile.username }} Uploads</h2>
