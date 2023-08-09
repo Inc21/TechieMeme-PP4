@@ -6,7 +6,7 @@ from .models import UserProfile
 def create_profile(sender, instance, created, **kwargs):
     if created:
         user = instance
-        profile = UserProfile.objects.create(
+        UserProfile.objects.create(
             user=user,
             username=user.username,
             email=user.email,

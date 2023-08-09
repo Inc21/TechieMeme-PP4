@@ -91,6 +91,20 @@ header {
     text-decoration: underline;
 }
 
+/* ------------------------------------------------------------- Log In  */
+
+.auth-card {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    color: #666666;
+    max-width: 400px;
+    min-width: 220px;
+}
+
+.auth-btn {
+    background:linear-gradient(0deg, rgba(80, 86, 85, 0.7), rgba(0, 0, 0, 0.6)), url("../images/site/background11.webp");
+    background-size: cover;
+}
+
 
 /* ------------------------------------------------------------- Footer custom css */
 footer {
