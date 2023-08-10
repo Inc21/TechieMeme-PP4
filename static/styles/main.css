@@ -89,6 +89,7 @@ header {
 .active-link {
     color: #DE970B;
     text-decoration: underline;
+    list-style: none;
 }
 
 /* ------------------------------------------------------------- Log In  */

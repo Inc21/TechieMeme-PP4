@@ -16,23 +16,17 @@
                 {% get_providers as socialaccount_providers %}
 
                 {% if socialaccount_providers %}
-                <p>{% blocktrans with site.name as site_name %}Please sign in with one
-                of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-                for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+                <p>{% blocktrans with site.name as site_name %}Please log in with your username and password
+                or with one of the following providers:</p> {% endblocktrans %}
+				<span class="active-link">{% include "socialaccount/snippets/provider_list.html" with process="login" %} </span>
+					
+					  
+						<!-- <div class="login-or">{% trans 'or' %}</div> -->
+			
                 <hr>
-              <div class="row flex-nowrap">
-                <div class="socialaccount_ballot">
-
-                    <ul class="socialaccount_providers">
-                      {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-                    </ul>
-                  
-                    <div class="login-or">{% trans 'or' %}</div>
-                  
-                  </div>
-              </div>
+				<p>Don't have an account? <a class="active-link" href="{{ signup_url }}">sign up</a> for one here.</p>
               <hr>
-              <div class="row flex-nowrap">
+              <div class="row">
                 {% include "socialaccount/snippets/login_extra.html" %}
 
                 {% else %}
@@ -46,9 +40,9 @@
                   {% if redirect_field_value %}
                   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                   {% endif %}
-                  <button class=" navbar-link btn yellow secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</button>
+                  <a class="active-link secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
                   <br>
-                  <button class="primaryAction btn btn-dark btn-outline-dark navbar-item hover" type="submit">{% trans "LOGIN" %}</button>
+                  <button class="primaryAction auth-btn btn navbar-item hover" type="submit">{% trans "LOGIN" %}</button>
                 </form>
               </div>
               
