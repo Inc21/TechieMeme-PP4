@@ -106,6 +106,41 @@ header {
     background-size: cover;
 }
 
+/* ------------------------------------------------------------- Banner */
+
+.banner {
+    background:linear-gradient(0deg, #e6e6e6, rgba(163, 162, 162, 0.7), #e6e6e6), url("../images/site/background11.webp");
+    background-size: cover;
+    color: white;
+    margin-top: 1.5em;
+    font-family: 'lexend deca';
+    font-size: 1em;
+    font-weight: 800;
+
+}
+
+.banner-btn {
+    font-weight: 900;
+    font-size: 1em;
+    margin-bottom: 1.5em;
+    color: #DE970B;
+    font-size: 1.2em;
+    box-shadow: black 1px 1px 10px;
+}
+
+.banner-text {
+    margin-top: 1.5em;
+    text-transform: uppercase;
+    color: #DE970B;
+    text-shadow: black 1px 1px 1px;
+    
+}
+
+.banner-btn:hover {
+    background-color: #DE970B;
+    color: black;
+    text-shadow: white 1px 1px 10px;
+}
 
 /* ------------------------------------------------------------- Footer custom css */
 footer {

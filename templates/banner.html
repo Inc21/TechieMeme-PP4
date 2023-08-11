@@ -1,0 +1,24 @@
+{% load static %}
+
+<main>
+    <div class="container-fluid p-0 ms-0 me-0">
+        <div class="col-12 banner">
+            <div class="row">
+                <div class="col-12 text-center banner-text">
+                    <h1 class="text-center">Welcome to TechieMeme!</h1>
+                    <br>
+                    <h3>Memes for the Modern Geek</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center m-3">
+                    {% if request.user.is_authenticated %}
+                    <a type="button" class="banner-btn btn btn-dark btn-lg" href="#" role="button"><i class="fa-solid fa-plus yellow"></i>&nbsp;UPLOAD-MEME</a>
+                    {% else %}
+                    <a type="button" class="banner-btn btn btn-dark btn-lg" href="{% url 'account_login' %}" role="button">JOIN THE FUN!</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main> 
