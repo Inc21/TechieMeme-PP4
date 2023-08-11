@@ -67,21 +67,32 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
         'APP': {
             'client_id': '87649bead60de80b26a4',
             'secret': '8d77d531ed2cc9a3cc1f43655904d595edeffe6f',
             'key': ''
         }
+    },
+    'google': {
+        'APP': {
+            'client_id': '12135',
+            'secret': '1223',
+            'key': ''
+        }
     }
 }
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
