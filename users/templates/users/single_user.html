@@ -16,7 +16,7 @@
                                 <p class="yellow m-0"><i class="fa-regular fa-circle-user"></i> {{ profile.username }}</p>
                                 <h4 class="m-1">{{ profile.first_name }} {{ profile.last_name }}</h4>
                                 <p class="m-1">{{ profile.location }}</p>
-                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_authenticated and request.user.username == profile.username %}
                                 <button class="btn hover auth-btn m-1"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
                                 {% endif %}
                             </div>
@@ -34,7 +34,7 @@
                 
                 <div class="card mt-3">
                     <div class="card-body">
-                        {% if profile.email != None %}
+                        {% if profile.email != None and request.user.is_authenticated %}
                             <div class="row">
                                 <a class="btn" role="button" class="col-4 text-nowrap"><i class="fa-solid fa-envelope yellow"></i> {{ profile.email }}</a>
                             </div>
@@ -105,7 +105,7 @@
                                             <button class="col-4 btn btn-sm" href=""><i class="fa-solid fa-comment yellow"></i>&nbsp;0</button>
                                         </div>
                                         <hr class="m-1">
-                                        {% if request.user.is_authenticated %}
+                                        {% if request.user.is_authenticated and request.user.username == project.username%}
                                         <div class="row">
                                             <button class="btn col-6 btn-sm mt-0"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
                                             <button class="btn col-6 text-danger mt-0 btn-sm "><i class="fa-solid fa-trash-can"></i> Delete</button>
