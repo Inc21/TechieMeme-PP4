@@ -15,9 +15,11 @@
                             <div class="mt-3">
                                 <p class="yellow m-0"><i class="fa-regular fa-circle-user"></i> {{ profile.username }}</p>
                                 <h4 class="m-1">{{ profile.first_name }} {{ profile.last_name }}</h4>
+                                {% if profile.location != None %}
                                 <p class="m-1">{{ profile.location }}</p>
+                                {% endif %}
                                 {% if request.user.is_authenticated and request.user.username == profile.username %}
-                                <button class="btn hover auth-btn m-1"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
+                                <a class="btn hover auth-btn m-1" href="{% url 'update-profile' %}"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -35,10 +37,15 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         {% if profile.email != None and request.user.is_authenticated %}
-                            <div class="row">
-                                <a class="btn" role="button" class="col-4 text-nowrap"><i class="fa-solid fa-envelope yellow"></i> {{ profile.email }}</a>
-                            </div>
-                            <hr>
+                        <div class="row">
+                            <a class="btn" role="button" class="col-4 text-nowrap"><i class="fa-solid fa-envelope yellow"></i> {{ profile.email }}</a>
+                        </div>
+                        <hr>   
+                        {% else %}
+                        <div class="row text-center">
+                            <p><i class="fa-solid fa-envelope yellow"></i> {{ profile.username|capfirst }} has not provided email. </p>
+                        </div>
+                        <hr>
                         {% endif %}
                         {% if profile.social_website != None %}
                             <a class="btn" role="button" href="{{ profile.social_website }}" target="_blank" rel="noopener"><i class="fa-solid fa-book-atlas yellow"></i> Website</a>
@@ -100,19 +107,19 @@
                                         </div>
                                         <hr class="m-1">
                                         <div class="row">
-                                            <button class="col-4 btn btn-sm" href=""><i class="fa-solid fa-face-smile-beam yellow"></i>&nbsp;{{ meme.smiley_face }}</button>
-                                            <button class="col-4 btn btn-sm" href=""><i class="fa-solid fa-face-frown-open yellow"></i>&nbsp;{{ meme.sad_face }}</button>
-                                            <button class="col-4 btn btn-sm" href=""><i class="fa-solid fa-comment yellow"></i>&nbsp;0</button>
+                                            <button class="col-4 btn btn" href=""><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.smiley_face }}</button>
+                                            <button class="col-4 btn btn" href=""><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.sad_face }}</button>
+                                            <button class="col-4 btn btn" href=""><i class="fa-regular fa-comment yellow"></i>&nbsp;0</button>
                                         </div>
                                         <hr class="m-1">
-                                        {% if request.user.is_authenticated and request.user.username == project.username%}
+                                        {% if request.user.is_authenticated and request.user.username == profile.username %}
                                         <div class="row">
                                             <button class="btn col-6 btn-sm mt-0"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
                                             <button class="btn col-6 text-danger mt-0 btn-sm "><i class="fa-solid fa-trash-can"></i> Delete</button>
                                         </div>
                                         {% else %}
                                         <div class="row-col-1 d-flex justify-content-end">
-                                            <a role="button" class="btn report text-end p-0 pe-1">Report Meme!</a>
+                                            <a role="button" class="btn report text-end p-0 pe-1"><i class="fa-regular fa-flag"></i> Report Meme!</a>
                                         </div>
                                         {% endif %}
                                     </div>

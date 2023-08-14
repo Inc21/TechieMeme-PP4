@@ -39,15 +39,6 @@ ALLOWED_HOSTS = [
 
 SITE_ID = 1
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-# ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
-# ACCOUNT_USERNAME_MIN_LENGTH = 4
-# LOGIN_URL = '/accounts/login/'
-
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
@@ -125,6 +116,8 @@ ROOT_URLCONF = 'techiememe.urls'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = "/users/update-profile/"
+
 
 TEMPLATES = [
     {
