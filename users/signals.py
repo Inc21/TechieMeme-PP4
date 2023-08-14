@@ -18,7 +18,7 @@ def create_profile(sender, instance, created, **kwargs):
 def updateUser(sender, instance, created, **kwargs):
     profile = instance
     user = profile.user
-    if created == False:  # noqa
+    if created:
         user.username = profile.username
         user.email = profile.email
         user.first_name = profile.first_name

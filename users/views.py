@@ -33,3 +33,14 @@ def updateProfile(request):
 
     context = {'form': form}
     return render(request, "users/user_form.html", context)
+
+
+@login_required(login_url='login')
+def deleteUser(request, pk):
+    profile = UserProfile.objects.get(id=pk)
+    if request.method == "POST":
+        profile.delete()
+        return redirect('/')
+
+    context = {'profile': profile}
+    return render(request, "users/user_profiles.html", context)
