@@ -10,8 +10,8 @@ def memes(request):
 
 def meme(request, pk):
     memeObj = Meme.objects.get(id=pk)
-    print('memeObj:', memeObj)
-    context = {"meme": memeObj}
+    tags = memeObj.tags.all()
+    context = {"meme": memeObj, "tags": tags}
     return render(request, "memes/single-meme.html", context)
 
 

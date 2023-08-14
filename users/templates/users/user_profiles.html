@@ -5,14 +5,14 @@
 {% block content %}
 
    <div class="container">
-		<div class="row gy-3">
+		<div class="row ">
             <div class="col-12 d-flex flex-wrap justify-content-center">
 
                 {% for profile in profiles %}
-                <div class="custom-card col-lg-3 col-md-6 d-flex justify-content-center">
-                    <div class="card m-4 w-75">
-                        <div class="card-body">
-                            <img src="{{ profile.user_img.url}}" class="card-img-top rounded-2" alt="...">
+                <div class="custom-card col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                    <div class="card user-card m-4 ">
+                        <div class="card-body d-grid align-content-between">
+                            <img src="{{ profile.user_img.url}}" class="card-img-top rounded-2 img-thumbnail" alt="User Image">
                             <a href="{% url 'single_user' profile.id %}" class="card-link yellow"><i class="fa-regular fa-circle-user"></i> {{ profile.username}}</a>
                             <h5 class="card-title">{{ profile.first_name}} {{ profile.last_name }}</h5>
                             <hr>
@@ -22,13 +22,13 @@
                             </div>
                             <hr>
                             <div class="row flex-nowrap">
-                                <div class="col-1"><i class="fa-regular fa-image yellow fs-6"></i></div>
+                                <div class="col-1"><i class="fa-solid fa-square-up-right yellow fs-5"></i></div>
                                 <div class="col-11">Uploads: {{profile.memes_uploaded}}</div>
                             </div>
                             <hr>
                             <div class="row flex-nowrap">
-                                <div class="col-1"><i class="fa-solid fa-plug yellow fs-5"></i></div>
-                                <div class="col-11">Last Visit: {{ request.user.profile.username.last_active|date:"d/M/Y" }}</div>
+                                <div class="col-1"><i class="fa-solid fa-eye yellow fs-5"></i></div>
+                                <div class="col-11">Last Seen: {{ request.user.profile.username.last_active|date:"d/M/Y" }}</div>
                             </div>
                         </div>
                     </div>

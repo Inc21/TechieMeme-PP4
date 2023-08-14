@@ -82,8 +82,7 @@ header {
 .card {
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     color: #666666;
-    max-width: 300px;
-    min-width: 220px;
+    /* min-width: 250px; */
 }
 
 .active-link {
@@ -146,6 +145,34 @@ header {
     color: black;
     text-shadow: white 1px 1px 10px;
 }
+
+/* ------------------------------------------------------------- Single user */
+.img-small {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.user-card {
+    min-width: 250px;
+}
+
+/* ------------------------------------------------------------- Memes */
+
+.tag {
+    background-color: #666666;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 0.2em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+}
+
+.report {
+    color: #666666;
+    font-size: 0.8em;
+}
+
 
 /* ------------------------------------------------------------- Footer custom css */
 footer {

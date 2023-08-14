@@ -4,23 +4,126 @@
 
 {% block content %}
 
-<h1>single user page</h1>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="{{ profile.user_img.url }}" alt="Profile image" class="card-img-top rounded-2 img-thumbnail img-small">
+                            <div class="mt-3">
+                                <p class="yellow m-0"><i class="fa-regular fa-circle-user"></i> {{ profile.username }}</p>
+                                <h4 class="m-1">{{ profile.first_name }} {{ profile.last_name }}</h4>
+                                <p class="m-1">{{ profile.location }}</p>
+                                {% if request.user.is_authenticated %}
+                                <button class="btn hover auth-btn m-1"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2 text-nowrap mb-2"><i class="fa-regular fa-address-card yellow"></i> Bio:</div>
+                            <p class="card-text">{{ profile.bio }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-body">
+                        {% if profile.email != None %}
+                            <div class="row">
+                                <a class="btn" role="button" class="col-4 text-nowrap"><i class="fa-solid fa-envelope yellow"></i> {{ profile.email }}</a>
+                            </div>
+                            <hr>
+                        {% endif %}
+                        {% if profile.social_website != None %}
+                            <a class="btn" role="button" href="{{ profile.social_website }}" target="_blank" rel="noopener"><i class="fa-solid fa-book-atlas yellow"></i> Website</a>
+                        {% endif %}
+                        {% if profile.social_github != None %}
+                            <a class="btn" role="button" href="{{ profile.social_github }}" target="_blank" rel="noopener"><i class="fa-brands fa-square-github yellow"></i> GitHub</a>
+                        {% endif %}
+                        {% if profile.social_linkedin != None %}
+                            <a class="btn" role="button" href="{{ profile.social_linkedin }}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin yellow"></i> LinkedIn</a>
+                        {% endif %}
+                        {% if profile.social_facebook != None %}
+                            <a class="btn" role="button" href="{{ profile.social_facebook }}" target="_blank" rel="noopener"><i class="fa-brands fa-square-facebook yellow"></i> Facebook</a>
+                        {% endif %}
+                        {% if profile.social_youtube != None %}
+                            <a class="btn" role="button" href="{{ profile.social_youtube }}" target="_blank" rel="noopener"><i class="fa-brands fa-youtube yellow"></i> YouTube</a>
+                        {% endif %}
+                    </div>
+                </div>
 
-<div>User image:  <img src="{{ profile.user_img.url}}" class="card-img-top rounded-2" alt="..." style="max-width: 250px"></div>
-<div>Username: {{ profile.username }}</div>
-<div>First name: {{ profile.first_name }}</div>
-<div>Last name: {{ profile.last_name }}</div>
-<div>Location: {{ profile.location }}</div>
-<div>Email: {{ profile.email }}</div>
-<div>Bio: {{ profile.bio }}</div>
-<div>Memes uploaded: {{profile.memes_uploaded}}</div>
-<div>Last Visit: {{ profile.user.last_active|date:"d/M/Y" }}</div>
-<div>Account created: {{ profile.created|date:"d/M/Y" }}</div>
-<br>
-<h2>{{ profile.username }} Uploads</h2>
-{% for meme in profile.meme_set.all %}
-    <div><img style="max-width: 250px;" src="{{meme.meme_img.url}}" alt="Meme"/></div>
-    <br>
-{% endfor %}
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-lg-5 text-nowrap"><i class="fa-regular fa-handshake yellow"></i> Joined:</div>
+                            <div class="col text-nowrap"><p class="card-text">{{ profile.created|date:"d/M/Y" }}</p></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 col-lg-5 text-nowrap"><i class="fa-solid fa-eye yellow"></i> Last Seen:</div>
+                            <div class="col text-nowrap"><p class="card-text">{{ profile.user.last_active|date:"d/M/Y" }}</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-{% endblock content %}
+            <div class="col-md-8 mt-md-3">
+                <div class="card mb-3 ">
+                    <div class="card-body">
+                        <div class="row">
+                            <h3 class="m-1"><i class="fa-solid fa-square-up-right yellow"></i> Memes Uploaded: {{profile.memes_uploaded}}</h3> 
+                        </div>
+                        <hr>
+                        <div class="row">
+                            {% for meme in profile.meme_set.all %}
+                            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body m-1 p-1 d-grid align-content-between">
+                                        <h6 class="card-title mb-1">{{ meme.title }}</h6>
+                                        <img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+                                        <div><i class="fa-solid fa-square-up-right yellow"></i> by: <a href="{% url 'single_user' profile.id %}" class="card-link yellow">{{ profile.username }}</a></div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                {% for tag in meme.tags.all %}
+                                                    <span class="tag text-nowrap">{{tag}}</span>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <hr class="m-1">
+                                        <div class="row">
+                                            <button class="col-4 btn btn-sm" href=""><i class="fa-solid fa-face-smile-beam yellow"></i>&nbsp;{{ meme.smiley_face }}</button>
+                                            <button class="col-4 btn btn-sm" href=""><i class="fa-solid fa-face-frown-open yellow"></i>&nbsp;{{ meme.sad_face }}</button>
+                                            <button class="col-4 btn btn-sm" href=""><i class="fa-solid fa-comment yellow"></i>&nbsp;0</button>
+                                        </div>
+                                        <hr class="m-1">
+                                        {% if request.user.is_authenticated %}
+                                        <div class="row">
+                                            <button class="btn col-6 btn-sm mt-0"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                                            <button class="btn col-6 text-danger mt-0 btn-sm "><i class="fa-solid fa-trash-can"></i> Delete</button>
+                                        </div>
+                                        {% else %}
+                                        <div class="row-col-1 d-flex justify-content-end">
+                                            <a role="button" class="btn report text-end p-0 pe-1">Report Meme!</a>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+    
+    {% endblock content %}
+    ```
