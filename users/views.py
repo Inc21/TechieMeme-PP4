@@ -36,11 +36,11 @@ def updateProfile(request):
 
 
 @login_required(login_url='login')
-def deleteUser(request, pk):
+def deleteProfile(request, pk):
     profile = UserProfile.objects.get(id=pk)
     if request.method == "POST":
         profile.delete()
         return redirect('/')
 
     context = {'profile': profile}
-    return render(request, "users/user_profiles.html", context)
+    return render(request, "users/delete_user.html", context)

@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     location = models.CharField(max_length=100, null=True, blank=True)
     email = models.EmailField(max_length=100, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
-    user_img = models.ImageField(null=True, blank=True, upload_to='users/',
+    user_img = models.ImageField(upload_to='users/',
                                  default='users/default_user.webp')
     social_github = models.CharField(max_length=200, null=True, blank=True)
     social_linkedin = models.CharField(max_length=200, null=True, blank=True)

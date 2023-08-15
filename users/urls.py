@@ -7,4 +7,7 @@ urlpatterns = [
     path('user/<str:pk>/', views.singleUser, name="single_user"),
 
     path('update-profile/', views.updateProfile, name="update-profile"),
+
+    path('delete-profile/<str:pk>/', views.deleteProfile,
+         name="delete-profile"),
 ]

@@ -1,15 +1,25 @@
 {% extends 'main.html' %}
 
-{% load crispy_forms_tags %}
-
 {% block content %}
 
-    <h1>User Form</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" action="{% url 'update-profile' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                {% for field in form %}
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="">{{ field.label }}</label>
+                        <br>
+                        {{field}}
+                    </div>
+                {% endfor %}
 
-    <form method="POST" action="{% url 'update-profile' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <input type="submit" value="Submit">
-    </form>
+                <button type="submit" class="btn auth-btn mb-4 hover">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
     
 {% endblock %}
