@@ -17,6 +17,10 @@ body {
     color: #DE970B;
 }
 
+.gray {
+    color: #666666;
+}
+
 /*------------------------------------------------------------- Header custom css */
 header {
     background-color: #4C4E52;
@@ -145,6 +149,12 @@ header {
     background-color: #DE970B;
     color: black;
     text-shadow: white 1px 1px 10px;
+}
+
+/* Forms */
+
+.form-input {
+    width: 80%;
 }
 
 /* ------------------------------------------------------------- Single user */

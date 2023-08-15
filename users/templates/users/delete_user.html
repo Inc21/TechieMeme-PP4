@@ -18,7 +18,7 @@
                 <form class="d-flex justify-content-around" method="post" action="">
                     {% csrf_token %}
                
-                    <a type="button" class="btn btn-outline-success ps-4 pe-4 mt-0 me-1 text-nowrap" href="{% url 'user_profiles' %}"><i class="fa-solid fa-angles-left"></i> BACK</a>
+                    <a type="button" class="btn btn-outline-success ps-4 pe-4 mt-0 me-1 text-nowrap" href="{% url 'single_user' request.user.userprofile.id %}"><i class="fa-solid fa-angles-left"></i> BACK</a>
                     <button type="submit" class="btn btn-outline-danger mt-0 text-nowrap"value=""><i class="fa-solid fa-trash-can"></i> CONFIRM</button>
                 </form>
             </div> 
