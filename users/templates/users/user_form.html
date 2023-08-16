@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container d-flex justify-content-center">
-        <div class="col-6 card m-4 ">
+        <div class="col-md-6 card m-4 ">
             <div class="card-body">
                 <div class="row">
                     <h1>EDIT PROFILE</h1>
@@ -17,8 +17,8 @@
                         {% csrf_token %}
                         
                         {% for field in form %}
-                            <div class="form-outline text-nowrap mt-3">
-                                <label class="col-sm-2 col-form-label" for="">{{ field.label }}</label>
+                            <div class="form-outline mt-3">
+                                <label class="col-sm-2 col-form-label text-nowrap" for="">{{ field.label }}</label>
                                 {{field}}
                             </div>
                         {% endfor %}
