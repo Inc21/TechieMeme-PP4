@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import UserProfile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import UserForm
 
 
@@ -29,6 +30,7 @@ def updateProfile(request):
         if form.is_valid():
             form.save()
 
+            messages.success(request, 'Profile updated successfully!')
             return redirect('single_user', pk=profile.id)
 
     context = {'form': form}
@@ -40,6 +42,7 @@ def deleteProfile(request, pk):
     profile = UserProfile.objects.get(id=pk)
     if request.method == "POST":
         profile.delete()
+        messages.warning(request, 'Profile was deleted!')
         return redirect('/')
 
     context = {'profile': profile}
