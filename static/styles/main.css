@@ -125,7 +125,7 @@ header {
     font-family: 'lexend deca';
     font-size: 1em;
     font-weight: 800;
-
+    overflow: hidden;
 }
 
 .banner-btn {

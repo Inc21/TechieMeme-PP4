@@ -14,7 +14,7 @@
                             <img src="{{ profile.user_img.url }}" alt="Profile image" class="card-img-top rounded-2 img-thumbnail img-small">
                             <div class="mt-3">
                                 <p class="yellow m-0"><i class="fa-regular fa-circle-user"></i> {{ profile.username }}</p>
-                                <h4 class="m-1">{{ profile.first_name }} {{ profile.last_name }}</h4>
+                                <h4 class="m-1">{{ profile.first_name|capfirst }} {{ profile.last_name|capfirst }}</h4>
                                 {% if profile.location != None %}
                                 <p class="m-1">{{ profile.location }}</p>
                                 {% endif %}
@@ -87,7 +87,7 @@
                 <div class="card mb-3 ">
                     <div class="card-body">
                         <div class="row">
-                            <h3 class="m-1"><i class="fa-solid fa-square-up-right yellow"></i> Memes Uploaded: {{profile.memes_uploaded}}</h3> 
+                            <h3 class="m-1"><i class="fa-solid fa-square-up-right yellow"></i> Memes Uploaded: {{memes.uloader|length}}</h3> 
                         </div>
                         <hr>
                         <div class="row">
