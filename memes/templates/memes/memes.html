@@ -2,22 +2,20 @@
 
 {% block content  %}
 
-<div class="col-md-8 mt-md-3">
-	<div class="card mb-3 ">
-		<div class="card-body">
-			<div class="row">
-				<h3 class="m-1"><i class="fa-solid fa-square-up-right yellow"></i> Memes Uploaded: {{memes.uloader|length}}</h3> 
-			</div>
-			<hr>
-			<div class="row">
-				{% for meme in memes %}
-				<div class="col-12 col-sm-6 col-lg-4 mb-3">
-					<div class="card h-100">
+<div class="container">
+	<div class="row ">
+		<div class="col-12 d-flex flex-wrap">
+
+			{% for meme in memes %}
+				<div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-4">
+					<div class="card m-4  h-100">
 						<div class="card-body m-1 p-1 d-grid align-content-between">
-							<h6 class="card-title mb-1">{{ meme.title }}</h6>
-							<img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+							<a class="text-decoration-none gray" href="{% url 'meme' meme.id %}">
+								<h6 class="card-title mb-1">{{ meme.title }}</h6>
+								<img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+							</a>
 							<div class="row-col-1 d-flex justify-content-between">
-								<div><i class="fa-solid fa-square-up-right yellow"></i> by: <a href="" class="card-link yellow">{{ profile.username }}</a></div>
+								<div><i class="fa-solid fa-square-up-right yellow"></i> by: <a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow">{{ meme.uploader }}</a></div>
 								<div class="report text-right mt-1">{{ meme.created|date:"d/m/y" }}</div>
 							</div>
 							<div class="row">
@@ -48,8 +46,6 @@
 					</div>
 				</div>
 				{% endfor %}
-
-			</div>
 		</div>
 	</div>
 </div>
