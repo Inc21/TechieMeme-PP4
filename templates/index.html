@@ -1,7 +1,17 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
 {% block content %}
 
 {% include 'banner.html' %}
+
+
+
+    {% for meme in memes %}
+    {{meme.meme_img.url}}
+    {% endfor %}
+    
+    
 
 {% endblock content %}

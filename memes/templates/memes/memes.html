@@ -2,27 +2,56 @@
 
 {% block content  %}
 
-<h2>Memes</h2>
+<div class="col-md-8 mt-md-3">
+	<div class="card mb-3 ">
+		<div class="card-body">
+			<div class="row">
+				<h3 class="m-1"><i class="fa-solid fa-square-up-right yellow"></i> Memes Uploaded: {{memes.uloader|length}}</h3> 
+			</div>
+			<hr>
+			<div class="row">
+				{% for meme in memes %}
+				<div class="col-12 col-sm-6 col-lg-4 mb-3">
+					<div class="card h-100">
+						<div class="card-body m-1 p-1 d-grid align-content-between">
+							<h6 class="card-title mb-1">{{ meme.title }}</h6>
+							<img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+							<div class="row-col-1 d-flex justify-content-between">
+								<div><i class="fa-solid fa-square-up-right yellow"></i> by: <a href="" class="card-link yellow">{{ profile.username }}</a></div>
+								<div class="report text-right mt-1">{{ meme.created|date:"d/m/y" }}</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									{% for tag in meme.tags.all %}
+										<span class="tag text-nowrap">{{tag}}</span>
+									{% endfor %}
+								</div>
+							</div>
+							<hr class="m-1">
+							<div class="row">
+								<button class="col-4 btn btn" href=""><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.smiley_face }}</button>
+								<button class="col-4 btn btn" href=""><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.sad_face }}</button>
+								<button class="col-4 btn btn" href=""><i class="fa-regular fa-comment yellow"></i>&nbsp;0</button>
+							</div>
+							<hr class="m-1">
+							{% if request.user.is_authenticated and request.user.username == profile.username %}
+							<div class="row">
+								<button class="btn col-6 btn-sm mt-0"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+								<button class="btn col-6 text-danger mt-0 btn-sm "><i class="fa-solid fa-trash-can"></i> Delete</button>
+							</div>
+							{% else %}
+							<div class="row-col-1 d-flex justify-content-end">
+								<a role="button" class="btn report text-end p-0 pe-1"><i class="fa-regular fa-flag"></i> Report Meme!</a>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
 
-<table>
-  <tr>
-    <th>Meme</th>
-    <th>Meme Title</th>
-    <th><i class="fa-regular fa-face-smile"></i></th>
-    <th><i class="fa-regular fa-face-frown-open"></i></th>
-	<th>Created</th>
-	<th>Link</th>
-  </tr>
-  {% for meme in memes  %}
-  	<tr>
-		<td><img src="{{meme.meme_img.url}}" alt="" style="max-width: 200px"></td>
-		<td>{{meme.title}}</td>
-		<td>{{meme.smiley_face}}</td>
-		<td>{{meme.sad_face}}</td>
-		<td>{{meme.created}}</td>
-		<td><a href="{% url 'meme' meme.id %}">View</a></td>
-	</tr>
-  {% endfor %}
-</table>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock content %}
