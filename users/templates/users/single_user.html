@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">
-                <div class="card mt-3">
+                <div class="card big-card mt-3">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="{{ profile.user_img.url }}" alt="Profile image" class="card-img-top rounded-2 img-thumbnail img-small">
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mt-3">
+                <div class="card big-card mt-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-2 text-nowrap mb-2"><i class="fa-regular fa-address-card yellow"></i> Bio:</div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 
-                <div class="card mt-3">
+                <div class="card big-card mt-3">
                     <div class="card-body">
                         {% if profile.email != None and request.user.is_authenticated %}
                         <div class="row">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <div class="card mt-3">
+                <div class="card big-card mt-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 col-lg-5 text-nowrap"><i class="fa-regular fa-handshake yellow"></i> Joined:</div>
@@ -84,7 +84,7 @@
             </div>
 
             <div class="col-md-8 mt-md-3">
-                <div class="card mb-3 ">
+                <div class="card big-card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <h3 class="m-1"><i class="fa-solid fa-square-up-right yellow"></i> Memes Uploaded: {{memes.uloader|length}}</h3> 
@@ -92,8 +92,8 @@
                         <hr>
                         <div class="row">
                             {% for meme in profile.meme_set.all %}
-                            <div class="col-12 col-sm-6 col-lg-4 mb-3">
-                                <div class="card h-100">
+                            <div class="col-12 col-sm-6 col-lg-4 mb-3 d-flex justify-content-center">
+                                <div class="card small-card h-100">
                                     <div class="card-body m-1 p-1 d-grid align-content-between">
                                         <h6 class="card-title mb-1">{{ meme.title }}</h6>
                                         <img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">

@@ -16,4 +16,6 @@ def meme(request, pk):
 
 
 def home_page(request):
-    return render(request, "index.html")
+    memes = Meme.objects.all()
+    context = {"memes": memes}
+    return render(request, "index.html", context)

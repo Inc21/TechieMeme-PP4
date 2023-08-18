@@ -7,11 +7,8 @@
 {% include 'banner.html' %}
 
 
-
-    {% for meme in memes %}
-    {{meme.meme_img.url}}
-    {% endfor %}
-    
-    
+{% for meme in memes %}
+<h6 class="card-title mb-1">{{ meme.title }}</h6>
+{% endfor %}
 
 {% endblock content %}
