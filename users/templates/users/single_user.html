@@ -95,8 +95,10 @@
                             <div class="col-12 col-sm-6 col-lg-4 mb-3 d-flex justify-content-center">
                                 <div class="card small-card h-100">
                                     <div class="card-body m-1 p-1 d-grid align-content-between">
-                                        <h6 class="card-title mb-1">{{ meme.title }}</h6>
-                                        <img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+                                        <a class="text-decoration-none gray" href="{% url 'meme' meme.id %}">
+                                            <h6 class="card-title mb-1">{{ meme.title }}</h6>
+                                            <img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+                                        </a>
                                         <div class="row-col-1 d-flex justify-content-between">
                                             <div><i class="fa-solid fa-square-up-right yellow"></i> by: <a href="{% url 'single_user' profile.id %}" class="card-link yellow">{{ profile.username }}</a></div>
                                             <div class="report text-right mt-1">{{ meme.created|date:"d/m/y" }}</div>

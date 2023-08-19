@@ -2,17 +2,92 @@
 {% load static %}
 
 {% block content %}
-    <div style="margin-left: 10px">
-    <h2>{{ meme.title }}</h2>
-    <img style="max-width: 250px;" src="{{meme.meme_img.url}}" alt="Meme"/>
-    <br>
-    <p>Uploaded by: {{ meme.uploader.username }}</p>
-    <hr>
-    {% for tag in meme.tags.all %}
-        <span style="border: 1px solid black">{{ tag }}</span>
-    {% endfor %}
-    <hr>
-</div>
 
+<main>
+    <div class="container me-3">
+        <div class="row">
+            <div class="col-sm-10 col-md-6 col-lg-4 mb-3">
+                <div class="card big-card mt-3">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center">
+                            <h3 class="card-title mb-1">{{ meme.title }}</h3>
+                            <img src=" {{ meme.meme_img.url }}" alt="Profile image" class="card-img-top rounded-2 img-thumbnail img-small"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="card big-card mt-3">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-6 d-flex justify-content-start">
+                                <div class="col-2 text-nowrap mb-2"><i class="fa-solid fa-square-up-right yellow"></i> Uploaded By:</div>
+                            </div>    
+                            <div class="col-6  d-flex justify-content-end">
+                                <div class="row">
+                                    <p class="card-text"><a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow">{{ meme.uploader.username }}</a></p>
+                                </div>
+                                <div class="row">
+                                    <div class="report mt-1">{{ meme.created|date:"d/m/y" }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card big-card mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3 text-nowrap"><i class="fa-solid fa-tags fa-rotate-90 yellow"></i> Tags:</div>
+                            <div class="col-9">
+                                {% for tag in meme.tags.all %}
+                                <span class="tag text-nowrap">{{tag}}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row d-flex justify-content-around">
+                            <button class="col-4 btn btn" href=""><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.smiley_face }}</button>
+                            <button class="col-4 btn btn" href=""><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.sad_face }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-md-6 col-lg-8 mt-md-3">
+                <div class="card big-card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <h3 class="m-1"><i class="fa-regular fa-comment yellow"></i> Comments:&nbsp;0</h3> 
+                        </div>
+                        <hr>
+                        <div class="row">
+                            {% for meme in profile.meme_set.all %}
+                            <div class="col-12 col-sm-6 col-lg-4 mb-3 d-flex justify-content-center">
+                                <div class="card small-card h-100">
+                                    <div class="card-body m-1 p-1 d-grid align-content-between">
+                                        
+                                        <img src="" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+                                        
+                                        <div class="row">
+                                            <div class="col-12">
+                                                {% for tag in meme.tags.all %}
+                                                    <span class="tag text-nowrap">{{tag}}</span>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <hr class="m-1">
+                                        
+                                        <hr class="m-1">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
 {% endblock content %}
