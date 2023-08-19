@@ -22,7 +22,7 @@
                     <a class="{% if request.resolver_match.url_name == 'user_profiles' or request.resolver_match.url_name == 'single_user' %}active-link{% endif %} nav-link navbar-item hover" href="{% url 'user_profiles' %}">USERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-item hover"><i class="fa-solid fa-plus yellow"></i>UPLOAD-MEME</a>
+                    <a class="{% if request.resolver_match.url_name == 'upload_meme' or request.resolver_match.url_name == 'upload_meme' %}active-link{% endif %} nav-link navbar-item hover" href="{% url 'upload_meme' %}"><i class="fa-solid fa-plus yellow"></i>UPLOAD-MEME</a>
                 </li>
                 </ul>
                 <div class="text-end mb-3">

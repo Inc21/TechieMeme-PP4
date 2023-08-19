@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Meme
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .forms import MemeForm
 
 
 def memes(request):
@@ -19,3 +22,19 @@ def home_page(request):
     memes = Meme.objects.all()
     context = {"memes": memes}
     return render(request, "index.html", context)
+
+
+@login_required(login_url='login')
+def uploadMeme(request):
+    form = MemeForm()
+
+    if request.method == "POST":
+        form = MemeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save(commit=False)
+            form.save()
+            messages.success(request, 'Meme uploaded successfully!')
+            return redirect("memes")
+
+    context = {'form': form}
+    return render(request, "memes/meme_form.html", context)
