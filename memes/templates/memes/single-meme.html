@@ -4,14 +4,14 @@
 {% block content %}
 
 <main>
-    <div class="container me-3">
-        <div class="row">
-            <div class="col-sm-10 col-md-6 col-lg-4 mb-3">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-10 col-md-5 col-lg-4 mb-3">
                 <div class="card big-card mt-3">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center">
                             <h3 class="card-title mb-1">{{ meme.title }}</h3>
-                            <img src=" {{ meme.meme_img.url }}" alt="Profile image" class="card-img-top rounded-2 img-thumbnail img-small"/>
+                            <img src=" {{ meme.meme_img.url }}" alt="M image" class="card-img-top rounded-2 img-thumbnail img-small"/>
                         </div>
                     </div>
                 </div>
@@ -21,12 +21,16 @@
                             <div class="col-6 d-flex justify-content-start">
                                 <div class="col-2 text-nowrap mb-2"><i class="fa-solid fa-square-up-right yellow"></i> Uploaded By:</div>
                             </div>    
-                            <div class="col-6  d-flex justify-content-end">
+                            <div class="col-6">
                                 <div class="row">
-                                    <p class="card-text"><a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow">{{ meme.uploader.username }}</a></p>
+                                    <div class="col d-flex justify-content-end">
+                                        <p class="card-text"><a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow">{{ meme.uploader.username }}</a></p>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <div class="report mt-1">{{ meme.created|date:"d/m/y" }}</div>
+                                    <div class="col d-flex justify-content-end">
+                                        <p class="report mt-1">{{ meme.created|date:"d/m/y" }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-10 col-md-6 col-lg-8 mt-md-3">
+            <div class="col-10 col-md-7 col-lg-8 mt-md-3">
                 <div class="card big-card mb-3">
                     <div class="card-body">
                         <div class="row">
