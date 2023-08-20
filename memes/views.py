@@ -26,12 +26,15 @@ def home_page(request):
 
 @login_required(login_url='/accounts/login/')
 def uploadMeme(request):
+    profile = request.user.userprofile
     form = MemeForm()
 
     if request.method == "POST":
         form = MemeForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            meme = form.save(commit=False)
+            meme.uploader = profile
+            meme.save()
             messages.success(request, 'Meme uploaded successfully!')
             return redirect("memes")
 

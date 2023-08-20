@@ -3,14 +3,14 @@
 {% block content %}
 
 <div class="container d-flex justify-content-center">
-        <div class="col-md-6 card m-4 ">
+        <div class="col-md-6 card m-4 gray">
             <div class="card-body">
                 <div class="row">
                     <h1>EDIT PROFILE</h1>
                     <hr>
                 </div>
                 <div class="row-col-1 d-flex justify-content-center">
-                    <a type="button" class="btn btn-outline-dark ps-4 pe-4 mt-0 me-1 text-nowrap gray" href="{% url 'single_user' request.user.userprofile.id %}"><i class="fa-solid fa-angles-left"></i> GO BACK</a>
+                    <a type="button" class="btn btn-outline-dark ps-4 pe-4 mt-0 me-1 text-nowrap gray" href="{{request.META.HTTP_REFERER|escape}}"><i class="fa-solid fa-angles-left"></i> GO BACK</a>
                 </div>
                 <div class="col-12">
                     <form method="POST" action="{% url 'update-profile' %}" enctype="multipart/form-data">
@@ -32,25 +32,4 @@
 </div>
     
 {% endblock %}
-
-{% comment %} <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <form method="POST" action="{% url 'update-profile' %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                
-                {% for field in form %}
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="">{{ field.label }}</label>
-                        <br>
-                        {{field}}
-                    </div>
-                {% endfor %}
-
-                <button type="submit" class="btn auth-btn mb-4 hover">Update</button>
-            </form>
-        </div>
-    </div>
-</div> {% endcomment %}
-
 
