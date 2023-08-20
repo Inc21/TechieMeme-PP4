@@ -5,7 +5,7 @@ from .models import Meme
 class MemeForm(ModelForm):
     class Meta:
         model = Meme
-        fields = ['meme_img', 'title', 'tags']
+        fields = ['uploader', 'meme_img', 'title', 'tags']
         labels = {
             'meme_img': 'Meme Image:',
             'title': 'Title:',

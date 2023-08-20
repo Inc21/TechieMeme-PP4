@@ -20,7 +20,7 @@ def singleUser(request, pk):
     return render(request, "users/single_user.html", context)
 
 
-@login_required(login_url='login')
+@login_required(login_url='/accounts/login/')
 def updateProfile(request):
     profile = request.user.userprofile
     form = UserForm(instance=profile)
@@ -37,7 +37,7 @@ def updateProfile(request):
     return render(request, "users/user_form.html", context)
 
 
-@login_required(login_url='login')
+@login_required(login_url='/accounts/login/')
 def deleteProfile(request, pk):
     profile = UserProfile.objects.get(id=pk)
     if request.method == "POST":
