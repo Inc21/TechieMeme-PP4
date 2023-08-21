@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-center m-3">
                     {% if request.user.is_authenticated %}
-                    <a type="button" class="banner-btn btn btn-dark btn-lg" href="#" role="button"><i class="fa-solid fa-plus yellow"></i>&nbsp;UPLOAD-MEME</a>
+                    <a type="button" class="banner-btn btn btn-dark btn-lg" href="{% url 'upload_meme' %}" role="button"><i class="fa-solid fa-plus yellow"></i>&nbsp;UPLOAD-MEME</a>
                     {% else %}
                     <a type="button" class="banner-btn btn btn-dark btn-lg" href="{% url 'account_login' %}" role="button">JOIN THE FUN!</a>
                     {% endif %}

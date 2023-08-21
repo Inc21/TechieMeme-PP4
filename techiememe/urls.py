@@ -18,11 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from memes import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('memes.urls')),
+    path('', views.homePage, name='home_page'),
     path('memes/', include('memes.urls')),
     path('users/', include('users.urls')),
     path('accounts/', include('allauth.urls')),

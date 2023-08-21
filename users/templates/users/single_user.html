@@ -127,13 +127,19 @@
                                         <hr class="m-1">
                                         {% if request.user.is_authenticated and request.user.username == profile.username %}
                                         <div class="row">
-                                            <button class="btn col-6 btn-sm mt-0" href="{% url 'update-meme' %}"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
-                                            <button class="btn col-6 text-danger mt-0 btn-sm "><i class="fa-solid fa-trash-can"></i> Delete</button>
+                                            <a class="btn col-6 btn-sm mt-0" href="{% url 'update-meme' meme.id %}"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                                            <a class="btn col-6 text-danger mt-0 btn-sm" href="{% url 'delete-meme' meme.id %}"><i class="fa-solid fa-trash-can"></i> Delete</a>
                                         </div>
                                         {% else %}
-                                        <div class="row-col-1 d-flex justify-content-end">
-                                            <a role="button" class="btn report text-end p-0 pe-1"><i class="fa-regular fa-flag"></i> Report Meme!</a>
-                                        </div>
+                                            {% if request.user.is_authenticated %}
+                                            <div class="row-col-1 d-flex justify-content-end">
+                                                <a role="button" class="btn report text-end p-0 pe-1"><i class="fa-regular fa-flag"></i> Report Meme!</a>
+                                            </div>
+                                            {% else %}
+                                            <div class="row-col-1 d-flex justify-content-end">
+                                                <a role="button" class="btn report text-end p-0 pe-1" href="{% url 'account_login' %}"><i class="fa-regular fa-flag"></i> Please <span class="active-link">login</span> to report Meme!</a>
+                                            </div>
+                                            {% endif %}
                                         {% endif %}
                                     </div>
                                 </div>

@@ -18,7 +18,7 @@ def meme(request, pk):
     return render(request, "memes/single-meme.html", context)
 
 
-def home_page(request):
+def homePage(request):
     memes = Meme.objects.all()
     context = {"memes": memes}
     return render(request, "index.html", context)
@@ -51,10 +51,10 @@ def updateMeme(request, pk):
     if request.method == 'POST':
         form = MemeForm(request.POST, request.FILES, instance=meme)
         if form.is_valid():
-            meme = form.save()
+            form.save()
 
             messages.success(request, 'Meme updated successfully!')
-            return redirect('single-meme', pk=meme.id)
+            return redirect('meme', pk=pk)
 
     context = {'form': form, 'meme': meme}
     return render(request, "memes/meme_form.html", context)

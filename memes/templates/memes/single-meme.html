@@ -13,7 +13,7 @@
                             <h3 class="card-title mb-1">{{ meme.title }}</h3>
                             <img src=" {{ meme.meme_img.url }}" alt="M image" class="card-img-top rounded-2 img-thumbnail img-small"/>
                             <hr class="m-1">
-                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_authenticated and meme.uploader.username == request.user.username %}
                                 <div class="row d-grid gap-2 d-flex justify-content-center flex-nowrap">
                                     <a class="btn btn-sm btn-outline-dark col-5 me-1 me-lg-3 text-nowrap" href="{% url 'update-meme' meme.id %}"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
                                     <a class="btn btn-sm btn-outline-danger col-6 text-nowrap" href="{% url 'delete-meme' meme.id %}"><i class="fa-solid fa-trash-can"></i> Delete</a>

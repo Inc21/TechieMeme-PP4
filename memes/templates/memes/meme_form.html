@@ -22,8 +22,11 @@
                             {{field}}
                         </div>
                     {% endfor %}
-    
-                    <button type="submit" class="btn auth-btn mt-4 mb-4 hover">Upload</button>
+                    {% if request.resolver_match.url_name == 'update-meme' %}
+                    <button type="submit" class="btn auth-btn mt-4 mb-4 hover">UPDATE</button>
+                    {% else %}
+                    <button type="submit" class="btn auth-btn mt-4 mb-4 hover">UPLOAD</button>
+                    {% endif %}
                 </form>
             </div>
         </div>
