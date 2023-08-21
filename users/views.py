@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import UserProfile
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserForm
@@ -8,9 +7,8 @@ from .forms import UserForm
 
 def userProfiles(request):
     profiles = UserProfile.objects.all()
-    last_active = User.objects.all().last().last_login
-    print(last_active)
-    context = {'profiles': profiles, 'last_active': last_active}
+    # memes_uploaded = profiles.meme_set.get()
+    context = {'profiles': profiles}
     return render(request, "users/user_profiles.html", context)
 
 
@@ -47,3 +45,10 @@ def deleteProfile(request, pk):
 
     context = {'profile': profile}
     return render(request, "users/delete_user.html", context)
+
+
+def memesUploaded(request):
+    profile = request.user.userprofile
+    memes = profile.meme_set.all()
+    context = {'memes': memes}
+    return render(request, "users/user_profiles.html", context)

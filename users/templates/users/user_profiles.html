@@ -23,12 +23,12 @@
                             <hr>
                             <div class="row flex-nowrap">
                                 <div class="col-1"><i class="fa-solid fa-square-up-right yellow fs-5"></i></div>
-                                <div class="col-11">Uploads: {{memes.uploader.profile|length}}</div>
+                                <div class="col-11">Uploads: {{upload_count.uploaded_memes}}</div>
                             </div>
                             <hr>
                             <div class="row flex-nowrap">
                                 <div class="col-1"><i class="fa-solid fa-eye yellow fs-5"></i></div>
-                                <div class="col-11">Last Seen: {{ request.user.profile.username.last_active|date:"d/M/Y" }}</div>
+                                <div class="col-11">Last Seen: {{ profile.user.last_login|date:"d/M/Y" }}</div>
                             </div>
                         </div>
                     </div>
