@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Meme
+from .models import Meme, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MemeForm
@@ -40,3 +40,34 @@ def uploadMeme(request):
 
     context = {'form': form}
     return render(request, "memes/meme_form.html", context)
+
+
+@login_required(login_url='/accounts/login/')
+def updateMeme(request, pk):
+    profile = request.user.userprofile
+    meme = profile.meme_set.get(id=pk)
+    form = MemeForm(instance=meme)
+
+    if request.method == 'POST':
+        form = MemeForm(request.POST, request.FILES, instance=meme)
+        if form.is_valid():
+            meme = form.save()
+
+            messages.success(request, 'Meme updated successfully!')
+            return redirect('single-meme', pk=meme.id)
+
+    context = {'form': form, 'meme': meme}
+    return render(request, "memes/meme_form.html", context)
+
+
+@login_required(login_url='/accounts/login/')
+def deleteMeme(request, pk):
+    profile = UserProfile.objects.get(user=request.user)
+    meme = profile.meme_set.get(id=pk)
+    if request.method == 'POST':
+        meme.delete()
+        messages.warning(request, 'Meme was deleted!')
+        return redirect('memes')
+
+    context = {'meme': meme}
+    return render(request, "memes/delete_meme.html", context)

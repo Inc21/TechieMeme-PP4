@@ -12,6 +12,13 @@
                         <div class="d-flex flex-column align-items-center">
                             <h3 class="card-title mb-1">{{ meme.title }}</h3>
                             <img src=" {{ meme.meme_img.url }}" alt="M image" class="card-img-top rounded-2 img-thumbnail img-small"/>
+                            <hr class="m-1">
+                            {% if request.user.is_authenticated %}
+                                <div class="row d-grid gap-2 d-flex justify-content-center flex-nowrap">
+                                    <a class="btn btn-sm btn-outline-dark col-5 me-1 me-lg-3 text-nowrap" href="{% url 'update-meme' meme.id %}"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                                    <a class="btn btn-sm btn-outline-danger col-6 text-nowrap" href="{% url 'delete-meme' meme.id %}"><i class="fa-solid fa-trash-can"></i> Delete</a>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -56,10 +63,11 @@
                 <div class="card big-card mt-3">
                     <div class="card-body">
                         <div class="row-col-1 d-flex justify-content-center">
-                            <a type="button" class="btn btn-outline-dark ps-4 pe-4 mt-0 me-1 text-nowrap gray" href="{{request.META.HTTP_REFERER|escape}}"><i class="fa-solid fa-angles-left"></i> GO BACK</a>
+                            <a type="button" class="btn btn-outline-dark ps-4 pe-4 mt-0 me-1 text-nowrap gray" href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-angles-left"></i> GO BACK</a>
                         </div>
                     </div>
                 </div>
+                
             </div>
 
             <div class="col-10 col-md-7 col-lg-8 mt-md-3">
@@ -69,31 +77,6 @@
                             <h3 class="m-1"><i class="fa-regular fa-comment yellow"></i> Comments:&nbsp;0</h3> 
                         </div>
                         <hr>
-                        <div class="row">
-                            {% for meme in profile.meme_set.all %}
-                            <div class="col-12 col-sm-6 col-lg-4 mb-3 d-flex justify-content-center">
-                                <div class="card small-card h-100">
-                                    <div class="card-body m-1 p-1 d-grid align-content-between">
-                                        
-                                        <img src="" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
-                                        
-                                        <div class="row">
-                                            <div class="col-12">
-                                                {% for tag in meme.tags.all %}
-                                                    <span class="tag text-nowrap">{{tag}}</span>
-                                                {% endfor %}
-                                            </div>
-                                        </div>
-                                        <hr class="m-1">
-                                        
-                                        <hr class="m-1">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-
-                        </div>
                     </div>
                 </div>
             </div>

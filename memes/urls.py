@@ -8,4 +8,7 @@ urlpatterns = [
     path('', views.home_page, name='home_page'),
 
     path('upload_meme/', views.uploadMeme, name='upload_meme'),
+    path('update-meme/', views.updateMeme, name="update-meme"),
+    path('delete-meme/<str:pk>/', views.deleteMeme,
+         name="delete-meme"),
 ]
