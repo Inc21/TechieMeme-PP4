@@ -192,6 +192,61 @@ header {
 }
 
 
+/* ------------------------------------------------------------- carousel */
+
+@media screen and (min-width: 168px) {
+    .carousel-inner {
+        display: flex;
+    }
+
+    .carousel-item {
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%);
+    }
+}
+
+@media screen and (min-width: 468px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 2);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 3);
+    }
+}
+
+@media screen and (min-width: 1068px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 4);
+    }
+}
+
+.carousel-inner {
+    padding: 1em;
+}
+
+.carousel-card {
+    margin: 0 0.5em;
+    border-radius: 0;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 6vh;
+    height: 6vh;
+    background-color: #DE970B;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .8;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 1;
+}
+
 /* ------------------------------------------------------------- Footer custom css */
 footer {
     background-color: #4C4E52;

@@ -6,9 +6,10 @@
 
 {% include 'banner.html' %}
 
+{% include 'carousel.html' %}
 
-{% for meme in memes %}
+{% comment %} {% for meme in memes %}
 <h6 class="card-title mb-1">{{ meme.title }}</h6>
-{% endfor %}
+{% endfor %} {% endcomment %}
 
 {% endblock content %}

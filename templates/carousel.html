@@ -1,0 +1,53 @@
+{% load static %}
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> 
+    <div class="carousel-inner">
+        {% for meme in memes %}
+				<div class="carousel-item col-sm-6 col-lg-4 col-xl-3 mb-4">
+					<div class="card carousel-card small-card m-4 h-100">
+						<div class="card-body m-1 p-1 d-grid align-content-between">
+							<a class="text-decoration-none gray" href="{% url 'meme' meme.id %}">
+								<h6 class="card-title mb-1">{{ meme.title }}</h6>
+								<img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
+							</a>
+							<div class="row-col-1 d-flex justify-content-between">
+								<div><i class="fa-solid fa-square-up-right yellow"></i> by: <a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow">{{ meme.uploader }}</a></div>
+								<div class="report text-right mt-1">{{ meme.created|date:"d/m/y" }}</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									{% for tag in meme.tags.all %}
+										<span class="tag text-nowrap">{{tag}}</span>
+									{% endfor %}
+								</div>
+							</div>
+							<hr class="m-1">
+							<div class="row">
+								<button class="col-4 btn btn" href=""><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.smiley_face }}</button>
+								<button class="col-4 btn btn" href=""><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.sad_face }}</button>
+								<button class="col-4 btn btn" href=""><i class="fa-regular fa-comment yellow"></i>&nbsp;0</button>
+							</div>
+							<hr class="m-1">
+							{% if request.user.is_authenticated %}
+							<div class="row-col-1 d-flex justify-content-end">
+								<a role="button" class="btn report text-end p-0 pe-1"><i class="fa-regular fa-flag"></i> Report Meme!</a>
+							</div>
+							{% else %}
+							<div class="row-col-1 d-flex justify-content-end">
+								<a role="button" class="btn report text-end p-0 pe-1" href="{% url 'account_login' %}"><i class="fa-regular fa-flag"></i> Please <span class="active-link">login</span> to report Meme!</a>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
