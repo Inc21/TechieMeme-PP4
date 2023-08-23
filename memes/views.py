@@ -22,12 +22,12 @@ def memes(request):
         page = paginator.num_pages
         memes = paginator.page(page)
 
-    leftIndex = (int(page) - 4)
+    leftIndex = (int(page) - 3)
 
     if leftIndex < 1:
         leftIndex = 1
 
-    rightIndex = (int(page) + 5)
+    rightIndex = (int(page) + 4)
 
     if rightIndex > paginator.num_pages:
         rightIndex = paginator.num_pages + 1
