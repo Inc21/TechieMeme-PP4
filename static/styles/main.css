@@ -255,6 +255,24 @@ header {
     opacity: 1;
 }
 
+/* ------------------------------------------------------------- Pagination */
+
+.pagination-link {
+    color: #666666;
+}
+
+.pagination-link:hover {
+    color: #DE970B;
+    background-color: #D3D3D3;
+}
+
+.disabled-btn {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.9;
+    background-color: #666666;
+}
+
 /* ------------------------------------------------------------- Footer custom css */
 footer {
     background-color: #4C4E52;

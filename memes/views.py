@@ -3,11 +3,41 @@ from .models import Meme, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MemeForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def memes(request):
     memes = Meme.objects.all()
-    context = {"memes": memes}
+
+    page = request.GET.get('page')
+    results = 4
+    paginator = Paginator(memes, results)
+
+    try:
+        memes = paginator.page(page)
+    except PageNotAnInteger:
+        page = 1
+        memes = paginator.page(page)
+    except EmptyPage:
+        page = paginator.num_pages
+        memes = paginator.page(page)
+
+    leftIndex = (int(page) - 4)
+
+    if leftIndex < 1:
+        leftIndex = 1
+
+    rightIndex = (int(page) + 5)
+
+    if rightIndex > paginator.num_pages:
+        rightIndex = paginator.num_pages + 1
+
+    custom_range = range(leftIndex, rightIndex)
+
+    context = {
+        "memes": memes,
+        "paginator": paginator,
+        "custom_range": custom_range}
     return render(request, "memes/memes.html", context)
 
 

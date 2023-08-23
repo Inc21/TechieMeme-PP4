@@ -22,7 +22,7 @@
 				<div class="carousel-inner">
 					{% for meme in memes %}
 							<div class="carousel-item {% if forloop.first %} active{% endif %} col-sm-6 col-lg-4 col-xl-3 mb-4">
-								<div class="card small-card h-100">
+								<div class="card small-card mx-3 h-100">
 									<div class="card-body m-1 p-1 d-grid align-content-between">
 										<a class="text-decoration-none gray" href="{% url 'meme' meme.id %}">
 											<h6 class="card-title mb-1">{{ meme.title }}</h6>
