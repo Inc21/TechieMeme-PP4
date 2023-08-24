@@ -41,8 +41,9 @@
     </nav>
     <div class="container-fluid">
         <div class="row justify-content-center justify-content-md-end">
-            <form class="col-10 col-md-6 col-lg-4 mb-1" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <form class="col-10 col-md-6 col-lg-4 mb-1" role="search" method="GET">
+                {{ myFilter.form}}
+                {% comment %} <input type="search" class="form-control" placeholder="Search..." aria-label="Search"> {% endcomment %}
             </form>
         </div>  
 </header>

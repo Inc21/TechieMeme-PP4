@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MemeForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .filters import memeFilter
 
 
 def memes(request):
@@ -37,19 +38,24 @@ def memes(request):
     context = {
         "memes": memes,
         "paginator": paginator,
-        "custom_range": custom_range}
+        "custom_range": custom_range,
+        }
     return render(request, "memes/memes.html", context)
 
 
 def meme(request, pk):
     memeObj = Meme.objects.get(id=pk)
     tags = memeObj.tags.all()
-    context = {"meme": memeObj, "tags": tags}
+
+    context = {"meme": memeObj,
+               "tags": tags,
+               }
     return render(request, "memes/single-meme.html", context)
 
 
 def homePage(request):
     memes = Meme.objects.all()
+
     context = {"memes": memes}
     return render(request, "index.html", context)
 
