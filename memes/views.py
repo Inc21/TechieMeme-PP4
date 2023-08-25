@@ -4,11 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MemeForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .filters import memeFilter
+from .utils import searchMeme
 
 
 def memes(request):
-    memes = Meme.objects.all()
+    """
+    This view will display all memes in the database. It will also allow the
+    user to search for memes by title or tag.
+    """
+
+    memes, search_form = searchMeme(request)
 
     page = request.GET.get('page')
     results = 4
@@ -39,29 +44,49 @@ def memes(request):
         "memes": memes,
         "paginator": paginator,
         "custom_range": custom_range,
+        "search_form": search_form,
         }
     return render(request, "memes/memes.html", context)
 
 
 def meme(request, pk):
+    """
+    This view will display a single meme.
+    """
+    memes, search_form = searchMeme(request)
+
     memeObj = Meme.objects.get(id=pk)
     tags = memeObj.tags.all()
 
-    context = {"meme": memeObj,
-               "tags": tags,
-               }
+    context = {
+        "meme": memeObj,
+        "tags": tags,
+        "memes": memes,
+        "search_form": search_form,
+        }
     return render(request, "memes/single-meme.html", context)
 
 
 def homePage(request):
-    memes = Meme.objects.all()
+    """
+    This view will display the home page.
+    """
+    memes, search_form = searchMeme(request)
 
-    context = {"memes": memes}
+    context = {
+        "memes": memes,
+        "search_form": search_form,
+        }
     return render(request, "index.html", context)
 
 
 @login_required(login_url='/accounts/login/')
 def uploadMeme(request):
+    """
+    This view will allow the user to upload a meme.
+    """
+    memes, search_form = searchMeme(request)
+    
     profile = request.user.userprofile
     form = MemeForm()
 
@@ -74,12 +99,19 @@ def uploadMeme(request):
             messages.success(request, 'Meme uploaded successfully!')
             return redirect("memes")
 
-    context = {'form': form}
+    context = {
+        "form": form,
+        "memes": memes,
+        "search_form": search_form
+        }
     return render(request, "memes/meme_form.html", context)
 
 
 @login_required(login_url='/accounts/login/')
 def updateMeme(request, pk):
+    """
+    This view will allow the user to update a meme.
+    """
     profile = request.user.userprofile
     meme = profile.meme_set.get(id=pk)
     form = MemeForm(instance=meme)
@@ -98,6 +130,9 @@ def updateMeme(request, pk):
 
 @login_required(login_url='/accounts/login/')
 def deleteMeme(request, pk):
+    """
+    This view will allow the user to delete a meme.
+    """
     profile = UserProfile.objects.get(user=request.user)
     meme = profile.meme_set.get(id=pk)
     if request.method == 'POST':

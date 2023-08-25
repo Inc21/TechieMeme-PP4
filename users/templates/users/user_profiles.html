@@ -12,7 +12,7 @@
                 <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
                     <div class="card small-card m-4 h-100">
                         <div class="card-body d-grid align-content-between">
-                            <img src="{{ profile.user_img.url}}" class="card-img-top rounded-2 img-thumbnail" alt="User Image">
+                            <img src="{{ profile.user_img.url}}" class="img-small card-img-top rounded-2 img-thumbnail" alt="User Image">
                             <a href="{% url 'single_user' profile.id %}" class="card-link yellow"><i class="fa-regular fa-circle-user"></i> {{ profile.username}}</a>
                             {% if profile.first_name != None %} <h5 class="card-title">{{ profile.first_name|capfirst}} {% else %} <h5>&nbsp;</h5> {% endif %} {% if profile.last_name != None %} {{ profile.last_name|capfirst }}</h5>{% endif %}
                             <hr class="mt-0">

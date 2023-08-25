@@ -4,12 +4,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from memes.utils import searchMeme
 
 
 def userProfiles(request):
     """
     This view will display all the user profiles and paginate them.
     """
+    memes, search_form = searchMeme(request)
 
     profiles = UserProfile.objects.all()
     page = request.GET.get('page')
@@ -38,9 +40,11 @@ def userProfiles(request):
     custom_range = range(leftIndex, rightIndex)
 
     context = {
-        'profiles': profiles,
+        "profiles": profiles,
         "custom_range": custom_range,
-        "paginator": paginator
+        "paginator": paginator,
+        "memes": memes,
+        "search_form": search_form,
         }
     return render(request, "users/user_profiles.html", context)
 

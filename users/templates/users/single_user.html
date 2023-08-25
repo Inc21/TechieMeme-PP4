@@ -43,7 +43,12 @@
                         <div class="row">
                             <a class="btn" role="button" class="col-4 text-nowrap"><i class="fa-solid fa-envelope yellow"></i> {{ profile.email }}</a>
                         </div>
-                        <hr>   
+                        <hr>
+                        {% elif profile.email and not request.user.is_authenticated %}
+                        <div class="row text-center">
+                            <p><i class="fa-solid fa-envelope yellow"></i> <a class="active-link" href="{% url 'account_login' %}">Log in</a> to see {{ profile.username|capfirst }}'s email. </p>
+                        </div>
+                        <hr>
                         {% else %}
                         <div class="row text-center">
                             <p><i class="fa-solid fa-envelope yellow"></i> {{ profile.username|capfirst }} has not provided email. </p>
@@ -104,7 +109,7 @@
                                 <div class="card small-card h-100">
                                     <div class="card-body m-1 p-1 d-grid align-content-between">
                                         <a class="text-decoration-none gray" href="{% url 'meme' meme.id %}">
-                                            <h6 class="card-title mb-1">{{ meme.title }}</h6>
+                                            <h6 class="card-title mb-1">{{ meme.title|truncatechars:"23" }}</h6>
                                             <img src="{{meme.meme_img.url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
                                         </a>
                                         <div class="row-col-1 d-flex justify-content-between">
