@@ -33,7 +33,7 @@
 											<div class="report text-right mt-1">{{ meme.created|date:"d/m/y" }}</div>
 										</div>
 										<div class="row">
-											<div class="col-12">
+											<div class="col-12 mb-1">
 												{% for tag in meme.tags.all %}
 													<span class="tag text-nowrap">{{tag}}</span>
 												{% endfor %}
@@ -48,11 +48,11 @@
 										<hr class="m-0">
 										{% if request.user.is_authenticated %}
 										<div class="row-col-1 d-flex justify-content-end">
-											<a role="button" class="btn report text-end p-0 pe-1"><i class="fa-regular fa-flag"></i> Report Meme!</a>
+											<a role="button" class="btn report text-end p-0 pe-1" href=""><i class="fa-regular fa-flag"></i> Report Meme!</a>
 										</div>
 										{% else %}
 										<div class="row-col-1 d-flex justify-content-end">
-											<a role="button" class="btn report text-end p-0 pe-1" href="{% url 'account_login' %}"><i class="fa-regular fa-flag"></i> Please <span class="active-link">login</span> to report Meme!</a>
+											<a role="button" class="btn report text-end p-0 pe-1" href="{% url 'account_login' %}?next={{request.path}}"><i class="fa-regular fa-flag"></i> Please <span class="active-link">login</span> to report Meme!</a>
 										</div>
 										{% endif %}
 									</div>

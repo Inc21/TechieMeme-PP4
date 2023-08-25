@@ -46,7 +46,7 @@
                         <hr>
                         {% elif profile.email and not request.user.is_authenticated %}
                         <div class="row text-center">
-                            <p><i class="fa-solid fa-envelope yellow"></i> <a class="active-link" href="{% url 'account_login' %}">Log in</a> to see {{ profile.username|capfirst }}'s email. </p>
+                            <p><i class="fa-solid fa-envelope yellow"></i> <a class="active-link" href="{% url 'account_login' %}?next={{request.path}}">Log in</a> to see {{ profile.username|capfirst }}'s email. </p>
                         </div>
                         <hr>
                         {% else %}

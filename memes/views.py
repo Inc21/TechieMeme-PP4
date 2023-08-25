@@ -86,7 +86,7 @@ def uploadMeme(request):
     This view will allow the user to upload a meme.
     """
     memes, search_form = searchMeme(request)
-    
+
     profile = request.user.userprofile
     form = MemeForm()
 
@@ -96,6 +96,7 @@ def uploadMeme(request):
             meme = form.save(commit=False)
             meme.uploader = profile
             meme.save()
+            form.save()
             messages.success(request, 'Meme uploaded successfully!')
             return redirect("memes")
 
