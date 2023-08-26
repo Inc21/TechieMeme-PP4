@@ -1,11 +1,23 @@
 {% extends "main.html" %}
 
+{% load static %}
+
 {% load i18n %}
 
 {% block head_title %}{% trans "Social Network Login Failure" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Social Network Login Failure" %}</h1>
 
-<p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+<div class="col-12 d-flex flex-wrap justify-content-center">
+    <div class="d-flex justify-content-center">
+        <div class="card auth-card m-4">
+            <div class="card-body">
+                <h1>{% trans "Social Network Login Failure" %}</h1>
+                <hr>
+                <p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+            </div>
+        </div>
+    </div>
+  </div>
+
 {% endblock %}

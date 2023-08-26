@@ -13,7 +13,7 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="{{ profile.user_img.url }}" alt="Profile image" class="card-img-top rounded-2 img-thumbnail img-small">
                             <div class="mt-3">
-                                <p class="yellow m-0"><i class="fa-regular fa-circle-user"></i> {{ profile.username }}</p>
+                                <p class="yellow mb-2"><i class="fa-regular fa-circle-user"></i> {{ profile.username }}</p>
                                 {% if profile.first_name != None %} <h4 class="m-1">{{ profile.first_name|capfirst }} {% endif %}  {% if profile.last_name != None %} {{ profile.last_name|capfirst }}</h4>{% endif %}
                                 {% if profile.location != None %}
                                 <p class="m-1">{{ profile.location }}</p>

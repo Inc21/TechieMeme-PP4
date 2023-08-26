@@ -126,6 +126,16 @@ header {
     text-decoration: none;
 }
 
+.social-logo {
+    max-width: 4em;
+    list-style: none;
+}
+
+.auth-list {
+    list-style: none;
+}
+
+
 /* ------------------------------------------------------------- Banner */
 
 .banner {
