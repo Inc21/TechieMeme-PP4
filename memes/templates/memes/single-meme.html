@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center">
                             <h3 class="card-title mb-1">{{ meme.title }}</h3>
-                            <img src=" {{ meme.meme_img.url }}" alt="M image" class="card-img-top rounded-2 img-thumbnail img-small"/>
+                            <img src=" {{ meme.meme_image_url }}" alt="Meme image" class="card-img-top rounded-2 img-thumbnail img-small"/>
                             <hr class="m-1">
                             {% if request.user.is_authenticated and meme.uploader.username == request.user.username %}
                                 <div class="row d-grid gap-2 d-flex justify-content-center flex-nowrap">

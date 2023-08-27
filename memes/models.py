@@ -1,14 +1,16 @@
 from django.db import models
 import uuid
 from users.models import UserProfile
+from django_resized import ResizedImageField
 
 
 class Meme(models.Model):
     uploader = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
-    meme_img = models.ImageField(upload_to='memes/',
-                                 default='memes/default.webp')
+    meme_img = ResizedImageField(size=None, upload_to='memes/',
+                                 force_format='Webp', quality=95, null=True,
+                                 blank=True, default='memes/default.webp')
     tags = models.ManyToManyField('Tag', blank=True)
     smiley_face = models.IntegerField(default=0, null=True, blank=True)
     sad_face = models.IntegerField(default=0, null=True, blank=True)
@@ -18,6 +20,13 @@ class Meme(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def meme_image_url(self):
+        if self.meme_img and hasattr(self.meme_img, 'url'):
+            return self.meme_img.url
+        else:
+            return '/static/images/memes/default.webp'
 
     class Meta:
         ordering = ['-created']
@@ -41,10 +50,13 @@ class Review(models.Model):
 
 
 class Tag(models.Model):
-    name = models.BooleanField(max_length=200)
+    name = models.CharField(max_length=20)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['name']

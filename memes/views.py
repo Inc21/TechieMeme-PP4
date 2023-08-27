@@ -117,6 +117,16 @@ def updateMeme(request, pk):
     meme = profile.meme_set.get(id=pk)
     form = MemeForm(instance=meme)
 
+    @property
+    def meme_img(self):
+        if self.meme_img:
+            url = self.meme_img.url
+        else:
+            url = (
+                'images/memes/default.webp'
+            )
+        return url
+
     if request.method == 'POST':
         form = MemeForm(request.POST, request.FILES, instance=meme)
         if form.is_valid():

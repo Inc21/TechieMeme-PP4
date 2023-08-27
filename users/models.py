@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
+from django_resized import ResizedImageField
 
 
 class UserProfile(models.Model):
@@ -12,8 +13,9 @@ class UserProfile(models.Model):
     location = models.CharField(max_length=100, null=True, blank=True)
     email = models.EmailField(max_length=100, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
-    user_img = models.ImageField(upload_to='users/',
-                                 default='users/default_user.webp')
+    user_img = ResizedImageField(size=None, upload_to='users/',
+                                 force_format='Webp', quality=95, null=True,
+                                 blank=True, default='users/default_user.webp')
     social_github = models.CharField(max_length=200, null=True, blank=True)
     social_linkedin = models.CharField(max_length=200, null=True, blank=True)
     social_facebook = models.CharField(max_length=200, null=True, blank=True)
@@ -24,3 +26,13 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return str(self.username)
+
+    @property
+    def user_image_url(self):
+        if self.user_img and hasattr(self.user_img, 'url'):
+            return self.user_img.url
+        else:
+            return '/static/images/users/default_user.webp'
+
+    class Meta:
+        ordering = ['-created']
