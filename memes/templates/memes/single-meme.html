@@ -65,8 +65,8 @@
                         </div>
                         <hr>
                         <div class="row d-flex justify-content-around">
-                            <button class="col-4 btn btn" href=""><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.total_smiley_face }}</button>
-                            <button class="col-4 btn btn" href=""><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;</button>
+                            <a class="col-4 btn btn" href="{% url 'smiley-face' meme.id %}"><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.total_smiley_face }}</a>
+                            <a class="col-4 btn btn" href="{% url 'sad-face' meme.id %}"><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.total_sad_face }}</a>
                         </div>
                     </div>
                 </div>

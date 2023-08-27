@@ -20,12 +20,18 @@ class Meme(models.Model):
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
+# returns the total number of likes or smiley faces
     def total_smiley_face(self):
         return self.smiley_face.count()
+
+# returns the total number of dislikes or sad faces
+    def total_sad_face(self):
+        return self.sad_face.count()
 
     def __str__(self):
         return self.title
 
+# Replaces default image incase the user deletes the image
     @property
     def meme_image_url(self):
         if self.meme_img and hasattr(self.meme_img, 'url'):

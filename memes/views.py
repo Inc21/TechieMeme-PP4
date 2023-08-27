@@ -155,15 +155,59 @@ def deleteMeme(request, pk):
     return render(request, "memes/delete_meme.html", context)
 
 
-def likeMeme(request, pk):
+def smiley_face(request, pk):
     """
-    This view will allow the user to like a meme.
+    This view will allow the user to like or add/remove a smiley
+    face to the meme.
     """
     if request.user.is_authenticated:
         meme = get_object_or_404(Meme, id=pk)
         if meme.smiley_face.filter(id=request.user.userprofile.id).exists():
-            meme.smiley_face.remove(request.user.userprofile)
-        else:
-            meme.smiley_face.add(request.user.userprofile)
+            if not meme.sad_face.filter(
+                    id=request.user.userprofile.id).exists():
 
-    return redirect('/memes/meme/' + str(pk))
+                meme.smiley_face.remove(request.user.userprofile)
+                messages.info(request, 'You removed your like!')
+        elif not meme.smiley_face.filter(
+                id=request.user.userprofile.id).exists():
+
+            if meme.sad_face.filter(id=request.user.userprofile.id).exists():
+                meme.sad_face.remove(request.user.userprofile)
+                meme.smiley_face.add(request.user.userprofile)
+                messages.success(request, 'You turned that frown upside down!')
+            else:
+                meme.smiley_face.add(request.user.userprofile)
+                messages.success(request, 'You liked the meme!')
+    else:
+        messages.info(request, 'You must be logged in to like a meme!')
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+def sad_face(request, pk):
+    """
+    This view will allow the user to dislike or add/remove a
+    sad face to the meme.
+    """
+    if request.user.is_authenticated:
+        meme = get_object_or_404(Meme, id=pk)
+        if meme.sad_face.filter(id=request.user.userprofile.id).exists():
+            if not meme.smiley_face.filter(
+                    id=request.user.userprofile.id).exists():
+
+                meme.sad_face.remove(request.user.userprofile)
+                messages.info(request, 'You removed your dislike!')
+        elif not meme.sad_face.filter(id=request.user.userprofile.id).exists():
+            if meme.smiley_face.filter(
+                    id=request.user.userprofile.id).exists():
+
+                meme.smiley_face.remove(request.user.userprofile)
+                meme.sad_face.add(request.user.userprofile)
+                messages.info(request, 'You changed your like to dislike!')
+            else:
+                meme.sad_face.add(request.user.userprofile)
+                messages.info(request, 'You disliked the meme!')
+    else:
+        messages.info(request, 'You must be logged in to dislike a meme!')
+
+    return redirect(request.META.get('HTTP_REFERER'))

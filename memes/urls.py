@@ -10,5 +10,6 @@ urlpatterns = [
     path('update-meme/<str:pk>', views.updateMeme, name="update-meme"),
     path('delete-meme/<str:pk>/', views.deleteMeme,
          name="delete-meme"),
-    path('smiley-meme/<str:pk>/', views.likeMeme, name="smiley-meme"),
+    path('smiley-face/<str:pk>/', views.smiley_face, name="smiley-face"),
+    path('sad-face/<str:pk>/', views.sad_face, name="sad-face"),
 ]
