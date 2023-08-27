@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Meme, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -153,3 +153,17 @@ def deleteMeme(request, pk):
 
     context = {'meme': meme}
     return render(request, "memes/delete_meme.html", context)
+
+
+def likeMeme(request, pk):
+    """
+    This view will allow the user to like a meme.
+    """
+    if request.user.is_authenticated:
+        meme = get_object_or_404(Meme, id=pk)
+        if meme.smiley_face.filter(id=request.user.userprofile.id).exists():
+            meme.smiley_face.remove(request.user.userprofile)
+        else:
+            meme.smiley_face.add(request.user.userprofile)
+
+    return redirect('/memes/meme/' + str(pk))

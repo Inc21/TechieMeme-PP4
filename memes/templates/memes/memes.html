@@ -27,9 +27,9 @@
 							</div>
 							<hr class="m-1">
 							<div class="row">
-								<button class="col-4 btn btn" href=""><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.smiley_face }}</button>
-								<button class="col-4 btn btn" href=""><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.sad_face }}</button>
-								<button class="col-4 btn btn" href=""><i class="fa-regular fa-comment yellow"></i>&nbsp;0</button>
+								<a class="col-4 btn btn" href="{% url 'smiley-meme' meme.id %}"><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.total_smiley_face }}</a>
+								<a class="col-4 btn btn" href=""><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.total_smiley_face }}</a>
+								<a class="col-4 btn btn" href=""><i class="fa-regular fa-comment yellow"></i>&nbsp;0</a>
 							</div>
 							<hr class="m-1">
 							{% if request.user.is_authenticated %}

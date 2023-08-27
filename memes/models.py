@@ -12,11 +12,16 @@ class Meme(models.Model):
                                  force_format='Webp', quality=95, null=True,
                                  blank=True, default='memes/default.webp')
     tags = models.ManyToManyField('Tag', blank=True)
-    smiley_face = models.IntegerField(default=0, null=True, blank=True)
-    sad_face = models.IntegerField(default=0, null=True, blank=True)
+    smiley_face = models.ManyToManyField(
+        UserProfile, related_name='smiley_face', blank=True)
+    sad_face = models.ManyToManyField(
+        UserProfile, related_name='sad_face', blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def total_smiley_face(self):
+        return self.smiley_face.count()
 
     def __str__(self):
         return self.title
