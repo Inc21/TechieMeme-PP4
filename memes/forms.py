@@ -3,6 +3,9 @@ from .models import Meme
 
 
 class MemeForm(ModelForm):
+    """
+    This class is used to create a form for the Meme model.
+    """
     class Meta:
         model = Meme
         fields = ['meme_img', 'title', 'tags']

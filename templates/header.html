@@ -32,7 +32,7 @@
                         </div>
                         <a href="{% url 'account_logout' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGOUT</a>
                         {% else %}
-                        <a href="{% url 'account_login' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGIN</a>
+                        <a href="{% url 'account_login' %}?next={{request.path}}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGIN</a>
                         <a href="{% url 'account_signup' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">SIGN-UP</a>
                     {% endif %}
                 </div>

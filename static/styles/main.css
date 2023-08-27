@@ -210,6 +210,18 @@ header {
     font-size: 0.8em;
 }
 
+/* ------------------------------------------------------------- Meme comments */
+
+.comment-box {
+    /* width: 320px; */
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    word-wrap: normal;
+    border: 1px solid #666666;
+
+}
 
 /* ------------------------------------------------------------- carousel */
 

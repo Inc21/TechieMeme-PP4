@@ -87,11 +87,44 @@
                             <h3 class="m-1"><i class="fa-regular fa-comment yellow"></i> Comments:&nbsp;0</h3> 
                         </div>
                         <hr>
+                        <div class="row">
+                            <div class="col-3">
+                                <p class="card-text"><a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow">{{ meme.uploader.username }}</a></p>
+                                <p>27/08/23</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                            </div>
+                            <hr>
+                            <div class="col-9">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="card-text"><a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow">{{ meme.uploader.username }}</a></p>
+                                <p>27/08/23</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col d-flex justify-content-center">
+                                            <label for="message-body"></label>
+                                            <textarea type="text" id="message-body" name="message-body" class="form-control comment-box" placeholder="Please leave your comment here..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col d-flex justify-content-center">
+                                            <a class="btn auth-btn mt-4 mb-4 hover">Comment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+     </div>
 </main>
 
 {% endblock content %}

@@ -71,3 +71,22 @@ class Tag(models.Model):
 
     class Meta:
         ordering = ['name']
+
+
+class contactEmail(models.Model):
+    """
+    This class is used to create a model for the contact form.
+    """
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=250)
+    subject = models.CharField(max_length=150)
+    message = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    id = models.UUIDField(
+        default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self):
+        return self.name + ' - ' + self.email
+
+    class Meta:
+        ordering = ['-created']
