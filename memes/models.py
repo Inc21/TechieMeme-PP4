@@ -86,7 +86,7 @@ class ContactForm(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=250)
     subject = models.CharField(max_length=150)
-    message = models.TextField()
+    message = models.TextField(max_length=500)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)

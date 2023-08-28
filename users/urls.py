@@ -10,4 +10,5 @@ urlpatterns = [
 
     path('delete-profile/<str:pk>/', views.deleteProfile,
          name="delete-profile"),
+    path('contact-form/', views.contactMe, name='contact-form'),
 ]

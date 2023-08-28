@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class="container d-flex justify-content-center">
+    <div class="col-md-6 card m-4 gray">
+        <div class="card-body">
+            <div class="row">
+                <h1>CONTACT DEVELOPER</h1>
+                <hr>
+            </div>
+            <div class="row-col-1 d-flex justify-content-center">
+                <a type="button" class="btn btn-sm btn-outline-dark ps-4 pe-4 mt-0 me-1 text-nowrap gray" href="{{request.META.HTTP_REFERER|escape}}"><i class="fa-solid fa-angles-left"></i> GO BACK</a>
+            </div>
+            <div class="col-12">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col">
+                            {{form|crispy}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <button type="submit" class="btn auth-btn ps-5 pe-5 mb-4 hover">SEND</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

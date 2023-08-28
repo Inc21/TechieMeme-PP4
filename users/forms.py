@@ -1,5 +1,6 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, Textarea
 from .models import UserProfile
+from memes.models import ContactForm
 
 
 class UserForm(ModelForm):
@@ -29,3 +30,30 @@ class UserForm(ModelForm):
 
         for name, field in self.fields.items():
             field.widget.attrs.update({'class': 'form-control'})
+
+
+class ContactMe(ModelForm):
+    """
+    This class is used to create a form for the ContactForm model.
+    """
+    class Meta:
+        model = ContactForm
+        fields = ['name', 'email', 'subject', 'message']
+        labels = {
+            'name': 'Name:',
+            'email': 'Email:',
+            'subject': 'Subject:',
+            'message': 'Message:'
+        }
+        widgets = {
+          'message': Textarea(attrs={'rows': 4}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(ContactMe, self).__init__(*args, **kwargs)
+
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'class': 'form-control'})
+
+        # for field in self.fields.items():
+        #     field.widget.attrs.update({'class': 'comment-box'})

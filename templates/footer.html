@@ -12,12 +12,12 @@
                 <p class="footer-text-small">For educational purposes only. <i class="fa-solid fa-graduation-cap yellow"></i></p>
             </div>
             <div class="col-6 d-lg-flex justify-content-end">
-                <p class="footer-text-small"><i class="fa-solid fa-envelope yellow"></i> Have a question or found a bug? Contact the <a class="yellow" href="#">developer</a></p>
+                <p class="footer-text-small"><i class="fa-solid fa-envelope yellow"></i> Have a question or found a bug? Contact the <a class="yellow" href="{% url 'contact-form' %}?next={{ request.path }}">developer</a></p>
             </div>
         </div>
         <div class="row d-lg-none">
             <div class="col-12 d-flex justify-content-center">
-                <p class="footer-text-small"><i class="fa-solid fa-envelope yellow"></i> <span class="d-none d-sm-inline-flex">Have a question or found a bug?</span> Contact the <a class="yellow" href="#">developer</a></p>
+                <p class="footer-text-small"><i class="fa-solid fa-envelope yellow"></i> <span class="d-none d-sm-inline-flex">Have a question or found a bug?</span> Contact the <a class="yellow" href="{% url 'contact-form' %}?next={{ request.path }}">developer</a></p>
             </div>
         </div>
         <div class="row d-lg-none">
