@@ -43,24 +43,30 @@ class Meme(models.Model):
         ordering = ['-created']
 
 
-class Review(models.Model):
-    VOTE_TYPE = (
-        ('like', '+1'),
-        ('unlike', '-1'),
-    )
-    # owner = models.ForeignKey(
-    meme = models.ForeignKey(Meme, on_delete=models.CASCADE)
-    comment = models.TextField(blank=True, null=True)
-    value = models.CharField(max_length=10, choices=VOTE_TYPE)
+class Comments(models.Model):
+    """
+    This class is used to create a model for the meme comments.
+    """
+    meme = models.ForeignKey(
+        Meme, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+    comment = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
-        return self.meme.title.title() + ' - ' + self.value
+        return self.user.username + ' - ' + self.comment
+
+    class Meta:
+        ordering = ['-created']
 
 
 class Tag(models.Model):
+    """
+    This class is used to create a model for the tags.
+    """
     name = models.CharField(max_length=20)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
@@ -73,7 +79,7 @@ class Tag(models.Model):
         ordering = ['name']
 
 
-class contactEmail(models.Model):
+class ContactEmail(models.Model):
     """
     This class is used to create a model for the contact form.
     """
