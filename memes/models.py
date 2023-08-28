@@ -43,12 +43,12 @@ class Meme(models.Model):
         ordering = ['-created']
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     """
     This class is used to create a model for the meme comments.
     """
     meme = models.ForeignKey(
-        Meme, on_delete=models.CASCADE, related_name='comments')
+        Meme, on_delete=models.CASCADE, related_name='comment')
     user = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
     comment = models.TextField()
@@ -79,7 +79,7 @@ class Tag(models.Model):
         ordering = ['name']
 
 
-class ContactEmail(models.Model):
+class ContactForm(models.Model):
     """
     This class is used to create a model for the contact form.
     """

@@ -86,15 +86,15 @@
                 <div class="card big-card mb-3">
                     <div class="card-body">
                         <div class="row">
-                            <h3 class="m-1"><i class="fa-regular fa-comment yellow"></i> Comments:&nbsp;{{ meme.comments.all.count }}</h3> 
+                            <h3 class="m-1"><i class="fa-regular fa-comment yellow"></i> Comments:&nbsp;{{ meme.comment.all.count }}</h3> 
                         </div>
                         <hr>
                         <div class="row">
                             {% if request.user.is_authenticated %}
-                                {% if not meme.comments.all %}
+                                {% if not meme.comment.all %}
                                     <h4>No comments yet...</h4>
                                 {% else %}
-                                    {% for comment in meme.comments.all %}
+                                    {% for comment in meme.comment.all %}
                                         <div class="row">
                                             <div class="col-md-12 col-lg-3">
                                                 <div class="row">

@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Meme, Comments
+from .models import Meme, Comment
 
 
 class MemeForm(ModelForm):
@@ -24,10 +24,10 @@ class MemeForm(ModelForm):
 
 class CommentForm(ModelForm):
     """
-    This class is used to create a form for the Comments model.
+    This class is used to create a form for the Comment model.
     """
     class Meta:
-        model = Comments
+        model = Comment
         fields = ['comment']
         labels = {'comment': ''}
 

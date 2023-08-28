@@ -127,7 +127,7 @@
                                         <div class="row">
                                             <a class="col-4 btn btn" href="{% url 'smiley-face' meme.id %}"><i class="fa-regular fa-face-smile-beam yellow"></i>&nbsp;{{ meme.total_smiley_face }}</a>
                                             <a class="col-4 btn btn" href="{% url 'sad-face' meme.id %}"><i class="fa-regular fa-face-frown-open yellow"></i>&nbsp;{{ meme.total_sad_face }}</a>
-                                            <a class="col-4 btn btn" href="{% url 'meme' meme.id %}"><i class="fa-regular fa-comment yellow"></i>&nbsp;{{ meme.comments.all.count }}</a>
+                                            <a class="col-4 btn btn" href="{% url 'meme' meme.id %}"><i class="fa-regular fa-comment yellow"></i>&nbsp;{{ meme.comment.all.count }}</a>
                                         </div>
                                         <hr class="m-1">
                                         {% if request.user.is_authenticated and request.user.username == profile.username %}

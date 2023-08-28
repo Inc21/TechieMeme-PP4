@@ -232,7 +232,7 @@ def deleteComment(request, pk):
     This view will allow the user to delete a comment.
     """
     profile = UserProfile.objects.get(user=request.user)
-    comment = profile.comments_set.get(id=pk)
+    comment = profile.comment_set.get(id=pk)
     if request.method == 'POST':
         comment.delete()
         messages.warning(request, 'Your comment was deleted!')
@@ -254,7 +254,3 @@ def custom_500(request):
     This view will display a custom 500 page.
     """
     return render(request, "memes/custom_500.html", status=500)
-
-
-def hello_world(request): 
-    raise Exception('This is a test error')
