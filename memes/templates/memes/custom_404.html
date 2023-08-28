@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-12 d-flex flex-wrap justify-content-center">
+    <div class="card auth-card m-4">
+        <div class="card-body text-center">
+            <h1><i class="fa-solid fa-face-frown fa-fade fa-xl yellow"></i></h1>
+            <br>
+            <div class="row ">
+                <h3><span class="yellow">TechieMeme</span></h3>
+                <br>
+                <p>couldn't fint the page you are looking for.</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <a type="button" class="btn auth-btn mt-4 mb-4 hover" href="{% url 'home_page' %}"><i class="fa-solid fa-angles-left"></i> BACK TO SAFETY!</a>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

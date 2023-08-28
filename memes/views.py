@@ -240,3 +240,21 @@ def deleteComment(request, pk):
 
     context = {'meme': meme}
     return render(request, "memes/delete_comment.html", context)
+
+
+def custom_404(request, exception):
+    """
+    This view will display a custom 404 page.
+    """
+    return render(request, "memes/custom_404.html", status=404)
+
+
+def custom_500(request):
+    """
+    This view will display a custom 500 page.
+    """
+    return render(request, "memes/custom_500.html", status=500)
+
+
+def hello_world(request): 
+    raise Exception('This is a test error')

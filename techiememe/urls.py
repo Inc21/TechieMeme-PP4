@@ -21,6 +21,10 @@ from django.conf.urls.static import static
 from memes import views
 
 
+handler404 = 'memes.views.custom_404'
+handler500 = 'memes.views.custom_500'
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homePage, name='home_page'),
@@ -28,6 +32,5 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('accounts/', include('allauth.urls')),
 ]
-
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
