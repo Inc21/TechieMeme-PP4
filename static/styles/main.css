@@ -213,14 +213,25 @@ header {
 /* ------------------------------------------------------------- Meme comments */
 
 .comment-box {
-    /* width: 320px; */
     height: 75px;
     display: flex;
     flex-direction: row;
     text-align: left;
     word-wrap: normal;
     border: 1px solid #666666;
+}
 
+.commentator-img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+    object-fit: center;
+}
+
+.btn-xs {
+    font-size: 0.6em;
+    padding: 0.2em;
+    margin: 0.2em;
 }
 
 /* ------------------------------------------------------------- carousel */

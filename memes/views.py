@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Meme, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import MemeForm
+from .forms import MemeForm, CommentForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .utils import searchMeme
 
@@ -57,12 +57,25 @@ def meme(request, pk):
 
     memeObj = Meme.objects.get(id=pk)
     tags = memeObj.tags.all()
+    form = CommentForm()
+
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user.userprofile
+            comment.meme = memeObj
+            comment.save()
+            form.save()
+        messages.success(request, 'Comment added successfully!')
+        return redirect("meme", pk=pk)
 
     context = {
         "meme": memeObj,
         "tags": tags,
         "memes": memes,
         "search_form": search_form,
+        "form": form,
         }
     return render(request, "memes/single-meme.html", context)
 
@@ -211,3 +224,19 @@ def sad_face(request, pk):
         messages.info(request, 'You must be logged in to dislike a meme!')
 
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='/accounts/login/')
+def deleteComment(request, pk):
+    """
+    This view will allow the user to delete a comment.
+    """
+    profile = UserProfile.objects.get(user=request.user)
+    comment = profile.comments_set.get(id=pk)
+    if request.method == 'POST':
+        comment.delete()
+        messages.warning(request, 'Your comment was deleted!')
+        return redirect('meme', pk=comment.meme.id)
+
+    context = {'meme': meme}
+    return render(request, "memes/delete_comment.html", context)

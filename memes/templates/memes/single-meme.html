@@ -3,6 +3,8 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <main>
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -35,17 +37,17 @@
                 <div class="card big-card mt-3">
                     <div class="card-body">
                         <div class="row ">
-                            <div class="col-6 d-flex justify-content-start">
+                            <div class="col-12 col-md-6 d-flex justify-content-md-start">
                                 <div class="col-2 text-nowrap mb-2"><i class="fa-solid fa-square-up-right yellow"></i> Uploaded By:</div>
                             </div>    
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <div class="row">
-                                    <div class="col d-flex justify-content-end">
+                                    <div class="col d-flex justify-content-md-end">
                                         <p class="card-text"><a href="{% url 'single_user' meme.uploader.id %}" class="card-link yellow"><i class="fa-regular fa-circle-user"></i> {{ meme.uploader.username }}</a></p>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col d-flex justify-content-end">
+                                    <div class="col d-flex justify-content-md-end">
                                         <p class="report mt-1">{{ meme.created|date:"d/m/y" }}</p>
                                     </div>
                                 </div>
@@ -88,35 +90,62 @@
                         </div>
                         <hr>
                         <div class="row">
-                            {% if not meme.comments.all %}
-                            <h4>No comments yet...</h4>
-                            {% else %}
-                            {% for comment in meme.comments.all %}
-                            <div class="col-md-3">
-                                <p class="card-text"><a href="{% url 'single_user' comment.user.id %}" class="card-link yellow"><i class="fa-regular fa-circle-user"></i> {{ comment.user.username }}</a></p>
-                                <p>{{ comment.created|date:"d/M/Y H:i" }}</p>
-                            </div>
-                            <div class="col-md-9">
-                                <p class="card-text">{{ comment.comment }}</p>
-                            </div>
-                            <hr>
-                            {% endfor %}
-                            {% endif %}
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col d-flex justify-content-center">
-                                            <label for="message-body"></label>
-                                            <textarea type="text" id="message-body" name="message-body" class="form-control comment-box" placeholder="Please leave your comment here..."></textarea>
+                            {% if request.user.is_authenticated %}
+                                {% if not meme.comments.all %}
+                                    <h4>No comments yet...</h4>
+                                {% else %}
+                                    {% for comment in meme.comments.all %}
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-3">
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center">
+                                                        <img class="img-thumbnail me-2 commentator-img" src="{{ comment.user.user_image_url }}" alt="Commentator image">
+                                                        <p class="card-text text-nowrap"><a href="{% url 'single_user' comment.user.id %}" class="card-link yellow"><i class="fa-regular fa-circle-user"></i> {{ comment.user.username }}</a></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center">
+                                                        <p class="report mt-1">{{ comment.created|date:"d/m/y H:i" }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 p-0 d-flex justify-content-center">
+                                                        {% if request.user.is_authenticated and comment.user.username == request.user.username %}
+                                                        <a class="btn btn-xs btn-outline-danger mb-4 text-nowrap" href="{% url 'delete-comment' comment.id %}"><i class="fa-solid fa-trash-can"></i> Delete</a>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-9">
+                                                <p class="card-text">{{ comment.comment|linebreaks }}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col d-flex justify-content-center">
-                                            <a class="btn auth-btn mt-4 mb-4 hover">Comment</a>
+                                    <hr>
+                                    {% endfor %}
+                                {% endif %}
+
+                                <div class="row">
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col d-flex justify-content-center">
+                                                    {{ form|crispy }}
+                                                    {% comment %} <label for="message-body"></label>
+                                                    <textarea type="text" id="message-body" name="message-body" class="form-control comment-box" placeholder="Please leave your comment here..."></textarea> {% endcomment %}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col d-flex justify-content-center">
+                                                    <button role="button" type="submit" value="COMMENT" href="{% url 'meme' meme.id %}" class="btn auth-btn mt-4 mb-4 hover">COMMENT</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
-                            </div>
+                            {% else %}
+                            <h4>Please <a class="active-link" href="{% url 'account_login' %}?next={{request.path}}">login</a> to leave a comment...</h4>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

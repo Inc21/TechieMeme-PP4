@@ -12,4 +12,6 @@ urlpatterns = [
          name="delete-meme"),
     path('smiley-face/<str:pk>/', views.smiley_face, name="smiley-face"),
     path('sad-face/<str:pk>/', views.sad_face, name="sad-face"),
+    path('delete-comment/<str:pk>/', views.deleteComment,
+         name="delete-comment"),
 ]
