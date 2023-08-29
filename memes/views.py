@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Meme, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import MemeForm, CommentForm
+from .forms import MemeForm, CommentForm, ReportMeme
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .utils import searchMeme
+from django.template.loader import render_to_string
+from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
 
 
 def memes(request):
@@ -254,3 +257,43 @@ def custom_500(request):
     This view will display a custom 500 page.
     """
     return render(request, "memes/custom_500.html", status=500)
+
+
+@login_required(login_url='/accounts/login/')
+def reportMeme(request, pk):
+    """
+    This view will allow the user to report a meme.
+    """
+    memeObj = Meme.objects.get(id=pk)
+    if request.method == 'POST':
+
+        form = ReportMeme(request.POST)
+        tm_email = request.user.userprofile.email
+        tm_profile = request.user.userprofile.username
+
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            html = render_to_string('memes/emails/report_meme_email.html', {
+                'name': name,
+                'email': email,
+                'message': message,
+                'meme': memeObj,
+                'tm_profile': tm_profile,
+                'tm_email': tm_email,
+            })
+
+            send_mail('The Report Meme form entry',
+                      'The report meme form message',
+                      'noreply@test.com', ['intc21@gmail.com'],
+                      fail_silently=False, html_message=html)
+            messages.success(request, 'Your report was sent!')
+            next = request.GET.get('next', 'report-meme')
+            return HttpResponseRedirect(next)
+    else:
+        form = ReportMeme()
+
+    context = {'form': form, 'meme': memeObj}
+    return render(request, "memes/report_meme.html", context)

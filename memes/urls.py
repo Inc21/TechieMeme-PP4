@@ -14,4 +14,5 @@ urlpatterns = [
     path('sad-face/<str:pk>/', views.sad_face, name="sad-face"),
     path('delete-comment/<str:pk>/', views.deleteComment,
          name="delete-comment"),
+    path('report-meme/<str:pk>', views.reportMeme, name='report-meme'),
 ]

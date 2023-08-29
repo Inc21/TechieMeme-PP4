@@ -1,4 +1,4 @@
-from django.forms import ModelForm, Textarea
+from django.forms import ModelForm, Textarea, TextInput, EmailInput
 from .models import UserProfile
 from memes.models import ContactForm
 
@@ -40,13 +40,16 @@ class ContactMe(ModelForm):
         model = ContactForm
         fields = ['name', 'email', 'subject', 'message']
         labels = {
-            'name': 'Name:',
-            'email': 'Email:',
-            'subject': 'Subject:',
-            'message': 'Message:'
+            'name': '',
+            'email': '',
+            'subject': '',
+            'message': ''
         }
         widgets = {
-          'message': Textarea(attrs={'rows': 4}),
+          'name': TextInput(attrs={'placeholder': 'Name*'}),
+          'email': EmailInput(attrs={'placeholder': 'Email*'}),
+          'subject': TextInput(attrs={'placeholder': 'Subject*'}),
+          'message': Textarea(attrs={'rows': 4, 'placeholder': 'Message*'}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -54,6 +57,3 @@ class ContactMe(ModelForm):
 
         for name, field in self.fields.items():
             field.widget.attrs.update({'class': 'form-control'})
-
-        # for field in self.fields.items():
-        #     field.widget.attrs.update({'class': 'comment-box'})
