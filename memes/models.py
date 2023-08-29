@@ -8,8 +8,8 @@ class Meme(models.Model):
     uploader = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
-    meme_img = ResizedImageField(size=None, upload_to='memes/',
-                                 force_format='Webp', quality=95, null=True,
+    meme_img = ResizedImageField(upload_to='memes/',
+                                 force_format='WEBP', quality=85,
                                  blank=True, default='memes/default.webp')
     tags = models.ManyToManyField('Tag', blank=True)
     smiley_face = models.ManyToManyField(

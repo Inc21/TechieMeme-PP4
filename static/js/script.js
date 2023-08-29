@@ -26,7 +26,6 @@ var cardCarousel = document.querySelector('#carouselExampleControls')
         var cardAmount = $(".small-card").length;
         var prevBtn = document.querySelector(".carousel-control-prev");
         var nextBtn = document.querySelector(".carousel-control-next");
-        console.log(cardAmount);
         if (scrollPosition < (carouselWidth - (cardWidth * 4)) ) {
             prevBtn.classList.remove("invisible");
          };
@@ -38,7 +37,6 @@ var cardCarousel = document.querySelector('#carouselExampleControls')
         
     });
     $(".carousel-control-prev").on("click", function () {
-        // var cardAmount = $(".small-card").length;
         var prevBtn = document.querySelector(".carousel-control-prev");
         var nextBtn = document.querySelector(".carousel-control-next");
         if (scrollPosition == 0 + cardWidth) { //check if you can go any further
