@@ -10,17 +10,23 @@ class MemeForm(ModelForm):
     class Meta:
         model = Meme
         fields = ['meme_img', 'title', 'tags']
+        widgets = {
+            'tags': forms.CheckboxSelectMultiple(),
+        }
+
         labels = {
             'meme_img': 'Meme Image:',
             'title': 'Title:',
-            'tags': 'Tags:'
         }
 
     def __init__(self, *args, **kwargs):
         super(MemeForm, self).__init__(*args, **kwargs)
 
-        for name, field in self.fields.items():
-            field.widget.attrs.update({'class': 'form-control'})
+        self.fields['title'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Enter meme title*'
+            })
+        self.fields['meme_img'].widget.attrs.update({'class': 'form-control'})
 
 
 class CommentForm(ModelForm):
