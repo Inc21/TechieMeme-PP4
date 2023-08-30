@@ -1,5 +1,7 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -10,7 +12,7 @@
             <h1>DELETE?</h1>
             <hr>
             <div class="row ">
-                <p>Are you sure you want to delete meme "<span class="yellow">{{meme}}</span>"?</p>
+                <p>Are you sure you want to delete meme "<span class="yellow">{{ meme.title }}</span>"?</p>
                 <p>This can't be undone!</p>
             </div>
             <hr>

@@ -7,7 +7,7 @@ from django_resized import ResizedImageField
 class Meme(models.Model):
     uploader = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
-    title = models.CharField(max_length=100, null=True, blank=True)
+    title = models.CharField(max_length=100)
     meme_img = ResizedImageField(upload_to='memes/',
                                  force_format='WEBP', quality=85,
                                  blank=True, default='memes/default.webp')
