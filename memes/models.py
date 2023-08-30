@@ -7,13 +7,13 @@ from django_resized import ResizedImageField
 class Meme(models.Model):
     uploader = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
-    title = models.CharField(max_length=100)
-    meme_img = ResizedImageField(upload_to='memes/',
+    title = models.CharField(max_length=100, null=True)
+    meme_img = ResizedImageField(upload_to='memes/', null=True,
                                  force_format='WEBP', quality=85,
                                  blank=True, default='memes/default.webp')
     tags = models.ManyToManyField('Tag', blank=True)
     smiley_face = models.ManyToManyField(
-        UserProfile, related_name='smiley_face', blank=True)
+        UserProfile, related_name='smiley_face')
     sad_face = models.ManyToManyField(
         UserProfile, related_name='sad_face', blank=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -67,7 +67,7 @@ class Tag(models.Model):
     """
     This class is used to create a model for the tags.
     """
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -83,10 +83,10 @@ class ContactForm(models.Model):
     """
     This class is used to create a model for the contact form.
     """
-    name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=250)
-    subject = models.CharField(max_length=150)
-    message = models.TextField(max_length=500)
+    name = models.CharField(max_length=100, null=True)
+    email = models.EmailField(max_length=250, null=True)
+    subject = models.CharField(max_length=150, null=True)
+    message = models.TextField(max_length=500, null=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
