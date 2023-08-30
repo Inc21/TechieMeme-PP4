@@ -111,6 +111,7 @@ def uploadMeme(request):
         if form.is_valid():
             meme = form.save(commit=False)
             meme.uploader = profile
+            meme.save()
             form.save()
             messages.success(request, 'Meme uploaded successfully!')
             return redirect("memes")
