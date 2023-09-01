@@ -85,10 +85,11 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 -  
     
 
- ## Manual Testing
+# Testing
 
-This app was developed on a Dell desktop running Windows 10.
+## Code Validation
 
+### Google lighthouse testing
 ### CSS Testing
 - 
 
@@ -97,6 +98,11 @@ This app was developed on a Dell desktop running Windows 10.
 
 
 ![PEP8 Linter](/assets/)
+
+
+ ## Manual Testing
+
+This app was developed on a Dell desktop running Windows 10.
 
 
 ### User Stories Testing

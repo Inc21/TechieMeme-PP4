@@ -4,31 +4,31 @@
     <nav class="navbar navbar-expand-lg text-nowrap" aria-label="Fifth navbar example">
         <div class="container-fluid">
             <a href="{% url 'home_page' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <div class="img-fluid logo-image"><i class="fa-solid fa-chevron-left yellow"></i><span class="logo-text">TECHIE / MEME</span><i class="fa-solid fa-chevron-right yellow"></i></div>
+                <div class="img-fluid logo-image"><i class="fa-solid fa-chevron-left yellow-light"></i><span class="logo-text">TECHIE / MEME</span><i class="fa-solid fa-chevron-right yellow-light"></i></div>
             </a>
-            <a class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="hamburger-icon btn btn-outline-light me-2 fa-solid fa-bars hover"></i></span>
+            <a class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" href="#" aria-controls="navbarsExample05" aria-expanded="false" aria-label="navbar-toggler">
+                <span aria-label="navbar-toggler"><i class="hamburger-icon btn btn-outline-light me-2 fa-solid fa-bars hover"></i></span>
             </a>
 
             <div class="collapse navbar-collapse " id="navbarsExample05">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="{% if request.resolver_match.url_name == 'home_page' %}active-link{% endif %} navbar-item nav-link hover" aria-current="page" href="{% url 'home_page' %}">HOME</a>
+                    <a class="{% if request.resolver_match.url_name == 'home_page' %}active-link-light{% endif %} navbar-item nav-link hover" aria-current="page" href="{% url 'home_page' %}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="{% if request.resolver_match.url_name == 'memes' or request.resolver_match.url_name == 'meme'  %}active-link{% endif %} navbar-item nav-link hover" href="{% url 'memes' %}">MEMES</a>
+                    <a class="{% if request.resolver_match.url_name == 'memes' or request.resolver_match.url_name == 'meme'  %}active-link-light{% endif %} navbar-item nav-link hover" href="{% url 'memes' %}">MEMES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="{% if request.resolver_match.url_name == 'user_profiles' or request.resolver_match.url_name == 'single_user' %}active-link{% endif %} nav-link navbar-item hover" href="{% url 'user_profiles' %}">USERS</a>
+                    <a class="{% if request.resolver_match.url_name == 'user_profiles' or request.resolver_match.url_name == 'single_user' %}active-link-light{% endif %} nav-link navbar-item hover" href="{% url 'user_profiles' %}">USERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="{% if request.resolver_match.url_name == 'upload_meme' or request.resolver_match.url_name == 'upload_meme' %}active-link{% endif %} nav-link navbar-item hover" href="{% url 'upload_meme' %}"><i class="fa-solid fa-plus yellow"></i>UPLOAD-MEME</a>
+                    <a class="{% if request.resolver_match.url_name == 'upload_meme' or request.resolver_match.url_name == 'upload_meme' %}active-link-light{% endif %} nav-link navbar-item hover" href="{% url 'upload_meme' %}"><i class="fa-solid fa-plus yellow-light"></i>UPLOAD-MEME</a>
                 </li>
                 </ul>
                 <div class="text-end mb-3">
                     {% if request.user.is_authenticated %}
                         <div class="loggedin btn me-2 navbar-item">
-                            <a class="yellow" href="{% url 'single_user' request.user.userprofile.id %}"><i class="fa-regular fa-circle-user"></i> {{ request.user.username}}</a>
+                            <a class="yellow-light" href="{% url 'single_user' request.user.userprofile.id %}"><i class="fa-regular fa-circle-user"></i> {{ request.user.username}}</a>
                         </div>
                         <a href="{% url 'account_logout' %}" class="btn btn-outline-light me-2 hover navbar-item">LOGOUT</a>
                         {% else %}

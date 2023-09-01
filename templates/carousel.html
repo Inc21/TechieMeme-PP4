@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-12 text-center banner-text">
                     <h2 class="mt-2">Welcome to TechieMeme!</h2>
-					<h5>Memes for the modern geek.</h5>
+					<h3>Memes for the modern geek.</h3>
                 </div>
             </div>
             <div class="row">
@@ -25,7 +25,7 @@
 								<div class="card small-card mx-3 h-100">
 									<div class="card-body m-1 p-1 d-grid align-content-between">
 										<a class="text-decoration-none gray" href="{% url 'meme' meme.id %}">
-											<h6 class="card-title mb-1">{{ meme.title|truncatechars:"23" }}</h6>
+											<p class="card-title mb-1 card-title">{{ meme.title|truncatechars:"25" }}</p>
 											<img src="{{meme.meme_image_url}}" class="card-img rounded-2 img-small mb-1 mx-auto d-block" alt="User Meme">
 										</a>
 										<div class="row-col-1 d-flex justify-content-between">
