@@ -38,7 +38,8 @@ header {
 .logo-image {
     max-width: 300px;
     height: auto;
-    rotate: -10deg;
+    transform: rotate(-10deg);
+    /* rotate: -10deg; */
     font-size: 2em;
     font-weight: 800;
     flex-wrap: nowrap;
@@ -57,7 +58,7 @@ header {
     background-size: 200% auto;
     color: #fff;
     background-clip: text;
-    /* text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 5s linear infinite;
@@ -143,9 +144,9 @@ header {
     font-size: 1em;
     color: #DE970B;
     font-size: 1.2em;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75),;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     font-family: 'lexend deca';
-    text-shadow: -1px 0px 0px whitesmoke,
+    text-shadow: -1px 0px 0px whitesmoke;
 }
 
 .banner-text {
@@ -166,6 +167,7 @@ header {
     background-color: #DE970B;
     color: black;
     text-shadow: white 1px 1px 10px;
+
 }
 
 /* Forms */
@@ -179,7 +181,6 @@ header {
     max-width: 220px;
     max-height: 220px;
     object-fit: contain;
-    object-fit: center;
 }
 
 .user-card {
@@ -218,7 +219,6 @@ header {
     max-width: 50px;
     max-height: 50px;
     object-fit: contain;
-    object-fit: center;
 }
 
 .btn-xs {

@@ -6,7 +6,7 @@
             <a href="{% url 'home_page' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                 <div class="img-fluid logo-image"><i class="fa-solid fa-chevron-left yellow"></i><span class="logo-text">TECHIE / MEME</span><i class="fa-solid fa-chevron-right yellow"></i></div>
             </a>
-            <a class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span><i class="hamburger-icon btn btn-outline-light me-2 fa-solid fa-bars hover"></i></span>
             </a>
 
@@ -30,10 +30,10 @@
                         <div class="loggedin btn me-2 navbar-item">
                             <a class="yellow" href="{% url 'single_user' request.user.userprofile.id %}"><i class="fa-regular fa-circle-user"></i> {{ request.user.username}}</a>
                         </div>
-                        <a href="{% url 'account_logout' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGOUT</a>
+                        <a href="{% url 'account_logout' %}" class="btn btn-outline-light me-2 hover navbar-item">LOGOUT</a>
                         {% else %}
-                        <a href="{% url 'account_login' %}?next={{request.path}}" type="button" class="btn btn-outline-light me-2 hover navbar-item">LOGIN</a>
-                        <a href="{% url 'account_signup' %}" type="button" class="btn btn-outline-light me-2 hover navbar-item">SIGN-UP</a>
+                        <a href="{% url 'account_login' %}?next={{request.path}}" class="btn btn-outline-light me-2 hover navbar-item">LOGIN</a>
+                        <a href="{% url 'account_signup' %}" class="btn btn-outline-light me-2 hover navbar-item">SIGN-UP</a>
                     {% endif %}
                 </div>
             </div>
