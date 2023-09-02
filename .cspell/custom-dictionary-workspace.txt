@@ -1,6 +1,7 @@
 # Custom Dictionary Words
 allauth
 ckaj
+emailaddress
 GOCSPX
 googleusercontent
 Grammarly
@@ -9,5 +10,6 @@ mgonk
 Ngtkh
 PKCE
 REFERER
+signup
 socialaccount
 vereb

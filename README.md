@@ -52,10 +52,34 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 
 ### Look and feel
 
-
+With design for this website the aim was to create a fun and easy to use website. Main colors were chosen form black to emoji icon yellow. Had to add some CSS text-shadow trickery to improve the contrast on the light background. Also to improve accessibility for people with visual impairments some of the meme text was changed to darker yellow. 
 ### Colour
 
-### Wireframes
+Color palette was chosen and made on [Coolors](https://coolors.co/).
+
+![Color Palette](/static/images/readme_images/palette.png)
+
+### Typography
+
+- [Google Fonts](https://fonts.google.com/) was used for the font.
+
+Font Lexend was chosen for the site. This font was chosen because it is easy to read and looks good on all devices. By using this font the site is more accessible for people with visual impairments whilst. Two font weights are used, 400 and 700. 400 is used for the main text and 700 is used for the logo and some headings where **bold** text is required. Fall back font is Sans-serif.
+
+| Font Weight 400 | Font Weight 700 |
+| --- | --- |
+| ![Lexend 400](/static/images/readme_images/lexend_400.png) | ![Lexend 700](/static/images/readme_images/lexend_700.png) |
+
+### Wireframe
+
+#### Desktop Wireframe
+
+Didn't stray too far from the original wireframe. Only few small things. Text on the footer, banner and added carousel to main page instead of pagination as it is on all the other pages.
+
+![Desktop wireframe](/static/images/readme_images/desktop_wireframe.png)
+
+#### Mobile Wireframe
+
+![Mobile wireframe](/static/images/readme_images/mobile_wirframe.png)
 
 ### Database Schema
 
@@ -90,152 +114,153 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 <details>
   <summary>Existing Features</summary>
 
-- All pages are responsive on all devices.
-- All pages feature a header with the site logo and navigation bar with links to other pages, login/sign-up links and a search bar. 
-- All pages feature a footer with links to contact developer (Sends admin an e-mail).
-- All user actions are confirmed with a Django messages.
+    - All pages are responsive on all devices.
+    - All pages feature a header with the site logo and navigation bar with links to other pages, login/sign-up links and a search bar. 
+    - All pages feature a footer with links to contact developer (Sends admin an e-mail).
+    - All user actions are confirmed with a Django messages.
+    - All user uploaded content will be automatically converted to .webp format to save space and bandwidth using [Django-resized](https://pypi.org/project/django-resized/).  
 
-![Django messages](/static/images/readme_images/existing_features/messages.png)
+    ![Django messages](/static/images/readme_images/existing_features/messages.png)
 
-### Home Page
+    ### Home Page
 
-- Home page is the first page the user sees when they visit the site.
-- Page will have a welcome message and a button to take the user to the upload meme page or sign-up if user is not authenticated.
-- The user can see the latest memes uploaded by other users on Bootstrap carousel. 
+    - Home page is the first page the user sees when they visit the site.
+    - Page will have a welcome message and a button to take the user to the upload meme page or sign-up if user is not authenticated.
+    - The user can see the latest memes uploaded by other users on Bootstrap carousel. 
 
-![Home Page](/static/images/readme_images/existing_features/home_page.png)  
+    ![Home Page](/static/images/readme_images/existing_features/home_page.png)  
 
-### Memes Page
+    ### Memes Page
 
-- Meme page is where the user can see all the memes uploaded by other users.
-- Page will have 4 meme cards per page and rest will be paginated.
-- User can click on the meme card to see the single meme page.
+    - Meme page is where the user can see all the memes uploaded by other users.
+    - Page will have 4 meme cards per page and rest will be paginated.
+    - User can click on the meme card to see the single meme page.
 
-![Memes Page](/static/images/readme_images/existing_features/memes_page.png)
+    ![Memes Page](/static/images/readme_images/existing_features/memes_page.png)
 
-### Delete Meme Confirmation Page
+    ### Delete Meme Confirmation Page
 
-- Delete meme confirmation page is where the user can confirm that they want to delete the meme.
+    - Delete meme confirmation page is where the user can confirm that they want to delete the meme.
 
-![Delete Meme Confirmation Page](/static/images/readme_images/existing_features/delete_meme_confirmation_page.png)
+    ![Delete Meme Confirmation Page](/static/images/readme_images/existing_features/delete_meme_confirmation_page.png)
 
-### Single Meme Page
+    ### Single Meme Page
 
-- Single meme page is where the user can see the single meme.
-- User can see the meme title, meme image, meme description, meme category, meme author, meme date uploaded, meme likes, meme comments.
-- If the user is the uploader of the meme they will see the edit and delete buttons.
-- Authenticated user can comment on the meme and delete their own comments.
+    - Single meme page is where the user can see the single meme.
+    - User can see the meme title, meme image, meme description, meme category, meme author, meme date uploaded, meme likes, meme comments.
+    - If the user is the uploader of the meme they will see the edit and delete buttons.
+    - Authenticated user can comment on the meme and delete their own comments.
 
-![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png)
+    ![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png)
 
-### Report Meme Page
+    ### Report Meme Page
 
-- Report meme page is where the user can report the meme.
-- Page has a form with the title of the meme link was clicked on, name of the user, email of the user and the reason for reporting the meme.
-- Page also has a back button to take the user back to the single meme page in case they don't want to report the meme.
-- This form will send an email to the admin with the details of the report and more details about the authenticated user incase of malicious report.
+    - Report meme page is where the user can report the meme.
+    - Page has a form with the title of the meme link was clicked on, name of the user, email of the user and the reason for reporting the meme.
+    - Page also has a back button to take the user back to the single meme page in case they don't want to report the meme.
+    - This form will send an email to the admin with the details of the report and more details about the authenticated user incase of malicious report.
 
-![Report Meme Page](/static/images/readme_images/existing_features/report_meme.png)
+    ![Report Meme Page](/static/images/readme_images/existing_features/report_meme.png)
 
-### Users Page 
+    ### Users Page 
 
-- Users page is where the user can see all the users.
-- Page will have 4 user cards per page and rest will be paginated.
-- User can click on the user card to see the single user page.
+    - Users page is where the user can see all the users.
+    - Page will have 4 user cards per page and rest will be paginated.
+    - User can click on the user card to see the single user page.
 
-![Users Page](/static/images/readme_images/existing_features/users_page.png)
+    ![Users Page](/static/images/readme_images/existing_features/users_page.png)
 
-### Single User Page
+    ### Single User Page
 
-- Single user page is where the user can see the single user.
-- User can see the user username, user profile image, user bio, user date joined, last login, user memes, user email, and user social links if provided.
-- If the user is the owner of the profile they will see the edit and delete buttons.
+    - Single user page is where the user can see the single user.
+    - User can see the user username, user profile image, user bio, user date joined, last login, user memes, user email, and user social links if provided.
+    - If the user is the owner of the profile they will see the edit and delete buttons.
 
-![Single User Page](/static/images/readme_images/existing_features/single_user_page.png)
+    ![Single User Page](/static/images/readme_images/existing_features/single_user_page.png)
 
-### Edit Profile Page
+    ### Edit Profile Page
 
-NB: page is zoomed out to show the whole page.
+    NB: page is zoomed out to show the whole page.
 
-- Edit profile page is where the user can edit their profile.
-- Page has a pre populated form with the profile image, first name, last name, location, user email, user bio and user social links.
-- Page also has a back button to take the user back to the single user page in case they don't want to make any changes.
+    - Edit profile page is where the user can edit their profile.
+    - Page has a pre populated form with the profile image, first name, last name, location, user email, user bio and user social links.
+    - Page also has a back button to take the user back to the single user page in case they don't want to make any changes.
 
-![Edit Profile Page](/static/images/readme_images/existing_features/update_profile_page.png)
+    ![Edit Profile Page](/static/images/readme_images/existing_features/update_profile_page.png)
 
-### Delete Profile Confirmation Page
+    ### Delete Profile Confirmation Page
 
-NB: This page is only available to the user who owns the profile.
-- Delete profile confirmation page is where the user can confirm that they want to delete their profile.
-- Page has a message to confirm that the user wants to delete their profile.
-- Page also has a back button to take the user back to the single user page in case they don't want to delete their profile.
+    NB: This page is only available to the user who owns the profile.
+    - Delete profile confirmation page is where the user can confirm that they want to delete their profile.
+    - Page has a message to confirm that the user wants to delete their profile.
+    - Page also has a back button to take the user back to the single user page in case they don't want to delete their profile.
 
-![Delete Profile Confirmation Page](/static/images/readme_images/existing_features/delete_confirmation_page.png)
+    ![Delete Profile Confirmation Page](/static/images/readme_images/existing_features/delete_confirmation_page.png)
 
-### Upload Meme / Edit Meme Page
-NB: page is zoomed out to show the whole page. This page is the same for both upload and edit meme with edit meme instance is pre populated with current details.
-- Upload meme page is where the user can upload their own memes.
-- Page has a form with the meme image, meme title and meme tags.
-- Page also has a back button to take the user back to the memes page in case they don't want to upload/edit a meme.
+    ### Upload Meme / Edit Meme Page
+    NB: page is zoomed out to show the whole page. This page is the same for both upload and edit meme with edit meme instance is pre populated with current details.
+    - Upload meme page is where the user can upload their own memes.
+    - Page has a form with the meme image, meme title and meme tags.
+    - Page also has a back button to take the user back to the memes page in case they don't want to upload/edit a meme.
 
-![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png)
+    ![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png)
 
-### Login Page
+    ### Login Page
 
-- Login page is where the user can log into their account.
-- Page has a form with the username and password fields.
-- Page has a link to the sign-up page in case the user doesn't have an account and social sign-up links to Google and GitHub.
-- Page has a "Forgot password?" link to take the user to the password reset page in case they can't remember their current password.
+    - Login page is where the user can log into their account.
+    - Page has a form with the username and password fields.
+    - Page has a link to the sign-up page in case the user doesn't have an account and social sign-up links to Google and GitHub.
+    - Page has a "Forgot password?" link to take the user to the password reset page in case they can't remember their current password.
 
-![Login Page](/static/images/readme_images/existing_features/login_page.png)
+    ![Login Page](/static/images/readme_images/existing_features/login_page.png)
 
-### Password Reset Page
+    ### Password Reset Page
 
-- Password reset page is where the user can reset their password.
-- Page has a form with the email field.
-- Password reset only works if the user signed up with valid email address.
+    - Password reset page is where the user can reset their password.
+    - Page has a form with the email field.
+    - Password reset only works if the user signed up with valid email address.
 
-![Password Reset Page](/static/images/readme_images/existing_features/password_reset_page.png)
+    ![Password Reset Page](/static/images/readme_images/existing_features/password_reset_page.png)
 
-### Logout Page
+    ### Logout Page
 
-- Logout page is where the user can log out of their account.
-- Page has a message to confirm that the user wants to log out.
+    - Logout page is where the user can log out of their account.
+    - Page has a message to confirm that the user wants to log out.
 
-![Logout Page](/static/images/readme_images/existing_features/logout_page.png)
+    ![Logout Page](/static/images/readme_images/existing_features/logout_page.png)
 
-### Sign-up Page
+    ### Sign-up Page
 
-- Sign-up page is where the user can sign up for an account.
-- Page has a form with the username, email, password1 and password2 fields.
-- Page has a link to the login page in case the user already has an account.
-- When user registers for an account and use email, they will receive a welcome email and confirmation email with a link to confirm their email address.
-- When user won't upload a profile image, a default image will be used.
+    - Sign-up page is where the user can sign up for an account.
+    - Page has a form with the username, email, password1 and password2 fields.
+    - Page has a link to the login page in case the user already has an account.
+    - When user registers for an account and use email, they will receive a welcome email and confirmation email with a link to confirm their email address.
+    - When user won't upload a profile image, a default image will be used.
 
-| Sign-up Page | Welcome Email | Confirmation Email |
-| --- | --- | --- |
-| ![Sign-up Page](/static/images/readme_images/existing_features/signup_page.png) | ![Welcome Email](/static/images/readme_images/existing_features/welcome_email.png) | ![Confirmation Email](/static/images/readme_images/existing_features/confirmation_email.png) |
+    | Sign-up Page | Welcome Email | Confirm Email |
+    | --- | --- | --- |
+    | ![Sign-up Page](/static/images/readme_images/existing_features/signup_page.png) | ![Welcome Email](/static/images/readme_images/existing_features/welcome_email.png) | ![Confirmation Email](/static/images/readme_images/existing_features/confirmation_email.png) |
 
-|Redirect to edit profile page | Default profile image |
-| --- | --- |
-| ![Redirect to edit profile page](/static/images/readme_images/existing_features/after_signup.png) | ![Default profile image](/static/images/readme_images/existing_features/default_user_image.png) |
+    |Redirect to edit profile page | Default profile image |
+    | --- | --- |
+    | ![Redirect to edit profile page](/static/images/readme_images/existing_features/after_signup.png) | ![Default profile image](/static/images/readme_images/existing_features/default_user_image.png) |
 
-### Contact Developer Page
+    ### Contact Developer Page
 
-- Contact developer (link on the footer) page is where the user can contact the developer.
-- Page has a form with the user name, email, subject and message fields.
-- This page is only available to authenticated users.
-- This form will send an email to the developer with the details of the message and more details about the authenticated user.
-- Page also has a back button to take the user back to the home page in case they don't want to contact the developer.
+    - Contact developer (link on the footer) page is where the user can contact the developer.
+    - Page has a form with the user name, email, subject and message fields.
+    - This page is only available to authenticated users.
+    - This form will send an email to the developer with the details of the message and more details about the authenticated user.
+    - Page also has a back button to take the user back to the home page in case they don't want to contact the developer.
 
-![Contact Developer Page](/static/images/readme_images/existing_features/contact_developer_page.png)
+    ![Contact Developer Page](/static/images/readme_images/existing_features/contact_developer_page.png)
 
-### Custom Error 404 Page
+    ### Custom Error 404 Page
 
-- 404 page is where the user will be redirected if they try to access a page that doesn't exist.
-- 404 page is very similar to error 500 home.
+    - 404 page is where the user will be redirected if they try to access a page that doesn't exist.
+    - 404 page is very similar to error 500 home.
 
-![404 Page](/static/images/readme_images/existing_features/custom_404_500_page.png)
+    ![404 Page](/static/images/readme_images/existing_features/custom_404_500_page.png)
 
 
 </details>
@@ -243,7 +268,11 @@ NB: page is zoomed out to show the whole page. This page is the same for both up
 
 ## Features Left to Implement
 
--  
+- Give some users admin rights to manage memes and users.
+- Add option for a user to add their own custom tags to the meme.
+- Add private messaging feature between users.
+- Improve search functionality (search by user name. Currently you can search only users who have uploaded a meme).
+- Improve privacy controls and hide some details from other users. 
     
 
 # Testing
@@ -338,28 +367,45 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
  <details>
   <summary>Manual Testing</summary>
 
-This app was developed on a Dell desktop running Windows 10.
+    This app was developed on a Dell desktop running Windows 10.
 
 
-### User Stories Testing
+    ### User Stories Testing
 
-| Expectation | Solution |
-| --- | --- |
-|     |     |
+    | Expectation | Solution |
+    | --- | --- |
+    |     |     |
 
 
-### Home Page Testing.
-![](/assets/images/welcome_page_small.png)
-| Action | Expected Result | Actual Result | Image |
-| --- | --- | --- | --- |
-|     |     |     |     |
+    ### Home Page Testing.
+    ![](/assets/images/welcome_page_small.png)
+    | Action | Expected Result | Actual Result | Image |
+    | --- | --- | --- | --- |
+    |     |     |     |     |
 
-<details>
+</details>
+
 
 ## Interesting bug or problems
+
+As is now common with my Code Institute projects, most of this was one interesting problem to solve.
+A few of the more interesting ones are listed below.
+- How to convert all images to more web friendly format.
+    - This was solved by using [Django-resized](https://pypi.org/project/django-resized/) package. This package will convert all images to .webp format and resize them. This will save space and bandwidth.
+- Creating the functionality to comment on the memes took much more time then expected. It actually turned out not to be this difficult but I was overthinking it.
+    - This was solved by creating a new model for comments and then creating a form for that model. Then I created a view for the form and added it to the single meme page. 
      
 
 ## Unfixed Bugs
+
+- IntegrityError at /accounts/social/signup/ 
+```UNIQUE constraint failed: account_emailaddress.email```
+    - This error is caused by the user trying to sign up with the same email address that they used to sign up with Google or GitHub.
+- Carousel misalignment on mobile devices.
+    - This is caused by the carousel needing to move different amount of pixels on different devices. Will be solved in the future just ran out of time this iteration.
+- Search result pagination.
+    - When user enters a short search term, the pagination will show but as as soon as you turn the page it reloads memes page. This is caused by the search term being in the title or description of the meme. Will be solved in the future just ran out of time this iteration.
+
 
 
 ## Deployment
