@@ -178,8 +178,11 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 
 # Agile Development
 
+Link to my [GitHub Project](https://github.com/users/Inc21/projects/6)
+
 As it is my first time using Agile Development, I decided to use the [Kanban](https://en.wikipedia.org/wiki/Kanban_(development)) and [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) prioritization method. I used [GitHub Projects](https://github.com/users/Inc21/projects/6) to create the board. 
- Did find it a bit difficult to use at first but after a while I got the hang of it. As for a solo developer who is time constrained, I found it a bit time consuming to create all the Epics and User stories. But I can see the benefits of using this method in a team environment. As of now I will continue to use this method for my future projects and I hope to learn more about it. My first ever hackathon is coming soon where I will be working in a team and I will be surely using Agile method.
+
+Did find it a bit difficult to use at first but after a while I got the hang of it. As for a solo developer who is time constrained, I found it a bit time consuming to create all the Epics and User stories. But I can see the benefits of using this method in a team environment. As of now I will continue to use this method for my future projects and I hope to learn more about it. My first ever hackathon is coming soon where I will be working in a team and I will be surely using Agile method.
 
 I created 4 columns, Epics, To-Do, In Progress and Done. I also created 9 labels:
 
@@ -205,12 +208,39 @@ I created 4 columns, Epics, To-Do, In Progress and Done. I also created 9 labels
 | ![Kanban board](/static/images/readme_images/agile_kanban_board.png) | ![Kanban board](/static/images/readme_images/kanban.png) |
 
 
-
 # Tools and technologies used
 
-### Languages
+### Languages and Frameworks
+
+This project was created using the following languages and frameworks:
+
+- [Django](https://www.djangoproject.com/) as the Python web framework.
+    - [Python](https://www.python.org/) as the backend programming language.
+- [HTML](https://en.wikipedia.org/wiki/HTML) as the markup language and templating language.
+- [CSS](https://en.wikipedia.org/wiki/CSS) as the style sheet language.
+    - [Bootstrap 5](https://getbootstrap.com/) as the CSS framework.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) as create carousel on index.html.
+    - [jQuery](https://jquery.com/) to simplify DOM manipulation.
+    
 
 ### Django Packages
+
+Django installs a few packages by default and some packages get installed with other packages. Will list out the ones that I installed.
+
+| Packages | Description (copied from the web) |
+| :--- | --- |
+| [boto3](https://pypi.org/project/boto3/) | Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to write software that makes use of services like Amazon S3 and Amazon EC2. You can find the latest, most up to date, documentation at our doc site, including a list of services that are supported. |
+| [crispy-bootstrap5](https://pypi.org/project/crispy-bootstrap5/) | django-crispy-bootstrap5 provides you with a crispy-forms template pack to use with django-crispy-forms in your Django projects. |
+| [Django](https://pypi.org/project/Django/) | Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. |
+| [django-allauth](https://pypi.org/project/django-allauth/) | Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication. |
+| [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) | django-crispy-forms provides you with a |crispy filter and {% crispy %} tag that will let you control the rendering behavior of your Django forms in a very elegant and DRY way. Have full control without writing custom form templates. All this without breaking the standard way of doing things in Django, so it plays nice with any other form application. |
+| [django-resized](https://pypi.org/project/django-resized/) | Django-resized is the best approach to resize and convert images. It is a Django app that allows easy image resizing using the easy-thumbnails app as a backend. |
+| [django-storages](https://pypi.org/project/django-storages/) | Django Storages is a collection of custom storage backends for Django. |
+| [Pillow](https://pypi.org/project/Pillow/) | PIL is the Python Imaging Library. |
+| [psycopg2](https://pypi.org/project/psycopg2/) | Psycopg is the most popular PostgreSQL database adapter for the Python programming language. Its main features are the complete implementation of the Python DB API 2.0 specification and the thread safety (several threads can share the same connection). It was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent “INSERT”s or “UPDATE”s. |
+| [waitress](https://pypi.org/project/waitress/) | Waitress is meant to be a production-quality pure-Python WSGI server with very acceptable performance. It has no dependencies except ones that live in the Python standard library. It runs on CPython on Unix and Windows under Python 2.7+ and Python 3.5+. It is also known to run on PyPy 1.6.0 on UNIX. It supports HTTP/1.0 and HTTP/1.1. |
+| [whitenoise](https://pypi.org/project/whitenoise/) | With a couple of lines of config WhiteNoise allows your web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. (It can still optionally do all that if you want, though.) |
+
 
 
 
