@@ -91,7 +91,7 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 
 ### Google lighthouse Validation
 
-All pages were tested with Google Chrome Lighthouse. Testing was performed in private browsing mode and on the live website on Heroku.
+All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/). Testing was performed in private browsing mode and on the live website on Heroku.
 
 | Page | Image |
 | --- | --- |
@@ -108,18 +108,68 @@ All pages were tested with Google Chrome Lighthouse. Testing was performed in pr
 
 
 ### CSS Validation
-- No errors were found when passing through the official (Jigsaw) validator.
+- No errors were found when passing through the official [W3C](https://validator.w3.org/) validator.
 ![CSS Validator](/static/images/readme_images/css_validator.png)
 
 
 ### HTML Validation
-- No errors were found when passing through the official (W3C) validator.
 
-### PEP8 Code Institute Python Linter Testing
-- 
+- All pages were passed through the official [W3C](https://validator.w3.org/nu/) validator.
+- Validating was done by live website on Heroku. Some errors were found but they are all related to Django template's.
+
+| Page | Image |
+| --- | --- |
+| Home Page | ![HTML Validator](/static/images/readme_images/html_validator/home.png) |
+| Memes Page | ![HTML Validator](/static/images/readme_images/html_validator/memes.png) |
+| Single Meme Page  ("info" label because image coming from Amazon S3 bucket service ) | ![HTML Validator](/static/images/readme_images/html_validator/single_meme.png) |
+| User Page | ![HTML Validator](/static/images/readme_images/html_validator/users.png) |
+| Single User Page.  | ![HTML Validator](/static/images/readme_images/html_validator/single_user.png) |
+| Code was checked and then checked again no extra ```</P>``` can't be found where W3C validator is reporting it.   | ![HTML Validator](/static/images/readme_images/html_validator/single_user_error.png) |
+| Upload Meme Page  (Django ModelForm creating a trailing slash) | ![HTML Validator](/static/images/readme_images/html_validator/upload_meme.png) |
+| Login Page | ![HTML Validator](/static/images/readme_images/html_validator/login.png) |
+| Sign-up Page | ![HTML Validator](/static/images/readme_images/html_validator/signup.png) |
+| Contact Developer Page   (Django ModelForm creating a trailing slash) | ![HTML Validator](/static/images/readme_images/html_validator/contact_developer.png) |
+| Report Meme Page   ("info" label because image coming from Amazon S3 bucket service) | ![HTML Validator](/static/images/readme_images/html_validator/report_meme.png) |
 
 
-![PEP8 Linter](/assets/)
+### JavaScript Validation
+
+- All JavaScript files were passed through the official [JSHint](https://jshint.com/) validator.
+
+| File | Image |
+| --- | --- |
+| script.js (Bootstrap carousel on index.html or "Home" page)| ![JSHint Validator](/static/images/readme_images/jshint.png) |
+
+### PEP8 Code Institute Python Linter Validation
+- All Python files were passed through the Code Institute [PEP8](https://pep8ci.herokuapp.com/) validator.
+#### techiememe project app
+
+| File | Result |
+| --- | --- |
+| settings.py | ![PEP8 Linter](/static/images/readme_images/pep8_clear.png) |
+| urls.py | All clear, no errors found |
+
+#### memes app
+
+| File | Result |
+| --- | --- |
+| admin.py | All clear, no errors found |
+| apps.py | All clear, no errors found |
+| forms.py | All clear, no errors found |
+| models.py | All clear, no errors found |
+| urls.py | All clear, no errors found |
+| views.py | All clear, no errors found |
+
+#### users app
+
+| File | Result |
+| --- | --- |
+| admin.py | All clear, no errors found |
+| apps.py | All clear, no errors found |
+| forms.py | All clear, no errors found |
+| models.py | All clear, no errors found |
+| urls.py | All clear, no errors found |
+| views.py | All clear, no errors found |
 
 
  ## Manual Testing
@@ -140,13 +190,6 @@ This app was developed on a Dell desktop running Windows 10.
 | --- | --- | --- | --- |
 |     |     |     |     |
 
-
-
-## Google Lighthouse testing 
-
-| Text | Image |
-| --- | --- |
-| Google Chrome Lighthouse was used to test the performance of the app. Testing was performed in private browsing mode. | ![Google lighthouse](/assets/images/lighthouse.png) |
 
 
 ## Interesting bug or problems
