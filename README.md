@@ -1,11 +1,13 @@
 ![TechieMeme Logo](/static/images/readme_images/techiememe_logo.png)
 ![mockup](/static/images/readme_images/mockup_dark.png)
 
+
 # Introduction
 
 TechieMeme is a website meant to lighten up peoples day who like technology or related things. Like Code, science, maths or hardware as an example. Inspiration for this site came from Code Institute Slack channel **community-tech-humour**, which I really love. On this site the user can view, like and comment on the memes that they like or upload their own memes and edit, delete them if necessary. This website was created as a learning exercise for my [Code Institute](https://codeinstitute.net/ie/) fourth portfolio project. 
 
 The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com// "TechieMeme.")
+
 
 ### Project Goals
 - To create a website that is easy to navigate and use.
@@ -14,6 +16,7 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 - To create a website that is interactive.
 - To create a website that is fun to use.
 - To create a website that is easy to use.
+
 
 # User Stories
 
@@ -28,6 +31,7 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 8. As a user, I want to be able to easily view other users profiles.
 9. As a user, I want to be able to easily search for memes.
 
+
 ### Authenticated User Goals
 10. As a authenticated user, I want to be able to easily upload my own memes.
 11. As a authenticated user, I want to be able to easily edit my own memes.
@@ -40,6 +44,7 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 18. As a authenticated user, I want to be able to easily delete my profile.
 19. As a user, I want to be able to
 
+
 ### Site owner objectives
 20. As a site owner, I want to be able to log into the admin panel.
 21. As a site owner, I want to be able to easily manage memes incase of inappropriate content.
@@ -47,17 +52,19 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 23. As a site owner, I want to be able to provide fun and easy to use website.
 
 
-
 # Design
 
 ### Look and feel
 
 With design for this website the aim was to create a fun and easy to use website. Main colors were chosen form black to emoji icon yellow. Had to add some CSS text-shadow trickery to improve the contrast on the light background. Also to improve accessibility for people with visual impairments some of the meme text was changed to darker yellow. 
+
+
 ### Colour
 
 Color palette was chosen and made on [Coolors](https://coolors.co/).
 
 ![Color Palette](/static/images/readme_images/palette.png)
+
 
 ### Typography
 
@@ -69,6 +76,7 @@ Font Lexend was chosen for the site. This font was chosen because it is easy to 
 | --- | --- |
 | ![Lexend 400](/static/images/readme_images/lexend_400.png) | ![Lexend 700](/static/images/readme_images/lexend_700.png) |
 
+
 ### Wireframes
 
 #### Desktop Wireframe
@@ -77,13 +85,16 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 
 ![Desktop wireframe](/static/images/readme_images/desktop_wireframe.png)
 
+
 #### Mobile Wireframe
 
 ![Mobile wireframe](/static/images/readme_images/mobile_wirframe.png)
 
+
 # Database Schemas
 
 ![Database Schema](/static/images/readme_images/database_schema.png)
+
 
 ### User model
 
@@ -102,6 +113,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | is_staff | BooleanField |  |
 | is_active | BooleanField |  |
 | date_joined | DateTimeField |  |
+
 
 ### UserProfile model - users app
 
@@ -125,6 +137,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
+
 ### Meme model - memes app
 
 - Meme model is used to store all the memes uploaded by users.
@@ -140,6 +153,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
+
 ### Comment model - memes app
 
 - Comment model is used to store all the comments on the memes.
@@ -152,6 +166,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
+
 ### Tag model - memes app
 
 - Tag model is used to store all the tags for the memes.
@@ -161,6 +176,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | name | CharField | max_length=20, null=True, blank=True |
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
+
 
 ### ContactForm model - memes app
 
@@ -178,7 +194,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 
 # Agile Development
 
-Link to my [GitHub Project](https://github.com/users/Inc21/projects/6)
+Link to my [GitHub Agile Project](https://github.com/users/Inc21/projects/6)
 
 As it is my first time using Agile Development, I decided to use the [Kanban](https://en.wikipedia.org/wiki/Kanban_(development)) and [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) prioritization method. I used [GitHub Projects](https://github.com/users/Inc21/projects/6) to create the board. 
 
@@ -219,7 +235,7 @@ This project was created using the following languages and frameworks:
 - [HTML](https://en.wikipedia.org/wiki/HTML) as the markup language and templating language.
 - [CSS](https://en.wikipedia.org/wiki/CSS) as the style sheet language.
     - [Bootstrap 5](https://getbootstrap.com/) as the CSS framework.
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) as create carousel on index.html.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) to create carousel on index.html.
     - [jQuery](https://jquery.com/) to simplify DOM manipulation.
     
 
@@ -242,15 +258,22 @@ Django installs a few packages by default and some packages get installed with o
 | [whitenoise](https://pypi.org/project/whitenoise/) | With a couple of lines of config WhiteNoise allows your web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. (It can still optionally do all that if you want, though.) |
 
 
-
-
 ### Other tools and programs.
 
-- [Lucid](https://lucid.co/) was used when creating flow charts.
+- [Amazon AWS S3](https://aws.amazon.com/) was used to store static and media files.
+- [Amazon AWS IAM](https://aws.amazon.com/iam/) was used to create a user for the project.
+- [Amazon RDS](https://aws.amazon.com/rds/) was used to create a PostgreSQL database.
+- [Font Awesome](https://fontawesome.com/) was used for all icons.
+- [Balsamiq](https://balsamiq.com/) was used to create the wireframes.
+- [Coolors](https://coolors.co/) was used to create the color palette.
+- [Favicon.io](https://favicon.io/) was used to create the favicon.
+- [Birme](https://www.birme.net) was used to convert static images to .webp format.
+- [ami.responsivedesign.is](http://ami.responsivedesign.is/) was used to create the mockup image.
+- [Lucid](https://lucid.co/) was used when creating database ERD.
 - [Visual Studio Code.](https://code.visualstudio.com/) Did all of my coding and synchronizing with GitHub on VS Code.
 - [Git](https://git-scm.com/) for version control.
 - [GitHub](https://github.com/) for hosting repositories.
-- [Heroku](https://www.heroku.com/) where the game is deployed using the [Code Institute](https://codeinstitute.net/ie/) Python template.
+- [Heroku](https://www.heroku.com/) where the website is deployed.
 - [Grammarly](https://www.grammarly.com/) was used to double-check spelling mistakes.
 
 
@@ -259,153 +282,169 @@ Django installs a few packages by default and some packages get installed with o
 <details>
   <summary>Existing Features</summary>
 
-    - All pages are responsive on all devices.
-    - All pages feature a header with the site logo and navigation bar with links to other pages, login/sign-up links and a search bar. 
-    - All pages feature a footer with links to contact developer (Sends admin an e-mail).
-    - All user actions are confirmed with a Django messages.
-    - All user uploaded content will be automatically converted to .webp format to save space and bandwidth using [Django-resized](https://pypi.org/project/django-resized/).  
+- All pages are responsive on all devices.
+- All pages feature a header with the site logo and navigation bar with links to other pages, login/sign-up links and a search bar. 
+- All pages feature a footer with links to contact developer (Sends admin an e-mail).
+- All user actions are confirmed with a Django messages.
+- All user uploaded content will be automatically converted to .webp format to save space and bandwidth using [Django-resized](https://pypi.org/project/django-resized/).  
 
-    ![Django messages](/static/images/readme_images/existing_features/messages.png)
+![Django messages](/static/images/readme_images/existing_features/messages.png)
 
-    ### Home Page
 
-    - Home page is the first page the user sees when they visit the site.
-    - Page will have a welcome message and a button to take the user to the upload meme page or sign-up if user is not authenticated.
-    - The user can see the latest memes uploaded by other users on Bootstrap carousel. 
+### Home Page
 
-    ![Home Page](/static/images/readme_images/existing_features/home_page.png)  
+- Home page is the first page the user sees when they visit the site.
+- Page will have a welcome message and a button to take the user to the upload meme page or sign-up if user is not authenticated.
+- The user can see the latest memes uploaded by other users on Bootstrap carousel. 
 
-    ### Memes Page
+![Home Page](/static/images/readme_images/existing_features/home_page.png)  
 
-    - Meme page is where the user can see all the memes uploaded by other users.
-    - Page will have 4 meme cards per page and rest will be paginated.
-    - User can click on the meme card to see the single meme page.
 
-    ![Memes Page](/static/images/readme_images/existing_features/memes_page.png)
+### Memes Page
 
-    ### Delete Meme Confirmation Page
+- Meme page is where the user can see all the memes uploaded by other users.
+- Page will have 4 meme cards per page and rest will be paginated.
+- User can click on the meme card to see the single meme page.
 
-    - Delete meme confirmation page is where the user can confirm that they want to delete the meme.
+![Memes Page](/static/images/readme_images/existing_features/memes_page.png)
 
-    ![Delete Meme Confirmation Page](/static/images/readme_images/existing_features/delete_meme_confirmation_page.png)
 
-    ### Single Meme Page
+### Delete Meme Confirmation Page
 
-    - Single meme page is where the user can see the single meme.
-    - User can see the meme title, meme image, meme description, meme category, meme author, meme date uploaded, meme likes, meme comments.
-    - If the user is the uploader of the meme they will see the edit and delete buttons.
-    - Authenticated user can comment on the meme and delete their own comments.
+- Delete meme confirmation page is where the user can confirm that they want to delete the meme.
 
-    ![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png)
+![Delete Meme Confirmation Page](/static/images/readme_images/existing_features/delete_meme_confirmation_page.png)
 
-    ### Report Meme Page
 
-    - Report meme page is where the user can report the meme.
-    - Page has a form with the title of the meme link was clicked on, name of the user, email of the user and the reason for reporting the meme.
-    - Page also has a back button to take the user back to the single meme page in case they don't want to report the meme.
-    - This form will send an email to the admin with the details of the report and more details about the authenticated user incase of malicious report.
+### Single Meme Page
 
-    ![Report Meme Page](/static/images/readme_images/existing_features/report_meme.png)
+- Single meme page is where the user can see the single meme.
+- User can see the meme title, meme image, meme description, meme category, meme author, meme date uploaded, meme likes, meme comments.
+- If the user is the uploader of the meme they will see the edit and delete buttons.
+- Authenticated user can comment on the meme and delete their own comments.
 
-    ### Users Page 
+![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png)
 
-    - Users page is where the user can see all the users.
-    - Page will have 4 user cards per page and rest will be paginated.
-    - User can click on the user card to see the single user page.
 
-    ![Users Page](/static/images/readme_images/existing_features/users_page.png)
+### Report Meme Page
 
-    ### Single User Page
+- Report meme page is where the user can report the meme.
+- Page has a form with the title of the meme link was clicked on, name of the user, email of the user and the reason for reporting the meme.
+- Page also has a back button to take the user back to the single meme page in case they don't want to report the meme.
+- This form will send an email to the admin with the details of the report and more details about the authenticated user incase of malicious report.
 
-    - Single user page is where the user can see the single user.
-    - User can see the user username, user profile image, user bio, user date joined, last login, user memes, user email, and user social links if provided.
-    - If the user is the owner of the profile they will see the edit and delete buttons.
+![Report Meme Page](/static/images/readme_images/existing_features/report_meme.png)
 
-    ![Single User Page](/static/images/readme_images/existing_features/single_user_page.png)
 
-    ### Edit Profile Page
+### Users Page 
 
-    NB: page is zoomed out to show the whole page.
+- Users page is where the user can see all the users.
+- Page will have 4 user cards per page and rest will be paginated.
+- User can click on the user card to see the single user page.
 
-    - Edit profile page is where the user can edit their profile.
-    - Page has a pre populated form with the profile image, first name, last name, location, user email, user bio and user social links.
-    - Page also has a back button to take the user back to the single user page in case they don't want to make any changes.
+![Users Page](/static/images/readme_images/existing_features/users_page.png)
 
-    ![Edit Profile Page](/static/images/readme_images/existing_features/update_profile_page.png)
 
-    ### Delete Profile Confirmation Page
+### Single User Page
 
-    NB: This page is only available to the user who owns the profile.
-    - Delete profile confirmation page is where the user can confirm that they want to delete their profile.
-    - Page has a message to confirm that the user wants to delete their profile.
-    - Page also has a back button to take the user back to the single user page in case they don't want to delete their profile.
+- Single user page is where the user can see the single user.
+- User can see the user username, user profile image, user bio, user date joined, last login, user memes, user email, and user social links if provided.
+- If the user is the owner of the profile they will see the edit and delete buttons.
 
-    ![Delete Profile Confirmation Page](/static/images/readme_images/existing_features/delete_confirmation_page.png)
+![Single User Page](/static/images/readme_images/existing_features/single_user_page.png)
 
-    ### Upload Meme / Edit Meme Page
-    NB: page is zoomed out to show the whole page. This page is the same for both upload and edit meme with edit meme instance is pre populated with current details.
-    - Upload meme page is where the user can upload their own memes.
-    - Page has a form with the meme image, meme title and meme tags.
-    - Page also has a back button to take the user back to the memes page in case they don't want to upload/edit a meme.
 
-    ![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png)
+### Edit Profile Page
 
-    ### Login Page
+NB: page is zoomed out to show the whole page.
 
-    - Login page is where the user can log into their account.
-    - Page has a form with the username and password fields.
-    - Page has a link to the sign-up page in case the user doesn't have an account and social sign-up links to Google and GitHub.
-    - Page has a "Forgot password?" link to take the user to the password reset page in case they can't remember their current password.
+- Edit profile page is where the user can edit their profile.
+- Page has a pre populated form with the profile image, first name, last name, location, user email, user bio and user social links.
+- Page also has a back button to take the user back to the single user page in case they don't want to make any changes.
 
-    ![Login Page](/static/images/readme_images/existing_features/login_page.png)
+![Edit Profile Page](/static/images/readme_images/existing_features/update_profile_page.png)
 
-    ### Password Reset Page
 
-    - Password reset page is where the user can reset their password.
-    - Page has a form with the email field.
-    - Password reset only works if the user signed up with valid email address.
+### Delete Profile Confirmation Page
 
-    ![Password Reset Page](/static/images/readme_images/existing_features/password_reset_page.png)
+NB: This page is only available to the user who owns the profile.
+- Delete profile confirmation page is where the user can confirm that they want to delete their profile.
+- Page has a message to confirm that the user wants to delete their profile.
+- Page also has a back button to take the user back to the single user page in case they don't want to delete their profile.
 
-    ### Logout Page
+![Delete Profile Confirmation Page](/static/images/readme_images/existing_features/delete_confirmation_page.png)
 
-    - Logout page is where the user can log out of their account.
-    - Page has a message to confirm that the user wants to log out.
 
-    ![Logout Page](/static/images/readme_images/existing_features/logout_page.png)
+### Upload Meme / Edit Meme Page
+NB: page is zoomed out to show the whole page. This page is the same for both upload and edit meme with edit meme instance is pre populated with current details.
+- Upload meme page is where the user can upload their own memes.
+- Page has a form with the meme image, meme title and meme tags.
+- Page also has a back button to take the user back to the memes page in case they don't want to upload/edit a meme.
 
-    ### Sign-up Page
+![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png)
 
-    - Sign-up page is where the user can sign up for an account.
-    - Page has a form with the username, email, password1 and password2 fields.
-    - Page has a link to the login page in case the user already has an account.
-    - When user registers for an account and use email, they will receive a welcome email and confirmation email with a link to confirm their email address.
-    - When user won't upload a profile image, a default image will be used.
 
-    | Sign-up Page | Welcome Email | Confirm Email |
-    | --- | --- | --- |
-    | ![Sign-up Page](/static/images/readme_images/existing_features/signup_page.png) | ![Welcome Email](/static/images/readme_images/existing_features/welcome_email.png) | ![Confirmation Email](/static/images/readme_images/existing_features/confirmation_email.png) |
+### Login Page
 
-    |Redirect to edit profile page | Default profile image |
-    | --- | --- |
-    | ![Redirect to edit profile page](/static/images/readme_images/existing_features/after_signup.png) | ![Default profile image](/static/images/readme_images/existing_features/default_user_image.png) |
+- Login page is where the user can log into their account.
+- Page has a form with the username and password fields.
+- Page has a link to the sign-up page in case the user doesn't have an account and social sign-up links to Google and GitHub.
+- Page has a "Forgot password?" link to take the user to the password reset page in case they can't remember their current password.
 
-    ### Contact Developer Page
+![Login Page](/static/images/readme_images/existing_features/login_page.png)
 
-    - Contact developer (link on the footer) page is where the user can contact the developer.
-    - Page has a form with the user name, email, subject and message fields.
-    - This page is only available to authenticated users.
-    - This form will send an email to the developer with the details of the message and more details about the authenticated user.
-    - Page also has a back button to take the user back to the home page in case they don't want to contact the developer.
 
-    ![Contact Developer Page](/static/images/readme_images/existing_features/contact_developer_page.png)
+### Password Reset Page
 
-    ### Custom Error 404 Page
+- Password reset page is where the user can reset their password.
+- Page has a form with the email field.
+- Password reset only works if the user signed up with valid email address.
 
-    - 404 page is where the user will be redirected if they try to access a page that doesn't exist.
-    - 404 page is very similar to error 500 home.
+![Password Reset Page](/static/images/readme_images/existing_features/password_reset_page.png)
 
-    ![404 Page](/static/images/readme_images/existing_features/custom_404_500_page.png)
+
+### Logout Page
+
+- Logout page is where the user can log out of their account.
+- Page has a message to confirm that the user wants to log out.
+
+![Logout Page](/static/images/readme_images/existing_features/logout_page.png)
+
+
+### Sign-up Page
+
+- Sign-up page is where the user can sign up for an account.
+- Page has a form with the username, email, password1 and password2 fields.
+- Page has a link to the login page in case the user already has an account.
+- When user registers for an account and use email, they will receive a welcome email and confirmation email with a link to confirm their email address.
+- When user won't upload a profile image, a default image will be used.
+
+| Sign-up Page | Welcome Email | Confirm Email |
+| --- | --- | --- |
+| ![Sign-up Page](/static/images/readme_images/existing_features/signup_page.png) | ![Welcome Email](/static/images/readme_images/existing_features/welcome_email.png) | ![Confirmation Email](/static/images/readme_images/existing_features/confirmation_email.png) |
+
+|Redirect to edit profile page | Default profile image |
+| --- | --- |
+| ![Redirect to edit profile page](/static/images/readme_images/existing_features/after_signup.png) | ![Default profile image](/static/images/readme_images/existing_features/default_user_image.png) |
+
+
+### Contact Developer Page
+
+- Contact developer (link on the footer) page is where the user can contact the developer.
+- Page has a form with the user name, email, subject and message fields.
+- This page is only available to authenticated users.
+- This form will send an email to the developer with the details of the message and more details about the authenticated user.
+- Page also has a back button to take the user back to the home page in case they don't want to contact the developer.
+
+![Contact Developer Page](/static/images/readme_images/existing_features/contact_developer_page.png)
+
+
+### Custom Error 404 Page
+
+- 404 page is where the user will be redirected if they try to access a page that doesn't exist.
+- 404 page is very similar to error 500 home.
+
+![404 Page](/static/images/readme_images/existing_features/custom_404_500_page.png)
 
 
 </details>
@@ -475,9 +514,11 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | --- | --- |
 | script.js (Bootstrap carousel on index.html or "Home" page)| ![JSHint Validator](/static/images/readme_images/jshint.png) |
 
+
 ### PEP8 Code Institute Python Linter Validation
 
 - All Python files were passed through the Code Institute [PEP8](https://pep8ci.herokuapp.com/) validator.
+
 
 #### techiememe project app
 
@@ -485,6 +526,7 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | --- | --- |
 | settings.py | ![PEP8 Linter](/static/images/readme_images/pep8_clear.png) |
 | urls.py | All clear, no errors found |
+
 
 #### memes app
 
@@ -496,6 +538,7 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | models.py | All clear, no errors found |
 | urls.py | All clear, no errors found |
 | views.py | All clear, no errors found |
+
 
 #### users app
 
@@ -554,9 +597,7 @@ A few of the more interesting ones are listed below.
     - When user enters a short search term, the pagination will show but as as soon as you turn the page it reloads memes page. This is caused by the search term being in the title or description of the meme. Will be solved in the future just ran out of time this iteration.
 
 
-
 # Deployment
-
 
 ### Deploy with Heroku
 
@@ -568,27 +609,33 @@ A few of the more interesting ones are listed below.
 5. Click the "Create app" button.
 6. Next page, top centre of the screen, select the "Settings" tab. 
 7. In the "Config Vars" section, click on the "Reveal config Vars" button.
-8. In this section you need to enter your google sheets credentials. 
-    1. Type the name of the credentials (CREDS in my case) file into the "KEY" field.
-    2. Open your IDE and find CREDS.json in your project files.
-    3. Copy/paste everything in this file to the "VALUE" field and click the "Add" button.
-9. Just below in the "Buildpacks" section click on the "Add buildback" button. Buildpacks have to be installed in this order.
-    1. Click on the "Python" button to select it and then the "Save changes" button.
-    2. Click again on the "Add buildback" button.
-    3. Click on the "nodejs" button to select it and then the "Save changes" button.
+8. In this section you need to enter your environment variables. Usually stored in the env.py file locally. In my case I have 10 variables: 
+    - SECRET_KEY - Django secret key.
+    - AWS_ACCESS_KEY_ID - Amazon AWS access key.
+    - AWS_SECRET_ACCESS_KEY - Amazon AWS secret access key.
+    - AWS_STORAGE_BUCKET_NAME - Amazon AWS bucket name.
+    - DATABASE_USER - Amazon RDS database user.
+    - EMAIL_HOST_PASS - Email password.
+    - EMAIL_HOST_USER - Email address.
+    - DATABASE_HOST - Amazon RDS database host.
+    - DATABASE_NAME - Amazon RDS database name.
+    - DATABASE_PASS - Amazon RDS database password.
+9. Copy and paste these variables into the KEY field and their values into the VALUE field.
 10. Go back to the top of the screen and select the "Deploy" tab.
 11. In the "Deployment method" section select "GitHub".
     1. In "Connect to GitHub" click on the "Search" button. Find the project repository in the list and click on the "Connect" button.
-    2. Scroll to the bottom of that page. Click on the "Enable Automatic Deploys" button to update the deploy also when you push a new commit to GitHub.
-    3. At the very bottom of the page click on the "Deploy Branch" button.
+    2. Scroll to the bottom of that page. Click on the "Deploy Branch" button to deploy.
+    3. You should also see an option to enable automatic deployment. If you enable this, every time you push to GitHub, Heroku will automatically deploy the app.
 12. You will see build log scrolling at the bottom of the screen after that. When successfully finished building the app, you should see the link to your app.
+
+NB: You will need to add your Heroku app link to the ALLOWED_HOSTS in the settings.py file. You also need to make sure that DEBUG is set to False, requirements.txt and Procfile are up to date and pushed to GitHub.
 
 
 ### Clone project 
 
 - To clone this project.  
     - On my [GitHub](https://github.com/Inc21) profile page, top centre of the screen click on "repositories".
-    -  Find and click on the "Python-Quiz-Game-PP3" repository.
+    -  Find and click on the "TechieMeme-PP4" repository.
     - In the repository page that opens, click on the 'Code' button.
     - Menu that opens make sure you are in the "local" tab, copy the link in "HTTPS".
     - paste that link into the relevant section in your ide to clone the repository.
@@ -603,18 +650,26 @@ A few of the more interesting ones are listed below.
 ### Fork repository
 
 - To fork this repository.
-    - Open my [GitHub repository](https://github.com/Inc21/Python-Quiz-Game-PP3).
+    - Open my [GitHub repository](https://github.com/Inc21/TechieMeme-PP4).
     - Click on the 'Fork' button on the top right of the screen.
     - On the 'Create a new fork' page you are given the option to rename that repository and then click on the green 'Create fork' button at the bottom of the form.
 
+
 # Content
+
+After reading through numerous articles about copyright laws on memes, general census seems to be that as long as I'm not trying to profit off these memes we should be fine. As this website is not for profit and created for educational purposes only.
+
+Here is one of the first responses from my research: [The National Law Review](https://www.natlawreview.com/article/who-owns-memes)
+
+- Background image on the home page was taken from [Pixabay](https://pixabay.com/).
 
 
 # Credits
 
 Would like to say thanks to all for the support throughout the project.
 
-- [Real Python](https://realpython.com/) Great site for some extra Python content. A lot of inspiration was taken from there.
-- [Code Institute](https://codeinstitute.net/ie/) Love Sandwiches.
-- [Slack community](https://slack.com/intl/en-ie/) and my classmates for tips and tricks and entertainment.
+- [Dennis Ivy](https://www.youtube.com/channel/UCTZRcDjjkVajGL6wd76UnGg) He has best Django tutorials on YouTube and the way he explains everything is very easy to understand. I owe a lot to him.
+- [Code Institute](https://codeinstitute.net/ie/) for all the support and knowledge.
+- [Slack community](https://slack.com/intl/en-ie/) tech-humor channel where I got inspiration for this project and some feedback. My cohort channel for all the support and feedback.
 - My mentor Dick Vlaanderen who's continuously very supportive of me and very knowledgeable.
+- I would also like to thank or say sorry to my family. I'm not to sure they have seen me much these past weeks. According to [Wakatime](https://wakatime.com) I have spent nearly 55 hours behind this computer. Thats on top of 40 hour work week ![Wakatime](/static/images/readme_images/wakatime.png).

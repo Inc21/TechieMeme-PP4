@@ -303,6 +303,10 @@ header {
     opacity: 1;
 }
 
+.carousel-container {
+    overflow: hidden;
+}
+
 /* ------------------------------------------------------------- Pagination */
 
 .pagination-link {
