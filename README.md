@@ -85,53 +85,158 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 - [Grammarly](https://www.grammarly.com/) was used to double-check spelling mistakes.
 
 
-# Existing Features
+# Features
 
 <details>
   <summary>Existing Features</summary>
-  
+
+- All pages are responsive on all devices.
+- All pages feature a header with the site logo and navigation bar with links to other pages, login/sign-up links and a search bar. 
+- All pages feature a footer with links to contact developer (Sends admin an e-mail).
+- All user actions are confirmed with a Django messages.
+
+![Django messages](/static/images/readme_images/existing_features/messages.png)
+
 ### Home Page
 
-- 
+- Home page is the first page the user sees when they visit the site.
+- Page will have a welcome message and a button to take the user to the upload meme page or sign-up if user is not authenticated.
+- The user can see the latest memes uploaded by other users on Bootstrap carousel. 
 
-![Home Page](/assets)  
+![Home Page](/static/images/readme_images/existing_features/home_page.png)  
 
 ### Memes Page
 
-- 
+- Meme page is where the user can see all the memes uploaded by other users.
+- Page will have 4 meme cards per page and rest will be paginated.
+- User can click on the meme card to see the single meme page.
 
-![Memes Page](/assets/)  
+![Memes Page](/static/images/readme_images/existing_features/memes_page.png)
+
+### Delete Meme Confirmation Page
+
+- Delete meme confirmation page is where the user can confirm that they want to delete the meme.
+
+![Delete Meme Confirmation Page](/static/images/readme_images/existing_features/delete_meme_confirmation_page.png)
 
 ### Single Meme Page
 
-### Upload Meme / Edit Meme Page
+- Single meme page is where the user can see the single meme.
+- User can see the meme title, meme image, meme description, meme category, meme author, meme date uploaded, meme likes, meme comments.
+- If the user is the uploader of the meme they will see the edit and delete buttons.
+- Authenticated user can comment on the meme and delete their own comments.
 
-### Users Page 
-
-- 
-
-![Users Page](/assets) 
-
-
-### Single User Page
-
-### Edit Profile Page
-
-
-### Login Page
-
-
-### Logout Page
-
-### Contact Developer Page
-
-### Delete Confirmation Page
+![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png)
 
 ### Report Meme Page
 
-### 404 Page
+- Report meme page is where the user can report the meme.
+- Page has a form with the title of the meme link was clicked on, name of the user, email of the user and the reason for reporting the meme.
+- Page also has a back button to take the user back to the single meme page in case they don't want to report the meme.
+- This form will send an email to the admin with the details of the report and more details about the authenticated user incase of malicious report.
 
-### 500 Page
+![Report Meme Page](/static/images/readme_images/existing_features/report_meme.png)
+
+### Users Page 
+
+- Users page is where the user can see all the users.
+- Page will have 4 user cards per page and rest will be paginated.
+- User can click on the user card to see the single user page.
+
+![Users Page](/static/images/readme_images/existing_features/users_page.png)
+
+### Single User Page
+
+- Single user page is where the user can see the single user.
+- User can see the user username, user profile image, user bio, user date joined, last login, user memes, user email, and user social links if provided.
+- If the user is the owner of the profile they will see the edit and delete buttons.
+
+![Single User Page](/static/images/readme_images/existing_features/single_user_page.png)
+
+### Edit Profile Page
+
+NB: page is zoomed out to show the whole page.
+
+- Edit profile page is where the user can edit their profile.
+- Page has a pre populated form with the profile image, first name, last name, location, user email, user bio and user social links.
+- Page also has a back button to take the user back to the single user page in case they don't want to make any changes.
+
+![Edit Profile Page](/static/images/readme_images/existing_features/update_profile_page.png)
+
+### Delete Profile Confirmation Page
+
+NB: This page is only available to the user who owns the profile.
+- Delete profile confirmation page is where the user can confirm that they want to delete their profile.
+- Page has a message to confirm that the user wants to delete their profile.
+- Page also has a back button to take the user back to the single user page in case they don't want to delete their profile.
+
+![Delete Profile Confirmation Page](/static/images/readme_images/existing_features/delete_confirmation_page.png)
+
+### Upload Meme / Edit Meme Page
+NB: page is zoomed out to show the whole page. This page is the same for both upload and edit meme with edit meme instance is pre populated with current details.
+- Upload meme page is where the user can upload their own memes.
+- Page has a form with the meme image, meme title and meme tags.
+- Page also has a back button to take the user back to the memes page in case they don't want to upload/edit a meme.
+
+![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png)
+
+### Login Page
+
+- Login page is where the user can log into their account.
+- Page has a form with the username and password fields.
+- Page has a link to the sign-up page in case the user doesn't have an account and social sign-up links to Google and GitHub.
+- Page has a "Forgot password?" link to take the user to the password reset page in case they can't remember their current password.
+
+![Login Page](/static/images/readme_images/existing_features/login_page.png)
+
+### Password Reset Page
+
+- Password reset page is where the user can reset their password.
+- Page has a form with the email field.
+- Password reset only works if the user signed up with valid email address.
+
+![Password Reset Page](/static/images/readme_images/existing_features/password_reset_page.png)
+
+### Logout Page
+
+- Logout page is where the user can log out of their account.
+- Page has a message to confirm that the user wants to log out.
+
+![Logout Page](/static/images/readme_images/existing_features/logout_page.png)
+
+### Sign-up Page
+
+- Sign-up page is where the user can sign up for an account.
+- Page has a form with the username, email, password1 and password2 fields.
+- Page has a link to the login page in case the user already has an account.
+- When user registers for an account and use email, they will receive a welcome email and confirmation email with a link to confirm their email address.
+- When user won't upload a profile image, a default image will be used.
+
+| Sign-up Page | Welcome Email | Confirmation Email |
+| --- | --- | --- |
+| ![Sign-up Page](/static/images/readme_images/existing_features/signup_page.png) | ![Welcome Email](/static/images/readme_images/existing_features/welcome_email.png) | ![Confirmation Email](/static/images/readme_images/existing_features/confirmation_email.png) |
+
+|Redirect to edit profile page | Default profile image |
+| --- | --- |
+| ![Redirect to edit profile page](/static/images/readme_images/existing_features/after_signup.png) | ![Default profile image](/static/images/readme_images/existing_features/default_user_image.png) |
+
+### Contact Developer Page
+
+- Contact developer (link on the footer) page is where the user can contact the developer.
+- Page has a form with the user name, email, subject and message fields.
+- This page is only available to authenticated users.
+- This form will send an email to the developer with the details of the message and more details about the authenticated user.
+- Page also has a back button to take the user back to the home page in case they don't want to contact the developer.
+
+![Contact Developer Page](/static/images/readme_images/existing_features/contact_developer_page.png)
+
+### Custom Error 404 Page
+
+- 404 page is where the user will be redirected if they try to access a page that doesn't exist.
+- 404 page is very similar to error 500 home.
+
+![404 Page](/static/images/readme_images/existing_features/custom_404_500_page.png)
+
 
 </details>
 

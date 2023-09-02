@@ -18,8 +18,8 @@ def create_profile(sender, instance, created, **kwargs):
 
         send_mail(
             subject="Welcome to TechieMeme",
-            message=("Welcome to TechieMeme!"
-                     "We hope you will have some fun and enjoy your stay."),
+            message="Welcome to TechieMeme!" + " " +
+            "We hope you will have some fun and enjoy your stay.",
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[user.email],
             fail_silently=False,
