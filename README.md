@@ -17,11 +17,35 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 
 # User Stories
 
-### New User.
+### First Time Visitor Goals
+1. As a user, I want to be able to view the site on any device I choose.
+2. As a user, I want to be able to easily navigate the site.
+3. As a user, I want to be able to easily find the content I am looking for.
+4. As a user, I want to be able to easily register for an account.
+5. As a user, I want to be able to easily log in and out of my account.
+6. As a user, I want to be able to easily recover my password if I forget it.
+7. As a user, I want to be able to easily view my profile.
+8. As a user, I want to be able to easily view other users profiles.
+9. As a user, I want to be able to easily search for memes.
 
-### Returning user.
+### Authenticated User Goals
+10. As a authenticated user, I want to be able to easily upload my own memes.
+11. As a authenticated user, I want to be able to easily edit my own memes.
+12. As a authenticated user, I want to be able to easily delete my own memes.
+13. As a authenticated user, I want to be able to easily like memes.
+14. As a authenticated user, I want to be able to easily comment on memes.
+15. As a authenticated user, I want to be able to report memes.
+16. As a authenticated user, I want to be able to easily contact the developer.
+17. As a authenticated user, I want to be able to easily edit my profile.
+18. As a authenticated user, I want to be able to easily delete my profile.
+19. As a user, I want to be able to
 
 ### Site owner objectives
+20. As a site owner, I want to be able to log into the admin panel.
+21. As a site owner, I want to be able to easily manage memes incase of inappropriate content.
+22. As a site owner, I want to be able to easily manage users incase of inappropriate content.
+23. As a site owner, I want to be able to provide fun and easy to use website.
+
 
 
 # Design
