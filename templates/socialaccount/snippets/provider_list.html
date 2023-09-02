@@ -16,19 +16,11 @@
 {% endfor %}
 {% endif %}
   {% if provider.name == "Google" %}
-  <div class="d-inline-block auth-list">
-    <div class="">
-      <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" 
+    <a title="{{provider.name}}" class="auth-list socialaccount_provider {{provider.id}}" 
         href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'images/site/google_logo.webp' %}" class="d-inline social-logo" alt="Google logo"></a>
-    </div>
-  </div>
-  {% else %}
-  <div class="d-inline-block auth-list">
-    <div class="">
-      <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" 
-        href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'images/site/GitHub_Logo.webp' %}" class="social-logo" alt="Google logo"></a>
-    </div>
-  </div>
 
+  {% else %}
+    <a title="{{provider.name}}" class="auth-list socialaccount_provider {{provider.id}}" 
+        href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'images/site/GitHub_Logo.webp' %}" class="social-logo" alt="Google logo"></a>
   {% endif %}
 {% endfor %}
