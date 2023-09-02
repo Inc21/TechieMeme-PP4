@@ -69,7 +69,7 @@ Font Lexend was chosen for the site. This font was chosen because it is easy to 
 | --- | --- |
 | ![Lexend 400](/static/images/readme_images/lexend_400.png) | ![Lexend 700](/static/images/readme_images/lexend_700.png) |
 
-### Wireframe
+### Wireframes
 
 #### Desktop Wireframe
 
@@ -81,11 +81,11 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 
 ![Mobile wireframe](/static/images/readme_images/mobile_wirframe.png)
 
-### Database Schemas
+# Database Schemas
 
 ![Database Schema](/static/images/readme_images/database_schema.png)
 
-#### User model
+### User model
 
 - User model is the default Django user model.
 
@@ -103,7 +103,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | is_active | BooleanField |  |
 | date_joined | DateTimeField |  |
 
-#### UserProfile model - users app
+### UserProfile model - users app
 
 - UserProfile model is connected to the User model with OneToOneField. This model is used to store extra user information.
 
@@ -125,7 +125,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
-#### Meme model - memes app
+### Meme model - memes app
 
 - Meme model is used to store all the memes uploaded by users.
 
@@ -140,7 +140,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
-#### Comment model - memes app
+### Comment model - memes app
 
 - Comment model is used to store all the comments on the memes.
 
@@ -152,7 +152,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
-#### Tag model - memes app
+### Tag model - memes app
 
 - Tag model is used to store all the tags for the memes.
 
@@ -162,7 +162,7 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
-#### ContactForm model - memes app
+### ContactForm model - memes app
 
 - ContactForm model is used to store all the contact forms sent to developer by users.
 
@@ -176,7 +176,35 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
 
-### Agile Development
+# Agile Development
+
+As it is my first time using Agile Development, I decided to use the [Kanban](https://en.wikipedia.org/wiki/Kanban_(development)) and [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) prioritization method. I used [GitHub Projects](https://github.com/users/Inc21/projects/6) to create the board. 
+ Did find it a bit difficult to use at first but after a while I got the hang of it. As for a solo developer who is time constrained, I found it a bit time consuming to create all the Epics and User stories. But I can see the benefits of using this method in a team environment. As of now I will continue to use this method for my future projects and I hope to learn more about it. My first ever hackathon is coming soon where I will be working in a team and I will be surely using Agile method.
+
+I created 4 columns, Epics, To-Do, In Progress and Done. I also created 9 labels:
+
+- For MoSCoW prioritization: Must Have, Should Have, Could Have, Won't Have.
+
+![Must Have](/static/images/readme_images/labels/must-have.png) ![Should Have](/static/images/readme_images/labels/should-have.png) ![Could Have](/static/images/readme_images/labels/could-have.png) ![Won't Have](/static/images/readme_images/labels/wont-have.png)
+
+- And 5 helper labels: Dev-task, Epic, User-story, In-progress, Done.
+
+![Dev-task](/static/images/readme_images/labels/dev-task.png) ![Epic](/static/images/readme_images/labels/epic.png) ![User-story](/static/images/readme_images/labels/user-story.png) ![In-progress](/static/images/readme_images/labels/in-progress.png) ![Done](/static/images/readme_images/labels/done.png)
+
+- Created 9 Epics divided into 24 User stories. Epics and user stories are connected with # link on the title and in the description.
+
+| Example | Image |
+| --- | --- |
+| Epic | ![Epic](/static/images/readme_images/epic_example.png) |
+| User story | ![User story](/static/images/readme_images/user_story_example.png) |
+
+- My Kanban board:
+
+| then | now |
+| --- | --- |
+| ![Kanban board](/static/images/readme_images/agile_kanban_board.png) | ![Kanban board](/static/images/readme_images/kanban.png) |
+
+
 
 # Tools and technologies used
 
@@ -418,7 +446,9 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | script.js (Bootstrap carousel on index.html or "Home" page)| ![JSHint Validator](/static/images/readme_images/jshint.png) |
 
 ### PEP8 Code Institute Python Linter Validation
+
 - All Python files were passed through the Code Institute [PEP8](https://pep8ci.herokuapp.com/) validator.
+
 #### techiememe project app
 
 | File | Result |
@@ -449,7 +479,7 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | views.py | All clear, no errors found |
 
 
- ## Manual Testing
+ # Manual Testing
 
  <details>
   <summary>Manual Testing</summary>
@@ -495,7 +525,7 @@ A few of the more interesting ones are listed below.
 
 
 
-## Deployment
+# Deployment
 
 
 ### Deploy with Heroku
@@ -547,7 +577,7 @@ A few of the more interesting ones are listed below.
     - Click on the 'Fork' button on the top right of the screen.
     - On the 'Create a new fork' page you are given the option to rename that repository and then click on the green 'Create fork' button at the bottom of the form.
 
-## Content
+# Content
 
 
 # Credits
