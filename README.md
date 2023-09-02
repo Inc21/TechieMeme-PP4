@@ -50,24 +50,32 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 
 # Design
 
-## Look and feel
+### Look and feel
 
 
-## Colour
+### Colour
+
+### Wireframes
+
+### Database Schema
+
+### Agile Development
 
 
-## Font
+### Font
 
-## Flowcharts
+### Flowcharts
 
 
 # Tools and technologies used
 
-## Languages
+### Languages
+
+### Django Packages
 
 
 
-## Other tools and programs.
+### Other tools and programs.
 
 - [Lucid](https://lucid.co/) was used when creating flow charts.
 - [Visual Studio Code.](https://code.visualstudio.com/) Did all of my coding and synchronizing with GitHub on VS Code.
@@ -77,8 +85,11 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 - [Grammarly](https://www.grammarly.com/) was used to double-check spelling mistakes.
 
 
-## Existing Features
+# Existing Features
 
+<details>
+  <summary>Existing Features</summary>
+  
 ### Home Page
 
 - 
@@ -91,20 +102,41 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 
 ![Memes Page](/assets/)  
 
+### Single Meme Page
+
+### Upload Meme / Edit Meme Page
+
 ### Users Page 
 
 - 
 
 ![Users Page](/assets) 
 
-### Upload Meme
 
-- 
+### Single User Page
 
-![Upload Meme](/assets/)
+### Edit Profile Page
 
 
-### Features Left to Implement
+### Login Page
+
+
+### Logout Page
+
+### Contact Developer Page
+
+### Delete Confirmation Page
+
+### Report Meme Page
+
+### 404 Page
+
+### 500 Page
+
+</details>
+
+
+## Features Left to Implement
 
 -  
     
@@ -198,6 +230,9 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 
  ## Manual Testing
 
+ <details>
+  <summary>Manual Testing</summary>
+
 This app was developed on a Dell desktop running Windows 10.
 
 
@@ -214,7 +249,7 @@ This app was developed on a Dell desktop running Windows 10.
 | --- | --- | --- | --- |
 |     |     |     |     |
 
-
+<details>
 
 ## Interesting bug or problems
      
