@@ -16,11 +16,11 @@ class UserProfile(models.Model):
     user_img = ResizedImageField(upload_to='users/', null=True,
                                  force_format='WEBP', quality=85,
                                  blank=True, default='users/default_user.webp')
-    social_github = models.CharField(max_length=200, null=True, blank=True)
-    social_linkedin = models.CharField(max_length=200, null=True, blank=True)
-    social_facebook = models.CharField(max_length=200, null=True, blank=True)
-    social_youtube = models.CharField(max_length=200, null=True, blank=True)
-    social_website = models.CharField(max_length=200, null=True, blank=True)
+    social_github = models.URLField(max_length=200, null=True, blank=True)
+    social_linkedin = models.URLField(max_length=200, null=True, blank=True)
+    social_facebook = models.URLField(max_length=200, null=True, blank=True)
+    social_youtube = models.URLField(max_length=200, null=True, blank=True)
+    social_website = models.URLField(max_length=200, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 

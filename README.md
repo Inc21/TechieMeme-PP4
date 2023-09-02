@@ -81,15 +81,102 @@ Didn't stray too far from the original wireframe. Only few small things. Text on
 
 ![Mobile wireframe](/static/images/readme_images/mobile_wirframe.png)
 
-### Database Schema
+### Database Schemas
+
+![Database Schema](/static/images/readme_images/database_schema.png)
+
+#### User model
+
+- User model is the default Django user model.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| id | IntegerField | |
+| password | CharField |  |
+| last_login | DateTimeField |  |
+| is_superuser | BooleanField |  |
+| username | CharField | max_length=150, unique=True |
+| first_name | CharField | max_length=150, blank=True |
+| last_name | CharField | max_length=150, blank=True |
+| email | EmailField | max_length=254, unique=True |
+| is_staff | BooleanField |  |
+| is_active | BooleanField |  |
+| date_joined | DateTimeField |  |
+
+#### UserProfile model - users app
+
+- UserProfile model is connected to the User model with OneToOneField. This model is used to store extra user information.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| user | OneToOneField | User, on_delete=models.CASCADE |
+| username | CharField | max_length=50, null=True, blank=True |
+| first_name | CharField | max_length=50, null=True, blank=True |
+| last_name | CharField | max_length=50, null=True, blank=True |
+| location | CharField | max_length=100, null=True, blank=True |
+| email | EmailField | max_length=100, null=True, blank=True |
+| bio | TextField | max_length=500, null=True, blank=True |
+| user_image | ResizedImageField | upload_to='users/', null=True, force_format='WEBP', quality=85, blank=True, default='users/default_user.webp' |
+| social_github | URLField | max_length=200, null=True, blank=True |
+| social_linkedin | URLField | max_length=200, null=True, blank=True |
+| social_facebook | URLField | max_length=200, null=True, blank=True |
+| social_youtube | URLField | max_length=200, null=True, blank=True |
+| social_website | URLField | max_length=200, null=True, blank=True |
+| created | DateTimeField | auto_now_add=True |
+| id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
+
+#### Meme model - memes app
+
+- Meme model is used to store all the memes uploaded by users.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| uploader | ForeignKey | UserProfile, on_delete=models.CASCADE |
+| title | CharField | max_length=100, null=True |
+| meme_img | ResizedImageField | upload_to='memes/', null=True, force_format='WEBP', quality=85, blank=True, default='memes/default.webp |
+| tags | ManyToManyField | Tag, blank=True |
+| smiley_face | ManyToManyField |  UserProfile, related_name='smiley_face' |
+| sad_face | ManyToManyField |  UserProfile, related_name='sad_face', blank=True |
+| created | DateTimeField | auto_now_add=True |
+| id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
+
+#### Comment model - memes app
+
+- Comment model is used to store all the comments on the memes.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| meme | ForeignKey | Meme, on_delete=models.CASCADE, related_name='comment' |
+| user | ForeignKey | UserProfile, on_delete=models.CASCADE, null=True, blank=True |
+| comment | TextField | max_length=500 |
+| created | DateTimeField | auto_now_add=True |
+| id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
+
+#### Tag model - memes app
+
+- Tag model is used to store all the tags for the memes.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| name | CharField | max_length=20, null=True, blank=True |
+| created | DateTimeField | auto_now_add=True |
+| id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
+
+#### ContactForm model - memes app
+
+- ContactForm model is used to store all the contact forms sent to developer by users.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| name | CharField | max_length=100, null=True |
+| email | EmailField | max_length=250, null=True |
+| subject | CharField | max_length=150, null=True |
+| message | TextField | max_length=500, null=True |
+| created | DateTimeField | auto_now_add=True |
+| id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
+
 
 ### Agile Development
-
-
-### Font
-
-### Flowcharts
-
 
 # Tools and technologies used
 
