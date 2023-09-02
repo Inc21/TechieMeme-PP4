@@ -50,7 +50,7 @@ class Comment(models.Model):
     meme = models.ForeignKey(
         Meme, on_delete=models.CASCADE, related_name='comment')
     user = models.ForeignKey(
-        UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+        UserProfile, on_delete=models.CASCADE, null=True, blank=True)
     comment = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(

@@ -89,9 +89,31 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 
 ## Code Validation
 
-### Google lighthouse testing
-### CSS Testing
-- 
+### Google lighthouse Validation
+
+All pages were tested with Google Chrome Lighthouse. Testing was performed in private browsing mode and on the live website on Heroku.
+
+| Page | Image |
+| --- | --- |
+| Home Page | ![Google lighthouse](/static/images/readme_images/lighthouse/home_page.png) |
+| Memes Page | ![Google lighthouse](/static/images/readme_images/lighthouse/memes.png) |
+| Single Meme Page | ![Google lighthouse](/static/images/readme_images/lighthouse/single_meme.png) |
+| User Page | ![Google lighthouse](/static/images/readme_images/lighthouse/users.png) |
+| Single User Page | ![Google lighthouse](/static/images/readme_images/lighthouse/single_user.png) |
+| Upload Meme Page | ![Google lighthouse](/static/images/readme_images/lighthouse/upload_meme.png) |
+| Login Page | ![Google lighthouse](/static/images/readme_images/lighthouse/login.png) |
+| Logout Page | ![Google lighthouse](/static/images/readme_images/lighthouse/logout.png) |
+| Contact Developer Page | ![Google lighthouse](/static/images/readme_images/lighthouse/contact_developer_form.png) |
+| Report Meme Page | ![Google lighthouse](/static/images/readme_images/lighthouse/report_meme.png) |
+
+
+### CSS Validation
+- No errors were found when passing through the official (Jigsaw) validator.
+![CSS Validator](/static/images/readme_images/css_validator.png)
+
+
+### HTML Validation
+- No errors were found when passing through the official (W3C) validator.
 
 ### PEP8 Code Institute Python Linter Testing
 - 

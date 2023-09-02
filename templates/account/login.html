@@ -22,7 +22,6 @@
                 <p class="text-wrap">{% blocktrans with site.name as site_name %}Please log in with your username and password or with one of the following providers:</p> 
 				{% endblocktrans %}
 				<span class="active-link">{% include "socialaccount/snippets/provider_list.html" with process="login" %}</span>
-					<!-- <div class="login-or">{% trans 'or' %}</div> -->
                 <hr>
 				<p>Don't have an account? <a class="active-link text-nowrap" href="{{ signup_url }}">sign up</a> for one here.</p>
               <hr>
