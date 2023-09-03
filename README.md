@@ -27,29 +27,28 @@ The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com
 4. As a user, I want to be able to easily register for an account.
 5. As a user, I want to be able to easily log in and out of my account.
 6. As a user, I want to be able to easily recover my password if I forget it.
-7. As a user, I want to be able to easily view my profile.
-8. As a user, I want to be able to easily view other users profiles.
-9. As a user, I want to be able to easily search for memes.
+7. As a user, I want to be able to easily view other users profiles.
+8. As a user, I want to be able to easily search for memes.
 
 
 ### Authenticated User Goals
-10. As a authenticated user, I want to be able to easily upload my own memes.
-11. As a authenticated user, I want to be able to easily edit my own memes.
-12. As a authenticated user, I want to be able to easily delete my own memes.
-13. As a authenticated user, I want to be able to easily like memes.
-14. As a authenticated user, I want to be able to easily comment on memes.
-15. As a authenticated user, I want to be able to report memes.
-16. As a authenticated user, I want to be able to easily contact the developer.
+9. As a authenticated user, I want to be able to easily upload my own memes.
+10. As a authenticated user, I want to be able to easily edit my own memes.
+11. As a authenticated user, I want to be able to easily delete my own memes.
+12. As a authenticated user, I want to be able to easily like memes.
+13. As a authenticated user, I want to be able to easily comment on memes.
+14. As a authenticated user, I want to be able to report memes.
+15. As a authenticated user, I want to be able to easily contact the developer.
+16. As a user, I want to be able to easily view my profile.
 17. As a authenticated user, I want to be able to easily edit my profile.
 18. As a authenticated user, I want to be able to easily delete my profile.
-19. As a user, I want to be able to
 
 
 ### Site owner objectives
-20. As a site owner, I want to be able to log into the admin panel.
-21. As a site owner, I want to be able to easily manage memes incase of inappropriate content.
-22. As a site owner, I want to be able to easily manage users incase of inappropriate content.
-23. As a site owner, I want to be able to provide fun and easy to use website.
+19. As a site owner, I want to be able to log into the admin panel.
+20. As a site owner, I want to be able to easily manage memes incase of inappropriate content.
+21. As a site owner, I want to be able to easily manage users incase of inappropriate content.
+22. As a site owner, I want to be able to provide fun and easy to use website.
 
 
 # Design
@@ -554,24 +553,62 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 
  # Manual Testing
 
- <details>
-  <summary>Manual Testing</summary>
-
-    This app was developed on a Dell desktop running Windows 10.
+ <!-- <details>
+  <summary>Manual Testing</summary> -->
 
 
-    ### User Stories Testing
+### Devices and browsers used for testing
 
-    | Expectation | Solution |
-    | --- | --- |
-    |     |     |
+This website was developed on Dell Windows 10 desktop computer using Visual Studio Code. Testing was done on the following devices and browsers:
+| Device | Browser | Result |
+| --- | --- | --- |
+| Dell Windows 10 desktop computer | Google Chrome | Works as expected |
+| Dell Windows 10 desktop computer | Microsoft Edge | Works as expected |
+| Dell Windows 10 desktop computer | Mozilla Firefox | Works as expected |
+| Dell Windows 10 desktop computer | Opera | Works as expected |
+|HP Windows 11 laptop 13" Screen | Google Chrome | Works as expected |
+|HP Windows 11 laptop 13" Screen | Microsoft Edge | Works as expected |
+|HP Windows 11 laptop 13" Screen | Mozilla Firefox | Works as expected |
+| Apple iPhone 12 | Safari | Works as expected |
+| Apple iPhone 12 | Google Chrome | Works as expected |
+| Apple iPhone 12 | Mozilla Firefox | Works as expected |
+| Apple iPhone 13 | Safari | Works as expected |
+| Apple iPad 10th generation | Safari | Works as expected |
 
 
-    ### Home Page Testing.
-    ![](/assets/images/welcome_page_small.png)
-    | Action | Expected Result | Actual Result | Image |
-    | --- | --- | --- | --- |
-    |     |     |     |     |
+### User Stories Testing
+
+| Expectation | Solution | Image |
+| --- | --- | --- |
+| As a user, I want to be able to view the site on any device I choose.| Thorough testing was done on all devices and browsers listed above. | |
+| As a user, I want to be able to easily navigate the site. | Navigation bar is fixed to the top of the page and is visible on all pages. | ![Navigation bar](/static/images/readme_images/manual_testing/navigation_bar.png) |
+| As a user, I want to be able to easily find the content I am looking for. | All pages have a search bar in the navigation bar. | ![Search bar](/static/images/readme_images/manual_testing/search_bar.png) |
+| As a user, I want to be able to easily register for an account. | Sign-up button is in the navigation bar and available on all pages. | ![Sign-up button](/static/images/readme_images/manual_testing/signup_button.png) |
+| As a user, I want to be able to easily log in and out of my account. | Login and logout buttons are in the navigation bar and available on all pages. | ![Login button](/static/images/readme_images/manual_testing/login_button.png) ![Logout button](/static/images/readme_images/manual_testing/logout_button.png) |
+| As a user, I want to be able to easily recover my password if I forget it. | Forgot password link is provided on the login page. | ![Forgot password link](/static/images/readme_images/manual_testing/forgot_password_link.png) |
+| As a user, I want to be able to easily view other users profiles. | Users page is available to all users. | ![Users page](/static/images/readme_images/existing_features/users_page.png) |
+| As a user, I want to be able to easily search for memes. | Search bar is available on all pages. Memes page is available for all users | ![Search bar](/static/images/readme_images/manual_testing/search_bar.png) |
+| As an authenticated user, I want to be able to easily upload my own memes. | Upload meme button is available on navigation bar and on all pages. | ![Upload meme button](/static/images/readme_images/manual_testing/upload_meme_button.png) |
+|  As an authenticated user, I want to be able to easily edit my own memes. | Edit button is available on single meme page. | ![Edit button](/static/images/readme_images/manual_testing/edit_button.png) |
+| As an authenticated user, I want to be able to easily delete my own memes. | Delete button is available on single meme page and on single users page. | ![Delete button](/static/images/readme_images/manual_testing/delete_button.png) |
+| As an authenticated user, I want to be able to easily like memes. | Like or smiley face button is available on all meme cards, all memes, single meme, page, home page and single users memes | ![Like button](/static/images/readme_images/manual_testing/like_button.png) |
+| As an authenticated user, I want to be able to easily comment on memes. | Comment box is available on single meme page. | ![Comment button](/static/images/readme_images/manual_testing/comment_button.png) |
+As an authenticated user, I want to be able to report memes. | Report button is available on every meme card. | ![Report button](/static/images/readme_images/manual_testing/report_button.png) |
+|  As an authenticated user, I want to be able to easily contact the developer. | Contact developer link is available on the footer and on all pages. | ![Contact developer link](/static/images/readme_images/manual_testing/contact_developer_link.png) |
+| As a user, I want to be able to easily view my profile. | Current user profile button is available on navigation bar by login / logout buttons. | ![Profile button](/static/images/readme_images/manual_testing/profile_button.png) |
+| As an authenticated user, I want to be able to easily edit my profile. | Edit profile button is available on single user page. | ![Edit profile button](/static/images/readme_images/manual_testing/edit_profile_button.png) |
+| As an authenticated user, I want to be able to easily delete my profile. | Delete profile button is available on single user page. | ![Delete profile button](/static/images/readme_images/manual_testing/edit_profile_button.png) |
+| As a site owner, I want to be able to log into the admin panel. | Admin panel is available by entering /admin at the end of the url. | ![Admin panel](/static/images/readme_images/manual_testing/admin_panel.png) |
+| As a site owner, I want to be able to easily manage memes in case of inappropriate content. | Admin panel is available by entering /admin at the end of the url. From there website admin can delete any meme | ![Admin panel](/static/images/readme_images/manual_testing/admin_panel_page.png) |
+| As a site owner, I want to be able to easily manage users in case of inappropriate content. | Admin panel is available by entering /admin at the end of the url. From there website admin can delete any user | ![Admin panel](/static/images/readme_images/manual_testing/admin_panel_page.png) |
+| As a site owner, I want to be able to provide a fun and easy-to-use website. | All of the above. | ![techiememe](/static/images/readme_images/existing_features/home_page.png) |
+
+
+### Home Page Testing.
+![](/assets/images/welcome_page_small.png)
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+|     |     |     |     |
 
 </details>
 
