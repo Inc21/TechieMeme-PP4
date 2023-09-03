@@ -827,7 +827,7 @@ A few of the more interesting ones are listed below.
 
 ## Unfixed Bugs
 
-- IntegrityError at /accounts/social/signup/ 
+- [**This error was fixed minutes before submission** Solution: Didn't realize I needed to change all credentials to match deployed site.] IntegrityError at /accounts/social/signup/ 
 ```UNIQUE constraint failed: account_emailaddress.email```
     - This error is caused by the user trying to sign up with the same email address that they used to sign up with Google or GitHub.
 - Carousel misalignment on mobile devices.
