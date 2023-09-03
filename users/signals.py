@@ -6,6 +6,9 @@ from django.conf import settings
 
 
 def create_profile(sender, instance, created, **kwargs):
+    """
+    This function/signal is used to create a user profile when user registers.
+    """
     if created:
         user = instance
         UserProfile.objects.create(
@@ -16,6 +19,7 @@ def create_profile(sender, instance, created, **kwargs):
             last_name=user.last_name,
         )
 
+        # Send welcome email
         send_mail(
             subject="Welcome to TechieMeme",
             message="Welcome to TechieMeme!" + " " +
@@ -27,6 +31,10 @@ def create_profile(sender, instance, created, **kwargs):
 
 
 def updateUser(sender, instance, created, **kwargs):
+    """
+    This function/signal is used to update the user profile when user updates
+    their account.
+    """
     profile = instance
     user = profile.user
     if created:
@@ -38,6 +46,10 @@ def updateUser(sender, instance, created, **kwargs):
 
 
 def deleteUser(sender, instance, **kwargs):
+    """
+    This function/signal is used to delete the user profile when user deletes
+    their account.
+    """
     user = instance.user
     user.delete()
 

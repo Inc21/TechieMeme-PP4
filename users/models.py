@@ -5,6 +5,9 @@ from django_resized import ResizedImageField
 
 
 class UserProfile(models.Model):
+    """
+    This class is used to create a model for the user profile.
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
                                 blank=True)
     username = models.CharField(max_length=50, null=True, blank=True)

@@ -5,6 +5,9 @@ from django_resized import ResizedImageField
 
 
 class Meme(models.Model):
+    """
+    This class is used to create a model for the memes.
+    """
     uploader = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=100, null=True)

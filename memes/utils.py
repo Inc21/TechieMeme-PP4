@@ -4,6 +4,9 @@ from users.models import UserProfile
 
 
 def searchMeme(request):
+    """
+    This function is used to search for memes.
+    """
     search_form = ''
 
     if request.GET.get('search_form'):

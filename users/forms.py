@@ -4,6 +4,9 @@ from memes.models import ContactForm
 
 
 class UserForm(ModelForm):
+    """
+    This class is used to create a form for the UserProfile model.
+    """
     class Meta:
         model = UserProfile
         fields = [
