@@ -553,8 +553,8 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 
  # Manual Testing
 
- <!-- <details>
-  <summary>Manual Testing</summary> -->
+ <details>
+  <summary>Manual Testing</summary>
 
 
 ### Devices and browsers used for testing
@@ -605,10 +605,203 @@ As an authenticated user, I want to be able to report memes. | Report button is 
 
 
 ### Home Page Testing.
-![](/assets/images/welcome_page_small.png)
+
 | Action | Expected Result | Actual Result | Image |
 | --- | --- | --- | --- |
-|     |     |     |     |
+| User clicks on  the main logo in the navigation bar. | User is taken to the home page. | Working as expected. | ![Home Page](/static/images/readme_images/manual_testing/home_page.png) |
+| User clicks on the "Home" link in the navigation bar. | User is taken to the home page. | Working as expected. |  |
+| User clicks on the "Memes" link in the navigation bar. | User is taken to the memes page. | Working as expected. | ![Memes Page](/static/images/readme_images/manual_testing/memes_page.png) |
+| User clicks on the "Users" link in the navigation bar. | User is taken to the users page. | Working as expected. | ![Users Page](/static/images/readme_images/existing_features/users_page.png) |
+| User clicks on the "Upload Meme" link in the navigation bar. | User is taken to the upload meme page. | Working as expected. | ![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png) |
+| User clicks on the "Login" link in the navigation bar. | User is taken to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+| User clicks on the "Sign-up" link in the navigation bar. | User is taken to the sign-up page. | Working as expected. | ![Sign-up Page](/static/images/readme_images/existing_features/signup_page.png) |
+| Logged in user clicks on the "Logout" link in the navigation bar. | User is taken to the logout page. | Working as expected. | ![Logout Page](/static/images/readme_images/existing_features/logout_page.png) |
+| User clicks on the "Contact Developer" link in the footer. | User is taken to the contact developer page. | Working as expected. | ![Contact Developer Page](/static/images/readme_images/existing_features/contact_developer_page.png) |
+| User clicks on the "Sign up and join the fun" call to action button. | User is taken to the sign-up page. | Working as expected. | ![Sign-up Page](/static/images/readme_images/existing_features/signup_page.png) |
+| Authenticated user clicks on the "Upload Meme" call to action button. | User is taken to the upload meme page. | Working as expected. | ![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png) |
+| User clicks on the "Report" button on the meme card. | User is taken to the report meme page. | Working as expected. | ![Report Meme Page](/static/images/readme_images/existing_features/report_meme.png) |
+| If user not signed in clicks on the "Report" button on the meme card. | User is taken to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+|Authenticated User clicks on the "smiley face" or a "sad face" button on the meme card. | Corresponding emoji count goes up by one. | Working as expected. | ![Like button](/static/images/readme_images/manual_testing/like_button.png) |
+| If user not signed in clicks on the "smiley face" or a "sad face" button on the meme card. | Info message is displayed. | Working as expected. | ![Info message](/static/images/readme_images/manual_testing/like_message.png) |
+| User clicks anywhere on the meme image or title. | User is taken to the single meme page. | Working as expected. | ![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png) |
+| User clicks on the "uploader" link on the meme card. | User is taken to the single user page. | Working as expected. | ![Single User Page](/static/images/readme_images/existing_features/single_user_page.png) |
+| User clicks on the arrow to the right of the carousel. | Carousel moves to the next meme. | Working as expected. | ![Carousel](/static/images/readme_images/manual_testing/carousel.png) |
+| User clicks on the arrow to the left of the carousel. | Carousel moves to the previous meme. | Working as expected. | ![Carousel](/static/images/readme_images/manual_testing/carousel.png) |
+
+
+### Memes Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks anywhere on the meme image or title. | User is taken to the single meme page. | Working as expected. | ![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png) |
+| User clicks on the "uploader" link on the meme card. | User is taken to the single user page. | Working as expected. | ![Single User Page](/static/images/readme_images/existing_features/single_user_page.png) |
+| User clicks on the pagination links. | User is taken to the next page. | Working as expected. | ![Pagination](/static/images/readme_images/manual_testing/pagination_links.png) |
+| Authenticated user clicks on the "smiley face" or a "sad face" button on the meme card. | Corresponding emoji count goes up by one. | Working as expected. | ![Like button](/static/images/readme_images/manual_testing/like_button.png) |
+| If user is not signed and clicks on the "smiley face" or a "sad face" button on the meme card. | Info message is displayed. | Working as expected. | ![Info message](/static/images/readme_images/manual_testing/like_message.png) |
+| User clicks on the comment icon on the meme card. | User is taken to the single meme page. | Working as expected. | ![Single Meme Page](/static/images/readme_images/existing_features/single_meme_page.png) |
+
+
+### Single Meme Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+##### Authenticated user and owner of the meme.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "Edit" button. | User is taken to the edit meme page. | Working as expected. | ![Edit Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png) |
+| User clicks on the "Delete" button. | User is taken to the delete meme confirmation page. | Working as expected. | ![Delete Meme Confirmation Page](/static/images/readme_images/existing_features/delete_meme_confirmation_page.png) |
+
+##### Authenticated user and not owner of the meme.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User enters comment in the comment box and clicks on the "Comment" button. | Comment is added to the comments section. | Working as expected. | ![Comment button](/static/images/readme_images/manual_testing/comment_button.png) |
+| User clicks on the uploader link. | User is taken to the single user page. | Working as expected. | ![Single User Page](/static/images/readme_images/existing_features/single_user_page.png) |
+| User clicks on the "back" button. | User is taken one step back. | Working as expected. | ![Memes Page](/static/images/readme_images/manual_testing/back_button.png) |
+| User clicks on the "Report" button. | User is taken to the report meme page. | Working as expected. | ![Report Meme Page](/static/images/readme_images/existing_features/report_meme.png) |
+| User clicks on the "smiley face" or a "sad face" button. | Corresponding emoji count goes up by one. | Working as expected. | ![Like button](/static/images/readme_images/manual_testing/like_button.png) |
+
+##### Not authenticated user.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "back" button. | User is taken one step back. | Working as expected. | ![Memes Page](/static/images/readme_images/manual_testing/back_button.png) |
+| User clicks on the "Report" button. | User is redirected to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+| User clicks on the "smiley face" or a "sad face" button. | Info message is displayed. | Working as expected. | ![Info message](/static/images/readme_images/manual_testing/like_message.png) |
+
+
+### Users Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks anywhere on the user image or username. | User is taken to the single user page. | Working as expected. | ![Single User Page](/static/images/readme_images/existing_features/single_user_page.png) |
+| User clicks on the pagination links. | User is taken to the next page. | Working as expected. | ![Pagination](/static/images/readme_images/manual_testing/pagination_links.png) |
+
+
+### Single User Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+##### Authenticated user and owner of the profile.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "Edit" button. | User is taken to the edit profile page. | Working as expected. | ![Edit Profile Page](/static/images/readme_images/existing_features/update_profile_page.png) |
+| User clicks on the "Delete" button. | User is taken to the delete profile confirmation page. | Working as expected. | ![Delete Profile Confirmation Page](/static/images/readme_images/existing_features/delete_confirmation_page.png) |
+| User clicks on the "back" button. | User is taken one step back. | Working as expected. | ![Users Page](/static/images/readme_images/manual_testing/back_button.png) |
+| User clicks on "edit" button on their own meme card. | User is taken to the edit meme page. | Working as expected. | ![Edit Meme Page](/static/images/readme_images/existing_features/update_meme_page.png) |
+| User clicks on "delete" button on their own meme card. | User is taken to the delete meme confirmation page. | Working as expected. | ![Delete Meme Confirmation Page](/static/images/readme_images/existing_features/delete_meme_confirmation_page.png) |
+
+##### Not authenticated user.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "back" button. | User is taken one step back. | Working as expected. | ![Users Page](/static/images/readme_images/manual_testing/back_button.png) |
+| User clicks on the "Report" button. | User is redirected to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+| User clicks on the "smiley face" or a "sad face" button. | Info message is displayed. | Working as expected. | ![Info message](/static/images/readme_images/manual_testing/like_message.png) |
+| User clicks on one of the provided profile social media links. | User is taken to the social media page. Page opens in new window. | Working as expected. | ![Social Media Page](/static/images/readme_images/manual_testing/social_link.png) |
+
+
+### Upload Meme Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+##### Not authenticated user.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "upload meme" button. | User is redirected to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+
+##### Authenticated user.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "back" button. | User is taken one step back. | Working as expected. | ![Memes Page](/static/images/readme_images/manual_testing/back_button.png) |
+| User clicks on the "Upload Meme" button. | User is taken to the upload meme page. | Working as expected. | ![Upload Meme Page](/static/images/readme_images/existing_features/upload_meme_page.png) |
+
+
+### Contact Developer Form Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+##### Not authenticated user.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "Contact Developer" link. | User redirected to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+
+
+##### Authenticated user.
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "Contact Developer" link. | User is taken to the contact developer page. | Working as expected. | ![Contact Developer Page](/static/images/readme_images/manual_testing/contact_developer_form.png) |
+| User fills in the form and clicks on the "Send" button. | User is redirected to the home page and success message is displayed. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/contact_developer_form_message.png) | 
+
+
+### Update Meme Form Page Testing.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "back" button. | User is taken one step back. | Working as expected. | ![Single Meme Page](/static/images/readme_images/existing_features/update_meme_page.png) |
+| User "edits" any of the fields and clicks on the "Update Meme" button. | User is redirected to the single meme page and success message is displayed. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/success_message.png) |
+
+
+### Delete Confirmation Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "back" button. | User is taken one step back. | Working as expected. | ![Single Meme Page](/static/images/readme_images/existing_features/delete_confirmation_page.png) |
+| User clicks on the "CONFIRM" button. | User is redirected to the home page and red warning message is displayed to confirm users action. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/deleted_warning_message.png) |
+
+
+### Logout Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "Logout" button. | User is redirected to the logout page. | Working as expected. | ![Logout Page](/static/images/readme_images/existing_features/logout_page.png) |
+| User clicks on the "log out" button on the logout page. | User is redirected to the home page and success message is displayed. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/logout_message.png) |
+
+
+### Login Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "Login" button. | User is redirected to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+
+
+### Home Page Testing.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User clicks on the "social sign up" button. | User is redirected to the social sign up page. | Working as expected. | ![Social Sign Up Page](/static/images/readme_images/manual_testing/social_signin.png) |
+| User clicks on the "Sign up" link. | User is redirected to the sign up page. | Working as expected. | ![Sign Up Page](/static/images/readme_images/existing_features/signup_page.png) |
+| User clicks on the "Forgot password?" link. | User is redirected to the password reset page. | Working as expected. | ![Forgot Password Page](/static/images/readme_images/manual_testing/password_reset.png) |
+| User enters their username and password and clicks on the "Log in" button. | User is redirected to the home page and success message is displayed. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/signin_success.png) |
+
+
+### Password Reset Page Testing.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User enters a valid email that was used to sign up and clicks on the "Reset my password" button. | User is redirected to the password reset done page | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/password_reset_confirm.png) |
+| User clicks on the link in the email. | User is redirected to the password reset confirm page. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/password_reset_email.png) |
+| User enters a new password and clicks on the "Change my password" button. | User is redirected to the password reset complete page. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/change_password.png) |
+| | | | ![Password Change](/static/images/readme_images/manual_testing/change_password_success.png) |
+
+
+### Sign Up Page Testing.
+
+- Navigation bar and footer are the same as on the home page.
+
+| Action | Expected Result | Actual Result | Image |
+| --- | --- | --- | --- |
+| User enters a valid username, email and password and clicks on the "Sign up" button. | User is redirected to update profile page and success message is displayed. | Working as expected. | ![Success Message](/static/images/readme_images/manual_testing/signup_success.png) |
+| User clicks on the "Log in" link. | User is redirected to the login page. | Working as expected. | ![Login Page](/static/images/readme_images/existing_features/login_page.png) |
+
+
 
 </details>
 
