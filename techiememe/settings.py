@@ -76,11 +76,11 @@ INSTALLED_APPS = [
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
-        'APP': {
-            'client_id': '',
-            'secret': '',
-            'key': ''
-        }
+        'SCOPE': [
+            'user',
+            'repo',
+            'read:org',
+        ],
     },
     'google': {
         'SCOPE': [
