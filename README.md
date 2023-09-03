@@ -6,7 +6,10 @@
 
 TechieMeme is a website meant to lighten up peoples day who like technology or related things. Like Code, science, maths or hardware as an example. Inspiration for this site came from Code Institute Slack channel **community-tech-humour**, which I really love. On this site the user can view, like and comment on the memes that they like or upload their own memes and edit, delete them if necessary. This website was created as a learning exercise for my [Code Institute](https://codeinstitute.net/ie/) fourth portfolio project. 
 
-The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com// "TechieMeme.")
+
+The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com/ "TechieMeme.")
+
+Admin panel can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com/admin/login/?next=/admin/ "TechieMeme Admin Panel.")
 
 
 ### Project Goals
@@ -441,9 +444,15 @@ NB: page is zoomed out to show the whole page. This page is the same for both up
 ### Custom Error 404 Page
 
 - 404 page is where the user will be redirected if they try to access a page that doesn't exist.
-- 404 page is very similar to error 500 home.
 
 ![404 Page](/static/images/readme_images/existing_features/custom_404_500_page.png)
+
+
+### Custom Error 500 Page
+
+- 500 page is where the user will be redirected if there is an internal server error.
+
+![500 Page](/static/images/readme_images/existing_features/error_500.png)
 
 
 </details>

@@ -77,8 +77,8 @@ INSTALLED_APPS = [
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'APP': {
-            'client_id': '87649bead60de80b26a4',
-            'secret': '8d77d531ed2cc9a3cc1f43655904d595edeffe6f',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     },
