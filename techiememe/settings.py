@@ -156,7 +156,7 @@ WSGI_APPLICATION = 'techiememe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if "DEVELOPMENT" in os.environ:
+if "DEVELOPMENT" not in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -167,7 +167,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'TechieMeme',
+            'NAME': 'techiememe',
             'USER': 'inc21',
             'PASSWORD': os.environ.get("PASSWORD"),
             'HOST': os.environ.get("HOST"),
