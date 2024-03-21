@@ -2,9 +2,12 @@
 ![mockup](/static/images/readme_images/mockup_dark.png)
 
 
+NB: Some updates to readme done post-course. Submitted project can be forked from the main branch.
+
+
 # Introduction
 
-TechieMeme is a website meant to lighten up people's day who like technology or related things. Like Code, science, maths or hardware as an example. Inspiration for this site came from the Code Institute Slack channel **community-tech-humour**, which I really love. On this site, the user can view, like and comment on the memes that they like or upload their own memes and edit, or delete them if necessary. This website was created as a learning exercise for my [Code Institute](https://codeinstitute.net/ie/) fourth portfolio project. 
+TechieMeme is a website meant to lighten up people's day who like technology or related things. Like Code, science, maths or hardware as an example. Inspiration for this site came from the Code Institute Slack channel **community-tech-humour**, which I love. On this site, the user can view, like and comment on the memes that they like or upload their memes and edit, or delete them if necessary. This website was created as a learning exercise for my [Code Institute](https://codeinstitute.net/ie/) fourth portfolio project. 
 
 
 The live app can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com/ "TechieMeme.")
@@ -14,9 +17,9 @@ Admin panel can be found [here.](https://techiememe-50a6f4eb45eb.herokuapp.com/
 
 ### Project Goals
 - To create a website that is easy to navigate and use.
-- To create a website that is visually appealing.
+- To create a visually appealing website.
 - To create a website that is responsive on all devices.
-- To create a website that is interactive.
+- To create an interactive website.
 - To create a website that is fun to use.
 - To create a website that is easy to use.
 
