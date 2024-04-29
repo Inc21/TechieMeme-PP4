@@ -16,7 +16,7 @@ class Meme(models.Model):
                                  blank=True, default='memes/default.webp')
     tags = models.ManyToManyField('Tag', blank=True)
     smiley_face = models.ManyToManyField(
-        UserProfile, related_name='smiley_face')
+        UserProfile, related_name='smiley_face', blank=True)
     sad_face = models.ManyToManyField(
         UserProfile, related_name='sad_face', blank=True)
     created = models.DateTimeField(auto_now_add=True)
