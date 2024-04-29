@@ -37,5 +37,5 @@ class UserProfile(models.Model):
         else:
             return '/static/images/users/default_user.webp'
 
-    class Meta:
-        ordering = ['-created']
+    # class Meta:
+    #     ordering = ['-created']

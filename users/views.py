@@ -17,7 +17,7 @@ def userProfiles(request):
     """
     memes, search_form = searchMeme(request)
 
-    profiles = UserProfile.objects.all()
+    profiles = UserProfile.objects.all().order_by('-created')
     page = request.GET.get('page')
     results = 4
     paginator = Paginator(profiles, results)
