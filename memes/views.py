@@ -93,6 +93,8 @@ def homePage(request):
         "memes": memes,
         "search_form": search_form,
         }
+    messages.info(request, "This page is for educational purposes only. \
+                  Database is not connected and data won't be saved.")
     return render(request, "index.html", context)
 
 
