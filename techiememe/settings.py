@@ -27,6 +27,7 @@ ALLOWED_HOSTS = [
     'techiememe.herokuapp.com',
     'techiememe-50a6f4eb45eb.herokuapp.com',
     'techiememe-50a6f4eb45eb.herokuapp.com/users/',
+    'techiememe.inc21.dev'
     ]
 
 SITE_ID = 1
